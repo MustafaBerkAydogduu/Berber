@@ -1,6 +1,7 @@
 import React from 'react';
 import { Instagram, Phone, MapPin, Clock, ArrowUpRight, Scissors } from 'lucide-react';
 import WhatsAppIcon from './WhatsAppIcon';
+import BrandIcon from './BrandIcon';
 
 const WA_URL = "https://wa.me/905522742383?text=Merhaba%20Nurkan%20Bey%2C%20randevu%20almak%20istiyorum.";
 
@@ -50,13 +51,16 @@ export default function Footer() {
           
           {/* Brand Col (4 cols) */}
           <div className="lg:col-span-4 flex flex-col items-start">
-            <a href="#" className="flex flex-col group mb-4">
-              <span className="font-sans font-extrabold text-xl tracking-[0.14em] text-alabaster group-hover:text-amber transition-colors">
-                NURKAN AYDOĞDU
-              </span>
-              <span className="text-[9px] tracking-[0.3em] uppercase text-amber font-semibold mt-1">
-                Erkek Kuaförü · Çorum
-              </span>
+            <a href="#" className="flex items-center gap-3.5 group mb-4">
+              <BrandIcon size={42} />
+              <div className="flex flex-col">
+                <span className="font-sans font-extrabold text-lg tracking-[0.14em] text-alabaster group-hover:text-amber transition-colors">
+                  NURKAN AYDOĞDU
+                </span>
+                <span className="text-[9px] tracking-[0.25em] uppercase text-amber font-semibold mt-0.5">
+                  Erkek Kuaförü · Çorum
+                </span>
+              </div>
             </a>
             <p className="text-slate text-xs sm:text-sm leading-relaxed max-w-sm mb-6">
               Çorum'da modern saç kesim teknikleri, anatomik sakal tasarımı ve sıcak havlu ritüeli ile birinci sınıf erkek bakım stüdyosu.

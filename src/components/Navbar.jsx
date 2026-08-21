@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X, Phone, ArrowUpRight, Sparkles } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import WhatsAppIcon from './WhatsAppIcon';
+import BrandIcon from './BrandIcon';
 
 const WA_URL = "https://wa.me/905522742383?text=Merhaba%20Nurkan%20Bey%2C%20randevu%20almak%20istiyorum.";
 
@@ -37,14 +38,17 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-5 sm:px-8 flex items-center justify-between">
           {/* Brand Identity */}
-          <a href="#" className="flex flex-col group text-left">
-            <span className="font-sans font-extrabold text-base sm:text-lg tracking-[0.14em] text-alabaster group-hover:text-amber transition-colors duration-300">
-              NURKAN AYDOĞDU
-            </span>
-            <span className="font-sans text-[9px] sm:text-[10px] tracking-[0.3em] uppercase text-amber font-semibold flex items-center gap-1.5 mt-0.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-amber inline-block"></span>
-              Erkek Kuaförü · Çorum
-            </span>
+          <a href="#" className="flex items-center gap-3 group text-left">
+            <BrandIcon size={38} />
+            <div className="flex flex-col">
+              <span className="font-sans font-extrabold text-sm sm:text-base tracking-[0.14em] text-alabaster group-hover:text-amber transition-colors duration-300">
+                NURKAN AYDOĞDU
+              </span>
+              <span className="font-sans text-[9px] sm:text-[10px] tracking-[0.25em] uppercase text-amber font-semibold flex items-center gap-1.5 mt-0.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber inline-block"></span>
+                Erkek Kuaförü · Çorum
+              </span>
+            </div>
           </a>
 
           {/* Desktop Navigation */}
