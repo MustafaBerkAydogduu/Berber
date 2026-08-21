@@ -155,12 +155,6 @@ export default function Contact() {
                 referrerPolicy="no-referrer-when-downgrade"
                 className="w-full h-full"
               />
-
-              {/* Map Floating Top Badge */}
-              <div className="absolute top-4 left-4 bg-noir-950/90 backdrop-blur-md border border-white/10 px-4 py-2 rounded-xl shadow-luxury flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-amber"></span>
-                <span className="text-xs font-bold text-alabaster">Üçtutlar Mah. No:24/A (Ulukavak Muhtarlığı Karşısı)</span>
-              </div>
             </div>
 
             {/* Map Bottom Actions */}
