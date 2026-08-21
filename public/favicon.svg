@@ -1,21 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
-  <!-- Background Disc -->
-  <rect width="64" height="64" rx="16" fill="#0D0E11"/>
-  <rect x="1" y="1" width="62" height="62" rx="15" stroke="#E5C578" stroke-width="1.5" stroke-opacity="0.3"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" width="192" height="192" fill="none">
+  <!-- Solid Luxury Dark Background Disc -->
+  <rect width="192" height="192" rx="48" fill="#0A0B0E"/>
+  <rect x="3" y="3" width="186" height="186" rx="45" stroke="#E5C578" stroke-width="6" stroke-opacity="0.85"/>
   
-  <!-- Luxury Scissor Motif -->
-  <g transform="translate(12, 10)">
-    <!-- Scissor Blades -->
-    <path d="M10 8 L30 32 M30 8 L10 32" stroke="#E5C578" stroke-width="2.75" stroke-linecap="round"/>
-    
-    <!-- Pivot Gold Dot -->
-    <circle cx="20" cy="20" r="3" fill="#0D0E11" stroke="#E5C578" stroke-width="2"/>
-    
-    <!-- Scissor Finger Loops -->
-    <circle cx="9" cy="35" r="5" stroke="#E5C578" stroke-width="2.25" fill="#0D0E11"/>
-    <circle cx="31" cy="35" r="5" stroke="#E5C578" stroke-width="2.25" fill="#0D0E11"/>
-    
-    <!-- Little Star on Top -->
-    <path d="M20 2 L21.5 6 L25.5 6.5 L22.5 9.5 L23.5 13.5 L20 11.5 L16.5 13.5 L17.5 9.5 L14.5 6.5 L18.5 6 Z" fill="#E5C578"/>
+  <!-- Subtle Inner Gold Glow Ring -->
+  <circle cx="96" cy="96" r="76" stroke="#E5C578" stroke-width="1.5" stroke-opacity="0.25"/>
+
+  <!-- Star of Excellence at Top -->
+  <path d="M96 28 L100.5 40 L113 41.5 L103.5 50.5 L106.5 63 L96 56.5 L85.5 63 L88.5 50.5 L79 41.5 L91.5 40 Z" fill="#E5C578"/>
+
+  <!-- Master Stylist Crossed Scissors (Bold & Sharp) -->
+  <g stroke="#E5C578" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Left Blade -->
+    <path d="M68 62 L124 126" stroke-width="9"/>
+    <!-- Right Blade -->
+    <path d="M124 62 L68 126" stroke-width="9"/>
+
+    <!-- Pivot Gold Ring -->
+    <circle cx="96" cy="94" r="8" fill="#0A0B0E" stroke-width="6"/>
+
+    <!-- Finger Loops -->
+    <circle cx="60" cy="138" r="17" stroke-width="7" fill="#0A0B0E"/>
+    <circle cx="132" cy="138" r="17" stroke-width="7" fill="#0A0B0E"/>
   </g>
+
+  <!-- Accent Center Dot -->
+  <circle cx="96" cy="94" r="3" fill="#E5C578"/>
 </svg>
