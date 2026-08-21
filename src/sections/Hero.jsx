@@ -171,7 +171,7 @@ export default function Hero() {
                 </div>
                 <div>
                   <span className="font-sans font-extrabold text-base sm:text-xl text-alabaster block leading-none">
-                    10+ Yıl
+                    7+ Yıl
                   </span>
                   <span className="text-[9px] sm:text-[10px] text-slate uppercase tracking-wider mt-0.5 sm:mt-1 block">
                     Zanaat Tecrübesi

@@ -57,7 +57,7 @@ export default function Contact() {
                 </div>
                 <div className="flex justify-between py-1 text-slate-dark">
                   <span>Pazar:</span>
-                  <span className="text-amber/80 font-medium">Randevu ile / Kapalı</span>
+                  <span className="text-rose-400/90 font-semibold">Kapalı</span>
                 </div>
               </div>
             </div>

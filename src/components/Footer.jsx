@@ -57,8 +57,8 @@ export default function Footer() {
                 <span className="font-sans font-extrabold text-lg tracking-[0.14em] text-alabaster group-hover:text-amber transition-colors">
                   NURKAN AYDOĞDU
                 </span>
-                <span className="text-[9px] tracking-[0.25em] uppercase text-amber font-semibold mt-0.5">
-                  Erkek Kuaförü · Çorum
+                <span className="text-[10px] tracking-[0.22em] uppercase text-amber font-semibold mt-0.5">
+                  Erkek Kuaförü
                 </span>
               </div>
             </a>

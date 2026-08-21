@@ -6,11 +6,11 @@ import WhatsAppIcon from '../components/WhatsAppIcon';
 const FAQS = [
   {
     q: 'Randevu almadan çat kapı gelebilir miyim?',
-    a: 'Misafirlerimize sıra beklemeden, kişiye özel ve kesintisiz bir deneyim sunabilmek için stüdyomuzda öncelikli olarak randevu sistemiyle çalışıyoruz. Müsaitlik durumunu öğrenmek için gelmeden 15-20 dakika önce WhatsApp’tan yazmanız yeterlidir.',
+    a: 'Elbette, kapımız her zaman açık! Randevusuz olarak da dilediğiniz zaman uğrayabilirsiniz. Sadece randevulu misafirlerimizin saatlerine denk gelmemesi ve hiç sıra beklemeden doğrudan koltuğa oturabilmeniz için gelmeden önce WhatsApp’tan yazabilir veya 0552 274 23 83 numaralı hattımızdan bizi doğrudan arayarak müsaitlik durumunu sorabilirsiniz.',
   },
   {
     q: 'Randevumu nasıl oluşturabilir veya güncelleyebilirim?',
-    a: 'Sitemizdeki WhatsApp butonlarına tıklayarak veya doğrudan 0552 274 23 83 numaralı hattımıza mesaj atarak dilediğiniz gün ve saat için randevunuzu saniyeler içinde oluşturabilir, gerektiğinde kolayca güncelleyebilirsiniz.',
+    a: 'Sitemizdeki WhatsApp butonlarına tıklayarak, mesaj atarak veya doğrudan 0552 274 23 83 numaralı telefonumuzu arayarak dilediğiniz gün ve saat için randevunuzu saniyeler içinde oluşturabilir, gerektiğinde kolayca güncelleyebilirsiniz.',
   },
   {
     q: 'Damat tıraşı ve bakım paketi için ne kadar önceden randevu almalıyım?',
