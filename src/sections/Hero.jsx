@@ -64,7 +64,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-slate text-sm sm:text-base lg:text-lg leading-relaxed max-w-xl mb-7 sm:mb-8"
             >
-              Yüz anatomisi, saç yapısı ve yaşam tarzınıza özel olarak tasarlanan modern kuaförlük deneyimi. Ulukavak Muhtarlığı yanında, randevulu ve ayrıcalıklı hizmet.
+              Yüz anatomisi, saç yapısı ve yaşam tarzınıza özel olarak tasarlanan modern kuaförlük deneyimi. Üçtutlar Mah. Fatih Caddesi No:24/A adresinde, randevulu ve ayrıcalıklı hizmet.
             </motion.p>
 
             {/* Action Buttons */}
@@ -157,7 +157,7 @@ export default function Hero() {
 
                   <div className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-noir-850/90 border border-white/10 text-[10px] sm:text-xs text-slate font-medium backdrop-blur-md shrink-0">
                     <MapPin size={12} className="text-amber" />
-                    <span>Ulukavak Muhtarlığı Yanı</span>
+                    <span>Üçtutlar Mah. Fatih Cad. No:24/A</span>
                   </div>
                 </div>
               </div>

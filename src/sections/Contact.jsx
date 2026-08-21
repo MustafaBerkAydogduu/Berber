@@ -4,7 +4,7 @@ import { MapPin, Phone, Clock, Instagram, Navigation, ArrowUpRight } from 'lucid
 import WhatsAppIcon from '../components/WhatsAppIcon';
 
 const WA_URL = "https://wa.me/905522742383?text=Merhaba%20Nurkan%20Bey%2C%20adresiniz%20ve%20m%C3%BCsaitlik%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum.";
-const MAP_DIRECTIONS_URL = "https://www.google.com/maps/dir/?api=1&destination=Ulukavak+Muhtarlığı+Çorum";
+const MAP_DIRECTIONS_URL = "https://www.google.com/maps/dir/?api=1&destination=Üçtutlar+Mahallesi+Fatih+Caddesi+No:24/A+Çorum";
 
 export default function Contact() {
   return (
@@ -28,7 +28,7 @@ export default function Contact() {
             </span>
           </h2>
           <p className="text-slate text-sm sm:text-base leading-relaxed">
-            Çorum Merkez’de, Ulukavak Muhtarlığı hemen yanında ayrıcalıklı ve konforlu stil deneyimi.
+            Çorum Merkez’de, Üçtutlar Mahallesi Fatih Caddesi No:24/A adresinde ayrıcalıklı ve konforlu stil deneyimi.
           </p>
         </div>
 
@@ -131,7 +131,7 @@ export default function Contact() {
               <div>
                 <span className="text-[11px] text-slate uppercase tracking-wider block">Adres Bilgisi</span>
                 <p className="font-sans font-medium text-xs sm:text-sm text-alabaster leading-snug">
-                  Ulukavak Mah., Muhtarlık Yanı, Merkez / Çorum
+                  Üçtutlar Mah. Fatih Cad. No:24/A, Merkez / Çorum
                 </p>
               </div>
             </div>
@@ -145,7 +145,7 @@ export default function Contact() {
             <div className="relative w-full h-[360px] sm:h-[420px] lg:h-full rounded-xl overflow-hidden border border-white/[0.06]">
               <iframe
                 title="Kuaför Nurkan Aydoğdu Konumu"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12138.8!2d34.945!3d40.565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40877ddb7325608d%3A0xb86c75c8cf311d4e!2sUlukavak%2C%20%C3%87orum!5e0!3m2!1str!2str!4v1692000000000!5m2!1str!2str"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3035.5!2d34.953!3d40.548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40877e4860cb6fcf%3A0x2db48550ddc8ef4a!2s%C3%9C%C3%A7tutlar%2C%20Fatih%20Cd.%20No%3A24%2C%2019040%20%C3%87orum%20Merkez%2F%C3%87orum!5e0!3m2!1str!2str!4v1692000000000!5m2!1str!2str"
                 width="100%"
                 height="100%"
                 style={{ border: 0, filter: 'grayscale(0.85) invert(0.92) contrast(1.1) hue-rotate(180deg)' }}
@@ -158,7 +158,7 @@ export default function Contact() {
               {/* Map Floating Top Badge */}
               <div className="absolute top-4 left-4 bg-noir-950/90 backdrop-blur-md border border-white/10 px-4 py-2 rounded-xl shadow-luxury flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-amber"></span>
-                <span className="text-xs font-bold text-alabaster">Ulukavak Muhtarlığı Yanı</span>
+                <span className="text-xs font-bold text-alabaster">Üçtutlar Mah. Fatih Cad. No:24/A</span>
               </div>
             </div>
 
