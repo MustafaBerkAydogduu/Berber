@@ -4,9 +4,9 @@ import { Award, Sparkles, CheckCircle2, Shield, HeartHandshake, Scissors, UserCh
 
 const STATS = [
   { value: '7+', label: 'Yıllık Ustalık Deneyimi', desc: 'Zanaat ve modern trendlerin birleşimi' },
-  { value: '8.500+', label: 'Memnun Müşteri', desc: 'Çorum ve çevre illerden sadık misafirler' },
+  { value: '1.000+', label: 'Memnun Müşteri', desc: 'Kişiye özel tasarım ve mutlu ayrılan misafirler' },
   { value: '%100', label: 'Kişiye Özel Tasarım', desc: 'Her kafa yapısına özel stil haritası' },
-  { value: '5.0 ★', label: 'Hizmet Memnuniyeti', desc: 'Sürekli yüksek puanlı müşteri geri bildirimleri' },
+  { value: '4.8 ★', label: 'Müşteri Memnuniyeti', desc: 'Yüksek memnuniyet ve tavsiye oranı' },
 ];
 
 const HIGHLIGHTS = [

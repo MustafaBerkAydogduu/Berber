@@ -121,7 +121,7 @@ export default function Footer() {
 
               <div className="flex items-start gap-2.5 text-xs text-slate">
                 <MapPin size={14} className="text-amber shrink-0 mt-0.5" />
-                <span>Üçtutlar Mah. Fatih Cad. No:24/A, Merkez / Çorum</span>
+                <span>Üçtutlar Mah. Fatih Cad. No:24/A (Ulukavak Muhtarlığı Karşısı), Merkez / Çorum</span>
               </div>
             </div>
           </div>

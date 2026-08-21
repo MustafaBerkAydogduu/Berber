@@ -100,7 +100,7 @@ export default function Testimonials() {
           {/* Rating Summary Card (Cleaned without Google text) */}
           <div className="surface-card p-5 px-6 flex items-center gap-4 border-amber/20 bg-noir-900/90 shrink-0">
             <div className="text-3xl sm:text-4xl font-extrabold text-amber font-sans">
-              5.0
+              4.8
             </div>
             <div>
               <div className="flex text-amber mb-1">

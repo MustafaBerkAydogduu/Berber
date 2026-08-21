@@ -143,7 +143,7 @@ export default function Navbar() {
                 Bugün Açık · 09:00 – 20:00
               </div>
               <p className="text-slate text-xs leading-relaxed">
-                Üçtutlar Mah. Fatih Cad. No:24/A, Merkez / Çorum
+                Üçtutlar Mah. Fatih Cad. No:24/A (Ulukavak Muhtarlığı Karşısı), Merkez / Çorum
               </p>
               <div className="grid grid-cols-2 gap-3 pt-2">
                 <a

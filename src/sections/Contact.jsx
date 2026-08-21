@@ -4,7 +4,7 @@ import { MapPin, Phone, Clock, Instagram, Navigation, ArrowUpRight } from 'lucid
 import WhatsAppIcon from '../components/WhatsAppIcon';
 
 const WA_URL = "https://wa.me/905522742383?text=Merhaba%20Nurkan%20Bey%2C%20adresiniz%20ve%20m%C3%BCsaitlik%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum.";
-const MAP_DIRECTIONS_URL = "https://www.google.com/maps/dir/?api=1&destination=Üçtutlar+Mahallesi+Fatih+Caddesi+No:24/A+Çorum";
+const MAP_DIRECTIONS_URL = "https://www.google.com/maps/dir/?api=1&destination=Üçtutlar+Mahallesi+Fatih+Caddesi+No:24/A+Ulukavak+Muhtarlığı+Karşısı+Çorum";
 
 export default function Contact() {
   return (
@@ -28,7 +28,7 @@ export default function Contact() {
             </span>
           </h2>
           <p className="text-slate text-sm sm:text-base leading-relaxed">
-            Çorum Merkez’de, Üçtutlar Mahallesi Fatih Caddesi No:24/A adresinde ayrıcalıklı ve konforlu stil deneyimi.
+            Çorum Merkez’de, Üçtutlar Mahallesi Fatih Caddesi No:24/A (Ulukavak Muhtarlığı Karşısı) adresinde ayrıcalıklı ve konforlu stil deneyimi.
           </p>
         </div>
 
@@ -131,7 +131,8 @@ export default function Contact() {
               <div>
                 <span className="text-[11px] text-slate uppercase tracking-wider block">Adres Bilgisi</span>
                 <p className="font-sans font-medium text-xs sm:text-sm text-alabaster leading-snug">
-                  Üçtutlar Mah. Fatih Cad. No:24/A, Merkez / Çorum
+                  Üçtutlar Mah. Fatih Cad. No:24/A <br className="hidden sm:inline" />
+                  <span className="text-amber/90 font-normal">(Ulukavak Muhtarlığı Karşısı)</span>, Merkez / Çorum
                 </p>
               </div>
             </div>
@@ -158,7 +159,7 @@ export default function Contact() {
               {/* Map Floating Top Badge */}
               <div className="absolute top-4 left-4 bg-noir-950/90 backdrop-blur-md border border-white/10 px-4 py-2 rounded-xl shadow-luxury flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-amber"></span>
-                <span className="text-xs font-bold text-alabaster">Üçtutlar Mah. Fatih Cad. No:24/A</span>
+                <span className="text-xs font-bold text-alabaster">Üçtutlar Mah. No:24/A (Ulukavak Muhtarlığı Karşısı)</span>
               </div>
             </div>
 

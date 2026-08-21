@@ -22,7 +22,7 @@ const FAQS = [
   },
   {
     q: 'Stüdyonuz tam olarak nerede, otopark imkanı var mı?',
-    a: 'Stüdyomuz Çorum Merkez’de, Üçtutlar Mahallesi Fatih Caddesi No:24/A adresinde yer almaktadır. Çevrede araç park edebileceğiniz güvenli park alanları mevcuttur.',
+    a: 'Stüdyomuz Çorum Merkez’de, Üçtutlar Mahallesi Fatih Caddesi No:24/A (Ulukavak Muhtarlığı Karşısı) adresinde yer almaktadır. Çevrede araç park edebileceğiniz güvenli park alanları mevcuttur.',
   },
 ];
 

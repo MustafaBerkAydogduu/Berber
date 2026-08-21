@@ -64,7 +64,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-slate text-sm sm:text-base lg:text-lg leading-relaxed max-w-xl mb-7 sm:mb-8"
             >
-              Yüz anatomisi, saç yapısı ve yaşam tarzınıza özel olarak tasarlanan modern kuaförlük deneyimi. Üçtutlar Mah. Fatih Caddesi No:24/A adresinde, randevulu ve ayrıcalıklı hizmet.
+              Yüz anatomisi, saç yapısı ve yaşam tarzınıza özel olarak tasarlanan modern kuaförlük deneyimi. Üçtutlar Mah. Fatih Caddesi No:24/A (Ulukavak Muhtarlığı Karşısı) adresinde, randevulu ve ayrıcalıklı hizmet.
             </motion.p>
 
             {/* Action Buttons */}
@@ -88,7 +88,7 @@ export default function Hero() {
                 href="#services"
                 className="btn-secondary"
               >
-                <span>Hizmetleri & Fiyatları Gör</span>
+                <span>Hizmetleri Keşfet</span>
               </a>
             </motion.div>
 
@@ -105,8 +105,8 @@ export default function Hero() {
                     <Star key={i} size={13} fill="currentColor" />
                   ))}
                 </div>
-                <span className="font-bold text-alabaster">5.0</span>
-                <span className="text-[11px] sm:text-xs">(Google Yorumları)</span>
+                <span className="font-bold text-alabaster">4.8</span>
+                <span className="text-[11px] sm:text-xs text-slate-dark font-medium">(Müşteri Puanı)</span>
               </div>
 
               <div className="flex items-center gap-1.5 text-[11px] sm:text-xs">
@@ -141,21 +141,14 @@ export default function Hero() {
                   className="w-full h-[450px] sm:h-[530px] lg:h-[580px] object-cover object-[center_42%] contrast-[1.08] brightness-[1.06] saturate-[1.08] transition-transform duration-700 ease-out group-hover:scale-105"
                 />
 
-                {/* Bottom Name & Location Banner (Non-intrusive gradient) */}
-                <div className="absolute bottom-0 inset-x-0 pt-16 pb-4 sm:pb-5 px-4 sm:px-6 bg-gradient-to-t from-noir-950 via-noir-950/75 to-transparent flex items-end justify-between gap-3">
-                  <div>
-                    <span className="text-[10px] uppercase tracking-[0.25em] text-amber font-semibold block mb-1">
-                      Master Stylist & Founder
-                    </span>
-                    <h3 className="font-sans font-bold text-lg sm:text-2xl text-alabaster tracking-tight">
-                      Nurkan Aydoğdu
-                    </h3>
-                  </div>
-
-                  <div className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-noir-850/90 border border-white/10 text-[10px] sm:text-xs text-slate font-medium backdrop-blur-md shrink-0">
-                    <MapPin size={12} className="text-amber" />
-                    <span>Üçtutlar Mah. Fatih Cad. No:24/A</span>
-                  </div>
+                {/* Bottom Name Banner */}
+                <div className="absolute bottom-0 inset-x-0 pt-16 pb-4 sm:pb-5 px-4 sm:px-6 bg-gradient-to-t from-noir-950 via-noir-950/75 to-transparent">
+                  <span className="text-[10px] uppercase tracking-[0.25em] text-amber font-semibold block mb-1">
+                    Master Stylist & Founder
+                  </span>
+                  <h3 className="font-sans font-bold text-lg sm:text-2xl text-alabaster tracking-tight">
+                    Nurkan Aydoğdu
+                  </h3>
                 </div>
               </div>
 
