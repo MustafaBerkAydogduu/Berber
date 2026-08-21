@@ -3,14 +3,14 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Scissors, Clock, Sparkles, Check, ArrowUpRight } from 'lucide-react';
 import WhatsAppIcon from '../components/WhatsAppIcon';
 
-const CATEGORIES = ['Tümü', 'Saç & Kesim', 'Sakal & Bakım', 'VIP & Damat'];
+const CATEGORIES = ['Tümü', 'Saç Tasarımı', 'Sakal & Bakım', 'Damat & Özel'];
 
 const SERVICES = [
   {
     id: 1,
-    category: 'Saç & Kesim',
-    title: 'Kişiye Özel Saç Kesimi',
-    subtitle: 'Yıkama + Şekillendirme + Tonik Masajı',
+    category: 'Saç Tasarımı',
+    title: 'Kişiye Özel Saç Tasarımı & Kesim',
+    subtitle: 'Yıkama + Şekillendirme + Saç Toniği',
     duration: '45 dk',
     popular: true,
     desc: 'Yüz anatomisine uygun stil danışmanlığı, detaylı makas ve fade kesim tekniği, yıkama ve fön işlemi.',
@@ -20,31 +20,31 @@ const SERVICES = [
     id: 2,
     category: 'Sakal & Bakım',
     title: 'Geleneksel Sakal Tasarımı',
-    subtitle: 'Ustura + Sıcak Havlu + Sakal Yağı',
+    subtitle: 'Ustura + Net Hatlar + Ferahlatıcı Losyon',
     duration: '30 dk',
     popular: false,
-    desc: 'Yanak ve boyun çizgisi netleştirme, sıcak havlu kompresi ve özel bitkisel sakal bakım yağı uygulaması.',
-    features: ['Ustura ile net hatlar', 'Sıcak havlu buhar bakımı', 'Sakal serumu & besleme', 'Cilt ferahlatıcı losyon'],
+    desc: 'Yanak ve boyun çizgisi netleştirme, ustura ile hassas hat oluşturma ve ferahlatıcı cilt losyonu uygulaması.',
+    features: ['Ustura ile net hatlar', 'Yanak & boyun temizliği', 'Cilt yatıştırıcı losyon', 'Ferahlatıcı tonik'],
   },
   {
     id: 3,
-    category: 'Saç & Kesim',
-    title: 'Kombin: Saç & Sakal Ritüeli',
-    subtitle: 'Tam Bakım + Yıkama + Sıcak Havlu',
+    category: 'Saç Tasarımı',
+    title: 'Kombin: Saç & Sakal Tasarımı',
+    subtitle: 'Tam Bakım + Yıkama + Fön & Şekillendirme',
     duration: '60 dk',
     popular: true,
-    desc: 'Stüdyomuzun en çok tercih edilen deneyimi. Saç kesimi, sakal tasarımı ve sıcak havlu ritüelinin eksiksiz paketi.',
-    features: ['Eksiksiz saç kesimi & yıkama', 'Sakal şekillendirme & ustura', 'Çift sıcak havlu kompresi', 'Saç & sakal şekillendirme'],
+    desc: 'Salonumuzun en çok tercih edilen deneyimi. Kişiye özel saç kesimi, sakal tasarımı, yıkama ve fönün eksiksiz paketi.',
+    features: ['Eksiksiz saç kesimi & yıkama', 'Sakal şekillendirme & ustura', 'Saç toniği & ferahlatıcı bakım', 'Profesyonel şekillendirme'],
   },
   {
     id: 4,
-    category: 'VIP & Damat',
-    title: 'Özel VIP Damat Traşı & Bakım Paketi',
-    subtitle: 'Düğün / Özel Günler İçin Eksiksiz Deneyim',
+    category: 'Damat & Özel',
+    title: 'Özel Damat Tıraşı & Komple Bakım',
+    subtitle: 'Düğün & Özel Günler İçin Eksiksiz Hazırlık',
     duration: '90 dk',
     popular: true,
-    desc: 'Hayatınızın en özel günü için baştan aşağı lüks hazırlık. Saç, sakal, cilt bakımı, masaj ve özel ikram.',
-    features: ['VIP saç kesimi & sakal tasarımı', 'Derin cilt bakımı & maske', 'Kaş ve kulak detay temizliği', 'Sıcak havlu & masaj', 'Özel gün stil sabitleme'],
+    desc: 'Düğün ve özel günleriniz için eksiksiz hazırlık. Saç kesimi, sakal tasarımı, cilt bakımı ve arındırıcı maske.',
+    features: ['Özel saç kesimi & sakal tasarımı', 'Cilt bakımı & arındırıcı maske', 'Kaş ve ense detay temizliği', 'Ferahlatıcı tonik uygulaması', 'Özel gün saç şekillendirme'],
   },
 ];
 

@@ -23,7 +23,7 @@ export default function Footer() {
         <div className="surface-card p-8 sm:p-12 bg-gradient-to-r from-noir-900 via-noir-850 to-noir-900 border-amber/30 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
           <div className="max-w-xl">
             <span className="text-[11px] uppercase tracking-[0.25em] text-amber font-semibold block mb-2">
-              Kişiselleştirilmiş Kuaförlük Deneyimi
+              Modern Erkek Kuaförlüğü
             </span>
             <h3 className="font-sans font-extrabold text-2xl sm:text-4xl text-alabaster tracking-tight">
               Yeni Tarzınızı Keşfetmeye Hazır mısınız?
@@ -63,7 +63,7 @@ export default function Footer() {
               </div>
             </a>
             <p className="text-slate text-xs sm:text-sm leading-relaxed max-w-sm mb-6">
-              Çorum'da modern saç kesim teknikleri, anatomik sakal tasarımı ve sıcak havlu ritüeli ile birinci sınıf erkek bakım stüdyosu.
+              Çorum'da modern saç kesim teknikleri, anatomik sakal tasarımı ve ferahlatıcı cilt bakımı ile birinci sınıf erkek kuaförlüğü salonu.
             </p>
             <a
               href="https://instagram.com/_nurkan_aydogdu_19"
@@ -149,7 +149,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Kuaför Nurkan Aydoğdu. Tüm hakları saklıdır.
           </p>
           <p className="flex items-center gap-1.5">
-            <span>Çorum Butik Erkek Kuaförlüğü</span>
+            <span>Çorum Modern Erkek Kuaförlüğü</span>
           </p>
         </div>
 

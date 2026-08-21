@@ -18,7 +18,7 @@ const FAQS = [
   },
   {
     q: 'Hangi marka saç ve sakal bakım ürünlerini kullanıyorsunuz?',
-    a: 'Stüdyomuzda yalnızca dermatolojik olarak test edilmiş, saç derisine ve sakala zarar vermeyen uluslararası standartlardaki profesyonel erkek bakım ürünleri, özel sakal yağları ve arındırıcı tonikler kullanılmaktadır.',
+    a: 'Salonumuzda yalnızca dermatolojik olarak test edilmiş, saç derisine ve cilde zarar vermeyen uluslararası standartlardaki profesyonel erkek bakım ürünleri ve arındırıcı tonikler kullanılmaktadır.',
   },
   {
     q: 'Stüdyonuz tam olarak nerede, otopark imkanı var mı?',

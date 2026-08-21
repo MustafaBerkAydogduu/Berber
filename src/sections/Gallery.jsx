@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Sparkles, ZoomIn, X, Camera, ArrowUpRight } from 'lucide-react';
 
-const CATEGORIES = ['Tümü', 'Modern Fade & Klasik', 'Sakal & Çizgiler', 'Stüdyo Detayları'];
+const CATEGORIES = ['Tümü', 'Modern Fade & Klasik', 'Sakal & Çizgiler', 'Salon Detayları'];
 
 const GALLERY_ITEMS = [
   {
@@ -28,16 +28,16 @@ const GALLERY_ITEMS = [
   },
   {
     src: 'https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=1000&q=85',
-    title: 'Sıcak Havlu & Esansiyel Sakal Terapisi',
-    category: 'Stüdyo Detayları',
-    tag: 'Bakım Ritüeli',
+    title: 'Hassas Sakal Şekillendirme & Çizgiler',
+    category: 'Sakal & Çizgiler',
+    tag: 'Sakal Tasarımı',
     span: 'col-span-1 row-span-1',
   },
   {
     src: 'https://images.unsplash.com/photo-1517832606299-7ae9b720a186?auto=format&fit=crop&w=1000&q=85',
-    title: 'Boutique Studio Ambiance & Aletler',
-    category: 'Stüdyo Detayları',
-    tag: 'Stüdyo',
+    title: 'Salon Atmosferi & Profesyonel Ekipmanlar',
+    category: 'Salon Detayları',
+    tag: 'Salon',
     span: 'col-span-1 md:col-span-2 row-span-1',
   },
   {

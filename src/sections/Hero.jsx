@@ -7,12 +7,12 @@ const WA_URL = "https://wa.me/905522742383?text=Merhaba%20Nurkan%20Bey%2C%20rand
 
 const MARQUEE_ITEMS = [
   'KİŞİYE ÖZEL SAÇ TASARIMI',
-  'SAKAL ŞEKİLLENDİRME',
-  'SICAK HAVLU RİTÜELİ',
-  'CİLT BAKIMI & MASKE',
-  'ÖZEL DAMAT TRAŞI',
+  'ANATOMİK SAKAL ŞEKİLLENDİRME',
+  'FERAHLATICI SAÇ TONİĞİ',
+  'CİLT BAKIMI & ARINDIRICI MASKE',
+  'ÖZEL DAMAT TIRAŞI',
   'YÜZ ANATOMİSİ ANALİZİ',
-  'PREMİUM ERKEK BAKIMI',
+  'PROFESYONEL ERKEK BAKIMI',
   'ÇORUM MERKEZ',
 ];
 
@@ -38,7 +38,7 @@ export default function Hero() {
               className="pill-badge mb-6"
             >
               <span className="w-2 h-2 rounded-full bg-amber animate-pulse"></span>
-              <span className="text-alabaster font-medium">Boutique Men's Studio</span>
+              <span className="text-alabaster font-medium">Modern Erkek Kuaförlüğü</span>
               <span className="text-slate-dark">/</span>
               <span className="text-amber">Çorum</span>
             </motion.div>
@@ -143,8 +143,8 @@ export default function Hero() {
 
                 {/* Bottom Name Banner */}
                 <div className="absolute bottom-0 inset-x-0 pt-16 pb-4 sm:pb-5 px-4 sm:px-6 bg-gradient-to-t from-noir-950 via-noir-950/75 to-transparent">
-                  <span className="text-[10px] uppercase tracking-[0.25em] text-amber font-semibold block mb-1">
-                    Master Stylist & Founder
+                  <span className="text-[10px] uppercase tracking-[0.22em] text-amber font-semibold block mb-1">
+                    Kurucu & Saç Tasarımcısı
                   </span>
                   <h3 className="font-sans font-bold text-lg sm:text-2xl text-alabaster tracking-tight">
                     Nurkan Aydoğdu

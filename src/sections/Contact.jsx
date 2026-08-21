@@ -19,7 +19,7 @@ export default function Contact() {
         <div className="max-w-2xl mb-14 sm:mb-18">
           <span className="section-tag">
             <MapPin size={14} className="text-amber" />
-            Stüdyo & İletişim
+            Salon & İletişim
           </span>
           <h2 className="font-sans font-extrabold text-3xl sm:text-5xl lg:text-6xl text-alabaster tracking-tight mb-4">
             Bizi Ziyaret Edin & <br />
@@ -28,7 +28,7 @@ export default function Contact() {
             </span>
           </h2>
           <p className="text-slate text-sm sm:text-base leading-relaxed">
-            Çorum Merkez’de, Üçtutlar Mahallesi Fatih Caddesi No:24/A (Ulukavak Muhtarlığı Karşısı) adresinde ayrıcalıklı ve konforlu stil deneyimi.
+            Çorum Merkez’de, Üçtutlar Mahallesi Fatih Caddesi No:24/A (Ulukavak Muhtarlığı Karşısı) adresinde modern ve konforlu erkek kuaförlüğü deneyimi.
           </p>
         </div>
 

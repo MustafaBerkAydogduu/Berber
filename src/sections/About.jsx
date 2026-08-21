@@ -15,8 +15,8 @@ const HIGHLIGHTS = [
     desc: 'Kesime başlamadan önce çene hattı, elmacık kemikleri ve saç yönünü analiz ederek size en çok yakışan formu çıkarıyoruz.',
   },
   {
-    title: 'Sıcak Havlu & Sakal Ritüeli',
-    desc: 'Geleneksel ustura tıraşını esansiyel yağlar, buhar bakımı ve rahatlatıcı sıcak havlu masajı ile birleştiriyoruz.',
+    title: 'Hassas Sakal Tasarımı & Bakım',
+    desc: 'Geleneksel ustura tıraşı ile yanak ve boyun çizgilerini netleştiriyor, cildi yatıştırıcı ferahlatıcı losyonlarla destekliyoruz.',
   },
   {
     title: 'Medikal Düzeyde Hijyen',
@@ -24,7 +24,7 @@ const HIGHLIGHTS = [
   },
   {
     title: 'Ayrıcalıklı & Sakin Atmosfer',
-    desc: 'Sıra beklemeden, gürültüden uzak, özel ikramlar eşliğinde dinlenebileceğiniz butik bir alan.',
+    desc: 'Sıra beklemeden, gürültüden uzak, özel ikramlar eşliğinde dinlenebileceğiniz konforlu ve nezih bir salon.',
   },
 ];
 
@@ -52,7 +52,7 @@ export default function About() {
             </h2>
           </div>
           <p className="text-slate text-sm sm:text-base max-w-md leading-relaxed">
-            Nurkan Aydoğdu Stüdyosu, sıradan bir kuaför salonundan çok daha fazlasıdır. Burası her erkeğin kendine zaman ayırdığı, tarzını yenilediği ve koltuktan özgüvenle kalktığı bir stil mabedidir.
+            Kuaför Nurkan Aydoğdu, Çorum'da modern erkek kuaförlüğü anlayışıyla her misafirine özel ilgi gösterir. Burası kendinize zaman ayırdığınız, tarzınızı yenilediğiniz ve koltuktan memnuniyetle kalktığınız samimi ve nezih bir salondur.
           </p>
         </div>
 
@@ -138,8 +138,8 @@ export default function About() {
                     <h4 className="font-sans font-bold text-base text-alabaster">
                       Nurkan Aydoğdu
                     </h4>
-                    <span className="text-xs text-slate">
-                      Master Stylist & Çorum Hair Studio
+                    <span className="text-xs text-amber font-medium">
+                      Kurucu & Saç Tasarımcısı
                     </span>
                   </div>
                 </div>
