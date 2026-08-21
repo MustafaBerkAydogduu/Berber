@@ -51,8 +51,8 @@ const SERVICES = [
 export default function Services() {
   const [activeTab, setActiveTab] = useState('Tümü');
 
-  const filtered = activeTab === 'Tümü' 
-    ? SERVICES 
+  const filtered = activeTab === 'Tümü'
+    ? SERVICES
     : SERVICES.filter(s => s.category === activeTab);
 
   const getWhatsAppLink = (serviceTitle) => {
@@ -61,12 +61,12 @@ export default function Services() {
 
   return (
     <section id="services" className="py-20 sm:py-28 lg:py-36 bg-noir-950 relative overflow-hidden">
-      
+
       {/* Background Ambience */}
       <div className="absolute top-1/3 right-0 w-[500px] h-[500px] bg-amber/5 rounded-full blur-[150px] pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
-        
+
         {/* Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12 sm:mb-16">
           <div>
@@ -92,11 +92,10 @@ export default function Services() {
             <button
               key={cat}
               onClick={() => setActiveTab(cat)}
-              className={`px-4 sm:px-6 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 ${
-                activeTab === cat
+              className={`px-4 sm:px-6 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 ${activeTab === cat
                   ? 'bg-amber text-noir-950 shadow-luxury'
                   : 'bg-noir-900 text-slate hover:text-alabaster hover:bg-noir-850 border border-white/[0.06]'
-              }`}
+                }`}
             >
               {cat}
             </button>
@@ -114,11 +113,10 @@ export default function Services() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.3, delay: idx * 0.05 }}
-                className={`relative rounded-2xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 group ${
-                  service.popular
+                className={`relative rounded-2xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 group ${service.popular
                     ? 'surface-card border-amber/30 bg-gradient-to-b from-amber/[0.04] to-transparent shadow-card hover:border-amber/50'
                     : 'surface-card hover:border-white/20'
-                }`}
+                  }`}
               >
                 {/* Popular Pill */}
                 {service.popular && (
@@ -143,7 +141,7 @@ export default function Services() {
                   <h3 className="font-sans font-bold text-xl text-alabaster group-hover:text-amber transition-colors mb-1.5">
                     {service.title}
                   </h3>
-                  
+
                   <p className="text-slate text-xs mb-4 font-medium">
                     {service.subtitle}
                   </p>
@@ -168,11 +166,10 @@ export default function Services() {
                   href={getWhatsAppLink(service.title)}
                   target="_blank"
                   rel="noreferrer"
-                  className={`w-full py-3 px-4 rounded-xl text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-2 transition-all duration-300 ${
-                    service.popular
+                  className={`w-full py-3 px-4 rounded-xl text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-2 transition-all duration-300 ${service.popular
                       ? 'bg-amber text-noir-950 hover:bg-amber-light shadow-sm'
                       : 'bg-noir-800 text-alabaster hover:bg-noir-700 hover:text-amber border border-white/10'
-                  }`}
+                    }`}
                 >
                   <WhatsAppIcon size={15} />
                   <span>Randevu Al</span>
@@ -191,7 +188,7 @@ export default function Services() {
               Özel bir bakım veya etkinlik için mi randevu almak istiyorsunuz?
             </h4>
             <p className="text-slate text-xs sm:text-sm">
-              Gelin-Damat hazırlıkları, toplu randevular ve özel saatler için bize doğrudan WhatsApp'tan ulaşabilirsiniz.
+              Damat hazırlıkları, toplu randevular ve özel saatler için bize doğrudan WhatsApp'tan ulaşabilirsiniz.
             </p>
           </div>
           <a
