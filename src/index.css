@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #0D0E11;
+  }
+  body {
+    @apply bg-noir-900 text-alabaster font-sans selection:bg-amber selection:text-noir-950;
+    overflow-x: hidden;
+  }
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@layer components {
+  /* Editorial Buttons */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2.5 
+           px-7 py-3.5 
+           bg-amber text-noir-950 
+           font-sans font-semibold text-xs tracking-[0.12em] uppercase
+           rounded-full
+           transition-all duration-300 ease-out
+           hover:bg-amber-light hover:shadow-amber-glow hover:-translate-y-0.5
+           active:translate-y-0 active:scale-[0.98];
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2.5 
+           px-7 py-3.5 
+           bg-noir-800 text-alabaster 
+           border border-white/10
+           font-sans font-medium text-xs tracking-[0.12em] uppercase
+           rounded-full
+           transition-all duration-300 ease-out
+           hover:border-amber/50 hover:bg-noir-700 hover:text-amber hover:-translate-y-0.5
+           active:translate-y-0 active:scale-[0.98];
+  }
+
+  /* Badge Pill */
+  .pill-badge {
+    @apply inline-flex items-center gap-2 px-3.5 py-1.5 
+           rounded-full bg-noir-800/80 border border-white/10 
+           text-slate text-xs font-medium tracking-wide backdrop-blur-md;
+  }
+
+  /* Section Title Tag */
+  .section-tag {
+    @apply inline-flex items-center gap-2 text-amber text-[11px] uppercase font-semibold tracking-[0.25em] mb-3.5;
+  }
+
+  /* Card Surface */
+  .surface-card {
+    @apply bg-noir-850/80 border border-white/[0.08] rounded-2xl backdrop-blur-xl shadow-card transition-all duration-300 hover:border-white/20;
+  }
+}
+
+/* Custom Luxury Scrollbar */
+::-webkit-scrollbar { 
+  width: 6px; 
+}
+::-webkit-scrollbar-track { 
+  background: #0D0E11; 
+}
+::-webkit-scrollbar-thumb { 
+  background: #20222A; 
+  border-radius: 9999px; 
+}
+::-webkit-scrollbar-thumb:hover { 
+  background: #E5C578; 
+}
+
+/* Subtle Gradient Grids & Glows */
+.bg-radial-glow {
+  background: radial-gradient(circle at 50% 0%, rgba(229, 197, 120, 0.08) 0%, transparent 60%);
+}
+
+.text-gradient-amber {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-amber via-sand-light to-amber-light;
+}
