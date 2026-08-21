@@ -146,7 +146,7 @@ export default function Contact() {
             <div className="relative w-full h-[360px] sm:h-[420px] lg:h-full rounded-xl overflow-hidden border border-white/[0.06]">
               <iframe
                 title="Kuaför Nurkan Aydoğdu Konumu"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3035.5!2d34.953!3d40.548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40877e4860cb6fcf%3A0x2db48550ddc8ef4a!2s%C3%9C%C3%A7tutlar%2C%20Fatih%20Cd.%20No%3A24%2C%2019040%20%C3%87orum%20Merkez%2F%C3%87orum!5e0!3m2!1str!2str!4v1692000000000!5m2!1str!2str"
+                src="https://maps.google.com/maps?q=%C3%9C%C3%A7tutlar+Mahallesi+Fatih+Caddesi+No:24/A+%C3%87orum&t=&z=16&ie=UTF8&iwloc=&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0, filter: 'grayscale(0.85) invert(0.92) contrast(1.1) hue-rotate(180deg)' }}
