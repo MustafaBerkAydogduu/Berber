@@ -131,21 +131,18 @@ export default function Hero() {
               <div className="absolute -inset-2 sm:-inset-3 rounded-3xl border border-amber/20 bg-gradient-to-b from-amber/10 via-transparent to-transparent -z-10 blur-[1px]"></div>
 
               {/* Main Image Container */}
-              <div className="relative rounded-2xl overflow-hidden bg-noir-800 border border-white/10 shadow-luxury group">
+              <div className="relative rounded-2xl overflow-hidden bg-noir-800 border border-white/15 shadow-luxury group">
                 <img
                   src="/nurkan.jpg"
                   alt="Kuaför Nurkan Aydoğdu - Çorum Erkek Kuaförü ve Özel Saç Tasarımcısı"
-                  width="420"
-                  height="530"
+                  width="440"
+                  height="580"
                   fetchPriority="high"
-                  className="w-full h-[390px] sm:h-[480px] lg:h-[530px] object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
+                  className="w-full h-[450px] sm:h-[530px] lg:h-[580px] object-cover object-[center_42%] contrast-[1.08] brightness-[1.06] saturate-[1.08] transition-transform duration-700 ease-out group-hover:scale-105"
                 />
 
-                {/* Subtle Image Vignette Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-noir-950 via-noir-950/20 to-transparent"></div>
-
-                {/* Bottom Name & Location Banner */}
-                <div className="absolute bottom-0 inset-x-0 p-4 sm:p-6 bg-gradient-to-t from-noir-950 via-noir-950/90 to-transparent flex items-end justify-between gap-3">
+                {/* Bottom Name & Location Banner (Non-intrusive gradient) */}
+                <div className="absolute bottom-0 inset-x-0 pt-16 pb-4 sm:pb-5 px-4 sm:px-6 bg-gradient-to-t from-noir-950 via-noir-950/75 to-transparent flex items-end justify-between gap-3">
                   <div>
                     <span className="text-[10px] uppercase tracking-[0.25em] text-amber font-semibold block mb-1">
                       Master Stylist & Founder

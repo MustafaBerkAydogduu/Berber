@@ -131,7 +131,7 @@ export default function About() {
                       height="48"
                       loading="lazy"
                       decoding="async"
-                      className="w-full h-full object-cover object-top"
+                      className="w-full h-full object-cover object-[center_35%] contrast-[1.08] brightness-[1.06]"
                     />
                   </div>
                   <div>

@@ -6,10 +6,10 @@ const CATEGORIES = ['Tümü', 'Modern Fade & Klasik', 'Sakal & Çizgiler', 'Stü
 
 const GALLERY_ITEMS = [
   {
-    src: 'https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=1000&q=85',
-    title: 'Modern Crop & Mid Fade',
+    src: '/nurkan.jpg',
+    title: 'Nurkan Aydoğdu · Özel Makas & Fade Tasarımı',
     category: 'Modern Fade & Klasik',
-    tag: 'Trend Kesim',
+    tag: 'Usta İmzası',
     span: 'col-span-1 md:col-span-2 row-span-2',
   },
   {

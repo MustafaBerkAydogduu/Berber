@@ -12,7 +12,6 @@ const SERVICES = [
     title: 'Kişiye Özel Saç Kesimi',
     subtitle: 'Yıkama + Şekillendirme + Tonik Masajı',
     duration: '45 dk',
-    price: '₺400',
     popular: true,
     desc: 'Yüz anatomisine uygun stil danışmanlığı, detaylı makas ve fade kesim tekniği, yıkama ve fön işlemi.',
     features: ['Yüz tipi analizi', 'Detaylı makas/makine kesimi', 'Ferahlatıcı saç toniği', 'Kişiye özel şekillendirme'],
@@ -23,7 +22,6 @@ const SERVICES = [
     title: 'Geleneksel Sakal Tasarımı',
     subtitle: 'Ustura + Sıcak Havlu + Sakal Yağı',
     duration: '30 dk',
-    price: '₺250',
     popular: false,
     desc: 'Yanak ve boyun çizgisi netleştirme, sıcak havlu kompresi ve özel bitkisel sakal bakım yağı uygulaması.',
     features: ['Ustura ile net hatlar', 'Sıcak havlu buhar bakımı', 'Sakal serumu & besleme', 'Cilt ferahlatıcı losyon'],
@@ -34,43 +32,19 @@ const SERVICES = [
     title: 'Kombin: Saç & Sakal Ritüeli',
     subtitle: 'Tam Bakım + Yıkama + Sıcak Havlu',
     duration: '60 dk',
-    price: '₺600',
     popular: true,
     desc: 'Stüdyomuzun en çok tercih edilen deneyimi. Saç kesimi, sakal tasarımı ve sıcak havlu ritüelinin eksiksiz paketi.',
     features: ['Eksiksiz saç kesimi & yıkama', 'Sakal şekillendirme & ustura', 'Çift sıcak havlu kompresi', 'Saç & sakal şekillendirme'],
   },
   {
     id: 4,
-    category: 'Sakal & Bakım',
-    title: 'Cilt Arındırma & Buharlı Maske',
-    subtitle: 'Siyah Nokta & Peeling + Nemlendirici',
-    duration: '40 dk',
-    price: '₺350',
-    popular: false,
-    desc: 'Gözenekleri açan sıcak buhar, derinlemesine temizleyici kil maskesi ve canlandırıcı cilt masajı.',
-    features: ['Sıcak buhar terapi', 'Doğal kil / soyulabilir maske', 'Gözenek arındırma', 'Kolajen nem desteği'],
-  },
-  {
-    id: 5,
-    category: 'Saç & Kesim',
-    title: 'Gri Saç Kamuflajı & Renk',
-    subtitle: 'Doğal Geçişli Gençleştirici Dokunuş',
-    duration: '40 dk',
-    price: '₺500',
-    popular: false,
-    desc: 'Yapay görünmeyen, beyaz saçları doğal tonla hafifçe kırarak 10 yaş genç ve dinç gösteren özel erkek renklendirmesi.',
-    features: ['Amonyaksız özel erkek boyası', 'Doğal renk tonu uyumu', '15 dakikada hızlı sonuç', 'Saç yıpranmasını önleyici bakım'],
-  },
-  {
-    id: 6,
     category: 'VIP & Damat',
     title: 'Özel VIP Damat Traşı & Bakım Paketi',
     subtitle: 'Düğün / Özel Günler İçin Eksiksiz Deneyim',
     duration: '90 dk',
-    price: '₺1.500',
     popular: true,
-    desc: 'Hayatınızın en özel günü için baştan aşağı lüks hazırlık. Saç, sakal, cilt bakımı, masaj ve özel kahve ikramı.',
-    features: ['VIP saç kesimi & sakal tasarımı', 'Derin cilt bakımı & maske', 'Kaş ve kulak detay temizliği', 'Sıcak havlu & omuz masajı', 'Özel gün stil sabitleme'],
+    desc: 'Hayatınızın en özel günü için baştan aşağı lüks hazırlık. Saç, sakal, cilt bakımı, masaj ve özel ikram.',
+    features: ['VIP saç kesimi & sakal tasarımı', 'Derin cilt bakımı & maske', 'Kaş ve kulak detay temizliği', 'Sıcak havlu & masaj', 'Özel gün stil sabitleme'],
   },
 ];
 
@@ -101,27 +75,27 @@ export default function Services() {
               Hizmetler & Menü
             </span>
             <h2 className="font-sans font-extrabold text-3xl sm:text-5xl lg:text-6xl text-alabaster tracking-tight">
-              Ayrıcalıklı <br />
+              Ayrıcalıklı Bakım & <br />
               <span className="font-serif italic font-normal text-gradient-amber">
-                Bakım Menüsü.
+                Usta Dokunuşları.
               </span>
             </h2>
           </div>
           <p className="text-slate text-sm sm:text-base max-w-md leading-relaxed">
-            Her hizmet, en kaliteli profesyonel ürünler ve kişiye özel sterilize edilmiş ekipmanlarla titizlikle uygulanır.
+            Her saç ve sakal tipi için anatomik analizle uygulanan, geleneksel ustalığın modern stille buluştuğu özel hizmetler.
           </p>
         </div>
 
         {/* Category Tabs */}
-        <div className="flex items-center gap-2 sm:gap-3 overflow-x-auto pb-4 mb-10 scrollbar-none">
+        <div className="flex flex-wrap gap-2 sm:gap-3 mb-10 sm:mb-14 pb-2 border-b border-white/[0.06]">
           {CATEGORIES.map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveTab(cat)}
-              className={`px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-[0.1em] whitespace-nowrap transition-all duration-300 ${
+              className={`px-4 sm:px-6 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 ${
                 activeTab === cat
-                  ? 'bg-amber text-noir-950 shadow-amber-glow'
-                  : 'bg-noir-850 text-slate hover:text-alabaster hover:bg-noir-800 border border-white/[0.06]'
+                  ? 'bg-amber text-noir-950 shadow-luxury'
+                  : 'bg-noir-900 text-slate hover:text-alabaster hover:bg-noir-850 border border-white/[0.06]'
               }`}
             >
               {cat}
@@ -129,42 +103,44 @@ export default function Services() {
           ))}
         </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        {/* Services Grid (4 Services) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           <AnimatePresence mode="popLayout">
-            {filtered.map((service) => (
+            {filtered.map((service, idx) => (
               <motion.div
                 key={service.id}
                 layout
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.3 }}
-                className={`surface-card p-6 sm:p-8 flex flex-col justify-between relative group ${
-                  service.popular ? 'border-amber/40 bg-gradient-to-b from-noir-850 via-noir-850 to-noir-900' : ''
+                transition={{ duration: 0.3, delay: idx * 0.05 }}
+                className={`relative rounded-2xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 group ${
+                  service.popular
+                    ? 'surface-card border-amber/30 bg-gradient-to-b from-amber/[0.04] to-transparent shadow-card hover:border-amber/50'
+                    : 'surface-card hover:border-white/20'
                 }`}
               >
-                {/* Popular Tag */}
+                {/* Popular Pill */}
                 {service.popular && (
-                  <div className="absolute -top-3 right-6 bg-amber text-noir-950 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider shadow-sm flex items-center gap-1">
+                  <div className="absolute -top-3 right-5 px-3 py-1 rounded-full bg-amber text-noir-950 text-[10px] font-extrabold uppercase tracking-widest flex items-center gap-1 shadow-sm">
                     <Sparkles size={11} />
-                    Çok Tercih Edilen
+                    Öne Çıkan
                   </div>
                 )}
 
                 {/* Top Info */}
                 <div>
-                  <div className="flex items-center justify-between gap-4 mb-3">
-                    <span className="inline-flex items-center gap-1.5 text-xs text-slate-dark font-medium">
+                  <div className="flex items-center justify-between gap-4 mb-4">
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-noir-800 border border-white/10 text-xs text-amber font-medium">
                       <Clock size={13} className="text-amber" />
                       {service.duration}
                     </span>
-                    <span className="font-sans font-extrabold text-2xl text-amber">
-                      {service.price}
+                    <span className="text-[10px] uppercase font-bold tracking-wider text-slate-dark">
+                      {service.category}
                     </span>
                   </div>
 
-                  <h3 className="font-sans font-bold text-xl text-alabaster group-hover:text-amber transition-colors mb-1">
+                  <h3 className="font-sans font-bold text-xl text-alabaster group-hover:text-amber transition-colors mb-1.5">
                     {service.title}
                   </h3>
                   
@@ -172,7 +148,7 @@ export default function Services() {
                     {service.subtitle}
                   </p>
 
-                  <p className="text-slate text-xs sm:text-sm leading-relaxed mb-6">
+                  <p className="text-slate text-xs leading-relaxed mb-6">
                     {service.desc}
                   </p>
 
@@ -199,7 +175,7 @@ export default function Services() {
                   }`}
                 >
                   <WhatsAppIcon size={15} />
-                  <span>Randevu Seç</span>
+                  <span>Randevu Al</span>
                   <ArrowUpRight size={14} className="opacity-70" />
                 </a>
 
@@ -215,14 +191,17 @@ export default function Services() {
               Özel bir bakım veya etkinlik için mi randevu almak istiyorsunuz?
             </h4>
             <p className="text-slate text-xs sm:text-sm">
-              Gelin-Damat hazırlıkları, toplu randevular ve özel saatler için bize doğrudan ulaşabilirsiniz.
+              Gelin-Damat hazırlıkları, toplu randevular ve özel saatler için bize doğrudan WhatsApp'tan ulaşabilirsiniz.
             </p>
           </div>
           <a
-            href="tel:+905522742383"
-            className="btn-secondary whitespace-nowrap text-xs py-3 px-6 shrink-0"
+            href="https://wa.me/905522742383?text=Merhaba%20Nurkan%20Bey%2C%20özel%20etkinlik%20ve%20randevu%20hakkında%20bilgi%20almak%20istiyorum."
+            target="_blank"
+            rel="noreferrer"
+            className="btn-secondary whitespace-nowrap"
           >
-            Özel Talep İçin Ara
+            <WhatsAppIcon size={16} />
+            <span>Bilgi & Randevu</span>
           </a>
         </div>
 
