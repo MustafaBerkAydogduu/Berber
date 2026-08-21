@@ -8,7 +8,7 @@ const WA_URL = "https://wa.me/905522742383?text=Merhaba%20Nurkan%20Bey%2C%20rand
 
 const NAV_LINKS = [
   { label: 'Hikaye', href: '#about' },
-  { label: 'Hizmetler & Menü', href: '#services' },
+  { label: 'Hizmetler', href: '#services' },
   { label: 'Stil Portfolyosu', href: '#gallery' },
   { label: 'Yorumlar', href: '#testimonials' },
   { label: 'SSS', href: '#faq' },
@@ -30,11 +30,10 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
-          scrolled
+        className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${scrolled
             ? 'bg-noir-950/85 backdrop-blur-xl border-b border-white/[0.08] py-3.5 shadow-luxury'
             : 'bg-gradient-to-b from-noir-950/90 via-noir-950/40 to-transparent py-5'
-        }`}
+          }`}
       >
         <div className="max-w-7xl mx-auto px-5 sm:px-8 flex items-center justify-between">
           {/* Brand Identity */}
