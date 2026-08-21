@@ -7,44 +7,44 @@ const CATEGORIES = ['Tümü', 'Modern Fade & Klasik', 'Sakal & Çizgiler', 'Salo
 const GALLERY_ITEMS = [
   {
     src: '/nurkan.jpg',
-    title: 'Nurkan Aydoğdu · Özel Makas & Fade Tasarımı',
+    title: 'Nurkan Aydoğdu · Özel Makas & Saç Tasarımı',
     category: 'Modern Fade & Klasik',
-    tag: 'Usta İmzası',
+    tag: 'Kurucu Usta',
     span: 'col-span-1 md:col-span-2 row-span-2',
   },
   {
-    src: 'https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1000&q=85',
-    title: 'Geleneksel Ustura & Sakal Tasarımı',
-    category: 'Sakal & Çizgiler',
-    tag: 'Sakal Sanatı',
+    src: 'https://images.unsplash.com/photo-1512690459411-b9245aed614b?auto=format&fit=crop&w=1000&q=85',
+    title: 'Profesyonel Kesim Ekipmanları & Makaslar',
+    category: 'Salon Detayları',
+    tag: 'Ekipmanlar',
     span: 'col-span-1 row-span-1',
   },
   {
-    src: 'https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=1000&q=85',
-    title: 'Klasik İtalyan Taper & Makas Geçişi',
+    src: 'https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=1000&q=85',
+    title: 'Modern Fade & Klasik Kesim Geçişi',
     category: 'Modern Fade & Klasik',
-    tag: 'Klasik Stil',
+    tag: 'Hassas Kesim',
     span: 'col-span-1 row-span-1',
   },
   {
-    src: 'https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=1000&q=85',
-    title: 'Hassas Sakal Şekillendirme & Çizgiler',
+    src: 'https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=1000&q=85',
+    title: 'Anatomik Sakal Şekillendirme & Çizgiler',
     category: 'Sakal & Çizgiler',
     tag: 'Sakal Tasarımı',
     span: 'col-span-1 row-span-1',
   },
   {
-    src: 'https://images.unsplash.com/photo-1517832606299-7ae9b720a186?auto=format&fit=crop&w=1000&q=85',
-    title: 'Salon Atmosferi & Profesyonel Ekipmanlar',
+    src: 'https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=1000&q=85',
+    title: 'Nezih Salon Atmosferi & Konforlu Koltuklar',
     category: 'Salon Detayları',
-    tag: 'Salon',
-    span: 'col-span-1 md:col-span-2 row-span-1',
+    tag: 'Salonumuz',
+    span: 'col-span-1 row-span-1',
   },
   {
-    src: 'https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=1000&q=85',
-    title: 'Low Skin Fade & Üst Doku',
+    src: 'https://images.unsplash.com/photo-1517832606299-7ae9b720a186?auto=format&fit=crop&w=1000&q=85',
+    title: 'Hassas Şekillendirme & Premium Bakım',
     category: 'Modern Fade & Klasik',
-    tag: 'Hassas Kesim',
+    tag: 'Stil Tasarımı',
     span: 'col-span-1 row-span-1',
   },
 ];
@@ -163,6 +163,32 @@ export default function Gallery() {
               </motion.div>
             ))}
           </AnimatePresence>
+        </div>
+
+        {/* Bottom Portfolio & Instagram Showcase Banner */}
+        <div className="mt-8 sm:mt-10 p-5 sm:p-7 rounded-2xl bg-gradient-to-r from-noir-850 via-noir-900 to-noir-850 border border-amber/20 shadow-luxury flex flex-col sm:flex-row items-center justify-between gap-5">
+          <div className="flex items-center gap-4 text-center sm:text-left">
+            <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] flex items-center justify-center text-white shrink-0 shadow-lg">
+              <Camera size={22} />
+            </div>
+            <div>
+              <h4 className="font-sans font-bold text-base sm:text-lg text-alabaster">
+                Daha Fazla Güncel Saç & Sakal Tasarımı
+              </h4>
+              <p className="text-slate text-xs sm:text-sm mt-0.5">
+                Salonumuzda uyguladığımız en yeni saç modellerini ve video paylaşımlarını Instagram hesabımızdan keşfedin.
+              </p>
+            </div>
+          </div>
+          <a
+            href="https://instagram.com/_nurkan_aydogdu_19"
+            target="_blank"
+            rel="noreferrer"
+            className="btn-primary whitespace-nowrap text-xs py-3 px-6 shrink-0 w-full sm:w-auto"
+          >
+            <span>Instagram'da İncele</span>
+            <ArrowUpRight size={14} />
+          </a>
         </div>
 
       </div>
