@@ -24,6 +24,10 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://nurkanaydogdu.vercel.app/" />
 
+    <!-- Site Names & App Name Signals for Google & Browsers -->
+    <meta name="application-name" content="Kuaför Nurkan Aydoğdu" />
+    <meta name="apple-mobile-web-app-title" content="Kuaför Nurkan Aydoğdu" />
+
     <!-- Favicon & Icons -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/favicon.svg" />
@@ -34,9 +38,10 @@
     <meta name="geo.position" content="40.548000;34.953000" />
     <meta name="ICBM" content="40.548000, 34.953000" />
 
-    <!-- Open Graph / Facebook / WhatsApp Preview Meta Tags -->
+    <!-- Open Graph / Facebook / WhatsApp Preview Meta Tags (Site Name consistency) -->
     <meta property="og:type" content="business.business" />
     <meta property="og:url" content="https://nurkanaydogdu.vercel.app/" />
+    <meta property="og:site_name" content="Kuaför Nurkan Aydoğdu" />
     <meta property="og:title" content="Kuaför Nurkan Aydoğdu | Erkek Kuaförü & Saç Tasarım Stüdyosu | Çorum" />
     <meta property="og:description" content="Çorum Üçtutlar Mahallesi Fatih Caddesi'nde modern saç kesimi, kişiye özel sakal tasarımı ve sıcak havlu ritüeli. Hemen randevu alın: 0552 274 23 83." />
     <meta property="og:image" content="https://nurkanaydogdu.vercel.app/nurkan.jpg" />
@@ -44,7 +49,6 @@
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Kuaför Nurkan Aydoğdu - Çorum Erkek Kuaförü" />
     <meta property="og:locale" content="tr_TR" />
-    <meta property="og:site_name" content="Kuaför Nurkan Aydoğdu" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -57,11 +61,27 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
 
-    <!-- Complete Structured Data (Schema.org Graph for Google Rich Results) -->
+    <!-- Complete Structured Data (Schema.org Graph for Google Rich Results & Google Site Names) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://nurkanaydogdu.vercel.app/#website",
+          "url": "https://nurkanaydogdu.vercel.app/",
+          "name": "Kuaför Nurkan Aydoğdu",
+          "alternateName": [
+            "Nurkan Aydoğdu",
+            "Kuaför Nurkan Aydoğdu Çorum",
+            "Nurkan Aydoğdu Erkek Kuaförü"
+          ],
+          "description": "Çorum Erkek Kuaförü & Özel Saç Tasarım Stüdyosu",
+          "inLanguage": "tr-TR",
+          "publisher": {
+            "@id": "https://nurkanaydogdu.vercel.app/#salon"
+          }
+        },
         {
           "@type": ["HairSalon", "BarberShop", "LocalBusiness"],
           "@id": "https://nurkanaydogdu.vercel.app/#salon",
@@ -69,7 +89,7 @@
           "alternateName": "Nurkan Aydoğdu Erkek Kuaförü",
           "image": "https://nurkanaydogdu.vercel.app/nurkan.jpg",
           "logo": "https://nurkanaydogdu.vercel.app/favicon.svg",
-          "url": "https://nurkanaydogdu.vercel.app",
+          "url": "https://nurkanaydogdu.vercel.app/",
           "telephone": "+905522742383",
           "priceRange": "₺₺",
           "currenciesAccepted": "TRY",
@@ -157,20 +177,9 @@
           }
         },
         {
-          "@type": "WebSite",
-          "@id": "https://nurkanaydogdu.vercel.app/#website",
-          "url": "https://nurkanaydogdu.vercel.app",
-          "name": "Kuaför Nurkan Aydoğdu",
-          "description": "Çorum Erkek Kuaförü & Özel Saç Tasarım Stüdyosu",
-          "inLanguage": "tr-TR",
-          "publisher": {
-            "@id": "https://nurkanaydogdu.vercel.app/#salon"
-          }
-        },
-        {
           "@type": "WebPage",
           "@id": "https://nurkanaydogdu.vercel.app/#webpage",
-          "url": "https://nurkanaydogdu.vercel.app",
+          "url": "https://nurkanaydogdu.vercel.app/",
           "name": "Kuaför Nurkan Aydoğdu | Erkek Kuaförü & Saç Tasarım Stüdyosu | Çorum",
           "isPartOf": {
             "@id": "https://nurkanaydogdu.vercel.app/#website"
@@ -234,12 +243,12 @@
               "@type": "ListItem",
               "position": 1,
               "name": "Ana Sayfa",
-              "item": "https://nurkanaydogdu.vercel.app"
+              "item": "https://nurkanaydogdu.vercel.app/"
             },
             {
               "@type": "ListItem",
               "position": 2,
-              "name": "Hizmetler & Fiyatlar",
+              "name": "Hizmetler",
               "item": "https://nurkanaydogdu.vercel.app/#services"
             },
             {
