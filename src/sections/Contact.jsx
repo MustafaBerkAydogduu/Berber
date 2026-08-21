@@ -1,12 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Clock, Instagram, Navigation, ArrowUpRight } from 'lucide-react';
 import WhatsAppIcon from '../components/WhatsAppIcon';
+import { getSalonStatus } from '../utils/businessHours';
 
 const WA_URL = "https://wa.me/905522742383?text=Merhaba%20Nurkan%20Bey%2C%20adresiniz%20ve%20m%C3%BCsaitlik%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum.";
 const MAP_DIRECTIONS_URL = "https://www.google.com/maps/dir/?api=1&destination=Üçtutlar+Mahallesi+Fatih+Caddesi+No:24/A+Ulukavak+Muhtarlığı+Karşısı+Çorum";
 
 export default function Contact() {
+  const [salonStatus, setSalonStatus] = useState(getSalonStatus());
+
+  useEffect(() => {
+    // 60 saniyede bir durumu güncelle
+    const interval = setInterval(() => {
+      setSalonStatus(getSalonStatus());
+    }, 60000);
+    return () => clearInterval(interval);
+  }, []);
   return (
     <section id="contact" className="py-20 sm:py-28 lg:py-36 bg-noir-950 relative overflow-hidden border-t border-white/[0.06]">
       
@@ -45,10 +55,17 @@ export default function Contact() {
                   <Clock size={15} />
                   <span>Çalışma Saatleri</span>
                 </div>
-                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald/10 border border-emerald/20 text-emerald text-[11px] font-bold">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald animate-pulse"></span>
-                  Açık
-                </span>
+                {salonStatus.isOpen ? (
+                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald/10 border border-emerald/20 text-emerald text-[11px] font-bold">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald animate-pulse"></span>
+                    Şu An Açık
+                  </span>
+                ) : (
+                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-400 text-[11px] font-bold">
+                    <span className="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
+                    Şu An Kapalı
+                  </span>
+                )}
               </div>
               <div className="space-y-1.5 text-sm text-alabaster">
                 <div className="flex justify-between py-1 border-b border-white/[0.04]">

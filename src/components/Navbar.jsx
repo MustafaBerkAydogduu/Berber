@@ -3,6 +3,7 @@ import { Menu, X, Phone, ArrowUpRight, Sparkles } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import WhatsAppIcon from './WhatsAppIcon';
 import BrandIcon from './BrandIcon';
+import { getSalonStatus } from '../utils/businessHours';
 
 const WA_URL = "https://wa.me/905522742383?text=Merhaba%20Nurkan%20Bey%2C%20randevu%20almak%20istiyorum.";
 
@@ -18,13 +19,22 @@ const NAV_LINKS = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [salonStatus, setSalonStatus] = useState(getSalonStatus());
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    const interval = setInterval(() => {
+      setSalonStatus(getSalonStatus());
+    }, 60000);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      clearInterval(interval);
+    };
   }, []);
 
   return (
@@ -64,14 +74,23 @@ export default function Navbar() {
 
           {/* Right Actions */}
           <div className="hidden sm:flex items-center gap-3">
-            {/* Live Open Pill */}
-            <div className="hidden xl:flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald/10 border border-emerald/20 text-emerald text-[11px] font-medium tracking-wide">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald"></span>
-              </span>
-              Randevuya Açık
-            </div>
+            {/* Live Open / Closed Pill */}
+            {salonStatus.isOpen ? (
+              <div className="hidden xl:flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald/10 border border-emerald/20 text-emerald text-[11px] font-medium tracking-wide">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald"></span>
+                </span>
+                <span>Şu An Açık</span>
+              </div>
+            ) : (
+              <div className="hidden xl:flex items-center gap-2 px-3 py-1.5 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-400 text-[11px] font-medium tracking-wide">
+                <span className="relative flex h-2 w-2">
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-rose-400"></span>
+                </span>
+                <span>{salonStatus.isSunday ? 'Pazar Kapalı' : 'Şu An Kapalı'}</span>
+              </div>
+            )}
 
             {/* Quick Call */}
             <a
@@ -137,10 +156,17 @@ export default function Navbar() {
 
             {/* Mobile Footer Info */}
             <div className="flex flex-col gap-4 pt-8 border-t border-white/10">
-              <div className="flex items-center gap-2 text-emerald text-xs font-medium">
-                <span className="h-2 w-2 rounded-full bg-emerald animate-pulse"></span>
-                Bugün Açık · 09:00 – 20:00
-              </div>
+              {salonStatus.isOpen ? (
+                <div className="flex items-center gap-2 text-emerald text-xs font-medium">
+                  <span className="h-2 w-2 rounded-full bg-emerald animate-pulse"></span>
+                  <span>Şu An Açık · 09:00 – 20:00</span>
+                </div>
+              ) : (
+                <div className="flex items-center gap-2 text-rose-400 text-xs font-medium">
+                  <span className="h-2 w-2 rounded-full bg-rose-400"></span>
+                  <span>{salonStatus.isSunday ? 'Bugün Kapalı (Pazar)' : 'Şu An Kapalı · Açılış 09:00'}</span>
+                </div>
+              )}
               <p className="text-slate text-xs leading-relaxed">
                 Üçtutlar Mah. Fatih Cad. No:24/A (Ulukavak Muhtarlığı Karşısı), Merkez / Çorum
               </p>
