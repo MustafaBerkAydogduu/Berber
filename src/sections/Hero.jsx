@@ -134,7 +134,10 @@ export default function Hero() {
               <div className="relative rounded-2xl overflow-hidden bg-noir-800 border border-white/10 shadow-luxury group">
                 <img
                   src="/nurkan.jpg"
-                  alt="Nurkan Aydoğdu - Master Stylist"
+                  alt="Kuaför Nurkan Aydoğdu - Çorum Erkek Kuaförü ve Özel Saç Tasarımcısı"
+                  width="420"
+                  height="530"
+                  fetchPriority="high"
                   className="w-full h-[390px] sm:h-[480px] lg:h-[530px] object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
                 />
 

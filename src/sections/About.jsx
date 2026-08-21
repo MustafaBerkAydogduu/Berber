@@ -124,7 +124,15 @@ export default function About() {
 
                 <div className="flex items-center gap-4 pt-4 border-t border-white/10">
                   <div className="w-12 h-12 rounded-full overflow-hidden border border-amber/40">
-                    <img src="/nurkan.jpg" alt="Nurkan Aydoğdu" className="w-full h-full object-cover object-top" />
+                    <img
+                      src="/nurkan.jpg"
+                      alt="Kuaför Nurkan Aydoğdu - Çorum Erkek Kuaförü Kurucusu"
+                      width="48"
+                      height="48"
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-full object-cover object-top"
+                    />
                   </div>
                   <div>
                     <h4 className="font-sans font-bold text-base text-alabaster">
