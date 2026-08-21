@@ -82,7 +82,7 @@ export default function Gallery() {
           
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
             <p className="text-slate text-sm max-w-xs leading-relaxed">
-              Stüdyomuzdan çıkan gerçek işler ve güncel saç & sakal trendleri.
+              Salonumuzdan çıkan gerçek işler ve güncel saç & sakal trendleri.
             </p>
             <a
               href="https://instagram.com/_nurkan_aydogdu_19"

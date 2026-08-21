@@ -21,8 +21,8 @@ const FAQS = [
     a: 'Salonumuzda yalnızca dermatolojik olarak test edilmiş, saç derisine ve cilde zarar vermeyen uluslararası standartlardaki profesyonel erkek bakım ürünleri ve arındırıcı tonikler kullanılmaktadır.',
   },
   {
-    q: 'Stüdyonuz tam olarak nerede, otopark imkanı var mı?',
-    a: 'Stüdyomuz Çorum Merkez’de, Üçtutlar Mahallesi Fatih Caddesi No:24/A (Ulukavak Muhtarlığı Karşısı) adresinde yer almaktadır. Çevrede araç park edebileceğiniz güvenli park alanları mevcuttur.',
+    q: 'Salonunuz tam olarak nerede, otopark imkanı var mı?',
+    a: 'Salonumuz Çorum Merkez’de, Üçtutlar Mahallesi Fatih Caddesi No:24/A (Ulukavak Muhtarlığı Karşısı) adresinde yer almaktadır. Çevrede araç park edebileceğiniz güvenli park alanları mevcuttur.',
   },
 ];
 
@@ -30,8 +30,11 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section id="faq" className="py-20 sm:py-28 lg:py-36 bg-noir-900 relative overflow-hidden">
+    <section id="faq" className="py-20 sm:py-28 lg:py-36 bg-noir-900 relative overflow-hidden border-t border-white/[0.06]">
       
+      {/* Background Ambience */}
+      <div className="absolute top-1/2 left-0 w-80 h-80 bg-amber/5 rounded-full blur-[140px] pointer-events-none -z-10" />
+
       <div className="max-w-4xl mx-auto px-5 sm:px-8">
         
         {/* Header */}
@@ -43,11 +46,11 @@ export default function FAQ() {
           <h2 className="font-sans font-extrabold text-3xl sm:text-5xl text-alabaster tracking-tight mb-4">
             Sıkça Sorulan <br />
             <span className="font-serif italic font-normal text-gradient-amber">
-              Sorular & Yanıtlar.
+              Sorular & Bilgiler.
             </span>
           </h2>
-          <p className="text-slate text-sm leading-relaxed">
-            Stüdyomuz, randevu sistemi ve hizmetlerimiz hakkında en çok sorulan soruların yanıtları.
+          <p className="text-slate text-sm sm:text-base leading-relaxed">
+            Salonumuz, randevu sistemi ve hizmetlerimiz hakkında en çok sorulan soruların yanıtları.
           </p>
         </div>
 

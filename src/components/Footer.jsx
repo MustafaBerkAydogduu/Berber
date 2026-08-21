@@ -1,7 +1,8 @@
-import React from 'react';
-import { Instagram, Phone, MapPin, Clock, ArrowUpRight, Scissors } from 'lucide-react';
+import React, { useState } from 'react';
+import { Instagram, Phone, MapPin, Clock, ArrowUpRight, Scissors, Lock, ShieldCheck } from 'lucide-react';
 import WhatsAppIcon from './WhatsAppIcon';
 import BrandIcon from './BrandIcon';
+import LegalModal from './LegalModal';
 
 const WA_URL = "https://wa.me/905522742383?text=Merhaba%20Nurkan%20Bey%2C%20randevu%20almak%20istiyorum.";
 
@@ -15,6 +16,8 @@ const NAV_LINKS = [
 ];
 
 export default function Footer() {
+  const [legalModal, setLegalModal] = useState({ isOpen: false, tab: 'kvkk' });
+
   return (
     <footer className="bg-noir-950 border-t border-white/[0.08] relative overflow-hidden pt-16 pb-12">
       
@@ -143,17 +146,79 @@ export default function Footer() {
 
         </div>
 
-        {/* Bottom Copyright */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-dark">
-          <p>
-            © {new Date().getFullYear()} Kuaför Nurkan Aydoğdu. Tüm hakları saklıdır.
-          </p>
-          <p className="flex items-center gap-1.5">
-            <span>Çorum Modern Erkek Kuaförlüğü</span>
-          </p>
+        {/* Bottom Copyright, Credits & Legal Links */}
+        <div className="pt-8 pb-4 flex flex-col md:flex-row items-center justify-between gap-5 text-xs text-slate-dark border-t border-white/[0.04]">
+          
+          {/* Left: Copyright & Developer Credit */}
+          <div className="flex flex-col items-center md:items-start text-center md:text-left gap-1">
+            <p className="text-xs sm:text-sm text-alabaster/85 font-normal tracking-wide">
+              © {new Date().getFullYear()} Kuaför Nurkan Aydoğdu. Tüm hakları saklıdır.
+            </p>
+            <p className="text-[11px] sm:text-xs text-slate-dark">
+              Web Tasarım & Geliştirme:{' '}
+              <span className="text-slate hover:text-amber font-medium transition-colors duration-200 cursor-pointer underline underline-offset-4 decoration-amber/30 hover:decoration-amber">
+                Mustafa Berk Aydoğdu
+              </span>
+            </p>
+          </div>
+
+          {/* Right: Legal Policy Links & Security Badges */}
+          <div className="flex flex-wrap items-center justify-center md:justify-end gap-x-4 gap-y-2 text-[11px]">
+            <button
+              onClick={() => setLegalModal({ isOpen: true, tab: 'kvkk' })}
+              className="text-slate-dark hover:text-amber transition-colors font-medium cursor-pointer"
+            >
+              KVKK
+            </button>
+            <span className="text-white/10 hidden sm:inline">•</span>
+            <button
+              onClick={() => setLegalModal({ isOpen: true, tab: 'aydinlatma' })}
+              className="text-slate-dark hover:text-amber transition-colors font-medium cursor-pointer"
+            >
+              Aydınlatma Metni
+            </button>
+            <span className="text-white/10 hidden sm:inline">•</span>
+            <button
+              onClick={() => setLegalModal({ isOpen: true, tab: 'gizlilik' })}
+              className="text-slate-dark hover:text-amber transition-colors font-medium cursor-pointer"
+            >
+              Gizlilik Politikası
+            </button>
+            <span className="text-white/10 hidden sm:inline">•</span>
+            <button
+              onClick={() => setLegalModal({ isOpen: true, tab: 'cerez' })}
+              className="text-slate-dark hover:text-amber transition-colors font-medium cursor-pointer"
+            >
+              Çerez Politikası
+            </button>
+
+            {/* Security Badge Icons (Non-clickable with sleek hover glow animations) */}
+            <div className="flex items-center gap-1.5 pl-2 border-l border-white/10 text-slate-dark">
+              <div
+                title="256-Bit SSL Şifreli Güvenli Bağlantı"
+                className="w-6 h-6 rounded-full bg-white/[0.03] hover:bg-emerald/10 border border-white/[0.08] hover:border-emerald/40 flex items-center justify-center text-slate-dark hover:text-emerald cursor-default select-none transition-all duration-300 hover:scale-110"
+              >
+                <Lock size={11} />
+              </div>
+              <div
+                title="KVKK Uyumlu Güvenli Hizmet"
+                className="w-6 h-6 rounded-full bg-white/[0.03] hover:bg-amber/10 border border-white/[0.08] hover:border-amber/40 flex items-center justify-center text-slate-dark hover:text-amber cursor-default select-none transition-all duration-300 hover:scale-110"
+              >
+                <ShieldCheck size={12} />
+              </div>
+            </div>
+          </div>
+
         </div>
 
       </div>
+
+      {/* Interactive Full Legal Content Modal */}
+      <LegalModal
+        isOpen={legalModal.isOpen}
+        onClose={() => setLegalModal((prev) => ({ ...prev, isOpen: false }))}
+        initialTab={legalModal.tab}
+      />
 
     </footer>
   );

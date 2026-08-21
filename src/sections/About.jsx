@@ -119,7 +119,7 @@ export default function About() {
                 </span>
 
                 <blockquote className="font-serif italic text-lg sm:text-xl text-alabaster leading-relaxed mb-6">
-                  “Erkek kuaförlüğü sadece saç kısaltmak değildir. İnsanın duruşunu, ifadesini ve ilk izlenimini değiştiren bir sanattır. Stüdyomuzdaki her misafirimize bir sanat eseri titizliğiyle yaklaşıyoruz.”
+                  “Erkek kuaförlüğü sadece saç kısaltmak değildir. İnsanın duruşunu, ifadesini ve ilk izlenimini değiştiren bir sanattır. Salonumuzdaki her misafirimize büyük bir özen ve titizlikle yaklaşıyoruz.”
                 </blockquote>
 
                 <div className="flex items-center gap-4 pt-4 border-t border-white/10">
