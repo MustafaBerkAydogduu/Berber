@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nurkanaydogdu.com/sitemap.xml
+Sitemap: https://nurkanaydogdu.vercel.app/sitemap.xml
