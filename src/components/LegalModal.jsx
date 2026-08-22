@@ -81,7 +81,7 @@ const LEGAL_DOCS = {
             1. Bilgilendirme Amacı
           </h4>
           <p>
-            Bu aydınlatma metni, <strong>Kuaför Nurkan Aydoğdu</strong> salonunu ve <strong>nurkanaydogdu.vercel.app</strong> web sitesini ziyaret eden tüm misafirlerimizin haklarını ve kişisel verilerinin korunma yöntemlerini açıklamak amacıyla hazırlanmıştır.
+            Bu aydınlatma metni, <strong>Kuaför Nurkan Aydoğdu</strong> salonunu ve <strong>www.nurkanaydogdukuafor.com.tr</strong> web sitesini ziyaret eden tüm misafirlerimizin haklarını ve kişisel verilerinin korunma yöntemlerini açıklamak amacıyla hazırlanmıştır.
           </p>
         </div>
 
