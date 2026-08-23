@@ -12,21 +12,24 @@ export default function BrandIcon({ size = 36, className = "" }) {
         xmlns="http://www.w3.org/2000/svg"
         className="w-full h-full"
       >
-        {/* Scissor Blades */}
+        {/* Scissor Blades Crossing */}
         <path
-          d="M8 8 L24 26 M24 8 L8 26"
+          d="M11 11 L29 29 M29 11 L11 29"
           stroke="#E5C578"
-          strokeWidth="2.5"
+          strokeWidth="2.4"
           strokeLinecap="round"
         />
+        
         {/* Pivot Center */}
-        <circle cx="16" cy="17" r="2.2" fill="#0D0E11" stroke="#E5C578" strokeWidth="1.6" />
-        {/* Scissor Finger Loops */}
-        <circle cx="7" cy="30" r="4.2" stroke="#E5C578" strokeWidth="1.8" fill="none" />
-        <circle cx="25" cy="30" r="4.2" stroke="#E5C578" strokeWidth="1.8" fill="none" />
-        {/* Mini Gold Star */}
+        <circle cx="20" cy="20" r="2.2" fill="#0D0E11" stroke="#E5C578" strokeWidth="1.6" />
+        
+        {/* Scissor Finger Loops (Symmetric) */}
+        <circle cx="11" cy="32" r="4.2" stroke="#E5C578" strokeWidth="1.8" fill="none" />
+        <circle cx="29" cy="32" r="4.2" stroke="#E5C578" strokeWidth="1.8" fill="none" />
+        
+        {/* Mini Gold Star (Symmetric Top Center) */}
         <path
-          d="M16 2 L17.2 5.2 L20.5 5.5 L18 7.8 L18.8 11 L16 9.4 L13.2 11 L14 7.8 L11.5 5.5 L14.8 5.2 Z"
+          d="M20 3 L21.3 6.3 L24.8 6.6 L22.2 9 L23 12.4 L20 10.7 L17 12.4 L17.8 9 L15.2 6.6 L18.7 6.3 Z"
           fill="#E5C578"
         />
       </svg>
