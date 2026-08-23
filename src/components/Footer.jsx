@@ -193,7 +193,7 @@ export default function Footer() {
             </button>
 
             {/* Security Badge Icons (Non-clickable with sleek hover glow animations) */}
-            <div className="flex items-center gap-1.5 pl-2 border-l border-white/10 text-slate-dark">
+            <div className="flex items-center gap-1.5 sm:border-l sm:border-white/10 sm:pl-2 text-slate-dark">
               <div
                 title="256-Bit SSL Şifreli Güvenli Bağlantı"
                 className="w-6 h-6 rounded-full bg-white/[0.03] hover:bg-emerald/10 border border-white/[0.08] hover:border-emerald/40 flex items-center justify-center text-slate-dark hover:text-emerald cursor-default select-none transition-all duration-300 hover:scale-110"
