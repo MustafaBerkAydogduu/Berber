@@ -37,10 +37,28 @@ export default function Navbar() {
     };
   }, []);
 
+  // Menü açıkken arka planın kaymasını engelle ve menü durumunu bildir
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = 'hidden';
+      document.body.classList.add('mobile-menu-open');
+    } else {
+      document.body.style.overflow = '';
+      document.body.classList.remove('mobile-menu-open');
+    }
+    window.dispatchEvent(new CustomEvent('menu-toggle', { detail: { open: mobileOpen } }));
+
+    return () => {
+      document.body.style.overflow = '';
+      document.body.classList.remove('mobile-menu-open');
+      window.dispatchEvent(new CustomEvent('menu-toggle', { detail: { open: false } }));
+    };
+  }, [mobileOpen]);
+
   return (
     <>
       <header
-        className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${scrolled
+        className={`fixed top-0 inset-x-0 z-[60] transition-all duration-500 ${scrolled
             ? 'bg-noir-950/85 backdrop-blur-xl border-b border-white/[0.08] py-3.5 shadow-luxury'
             : 'bg-gradient-to-b from-noir-950/90 via-noir-950/40 to-transparent py-5'
           }`}
@@ -132,7 +150,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.25, ease: 'easeOut' }}
-            className="fixed inset-0 z-40 bg-noir-950/98 backdrop-blur-2xl lg:hidden flex flex-col justify-between pt-24 pb-8 px-6 overflow-y-auto"
+            className="fixed inset-0 z-50 bg-noir-950/98 backdrop-blur-2xl lg:hidden flex flex-col justify-between pt-24 pb-8 px-6 overflow-y-auto"
           >
             <div className="flex flex-col gap-5 pt-4">
               <span className="text-[11px] uppercase tracking-[0.25em] text-slate-dark font-semibold">

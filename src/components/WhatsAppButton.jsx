@@ -8,6 +8,7 @@ const WA_URL = "https://wa.me/905522742383?text=Merhaba%20Nurkan%20Bey%2C%20rand
 export default function WhatsAppButton() {
   const [visible, setVisible] = useState(false);
   const [showTooltip, setShowTooltip] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -19,13 +20,19 @@ export default function WhatsAppButton() {
       setShowTooltip(false);
     }, 9000);
 
+    const handleMenu = (e) => {
+      setMenuOpen(Boolean(e.detail?.open));
+    };
+    window.addEventListener('menu-toggle', handleMenu);
+
     return () => {
       clearTimeout(timer);
       clearTimeout(tooltipTimer);
+      window.removeEventListener('menu-toggle', handleMenu);
     };
   }, []);
 
-  if (!visible) return null;
+  if (!visible || menuOpen) return null;
 
   return (
     <div className="fixed bottom-6 right-6 z-50 flex items-center gap-3">
