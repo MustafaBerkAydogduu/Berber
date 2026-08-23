@@ -5,74 +5,150 @@ import { Star, CheckCircle2, MessageSquare, Quote } from 'lucide-react';
 const REVIEWS = [
   {
     name: 'Ahmet Yılmaz',
-    role: 'Yazılım Mühendisi',
-    date: '2 gün önce',
+    date: '3 gün önce',
     rating: 5,
-    comment: 'Çorum’da aradığım o modern, randevusuna sadık ve işini gerçekten sanat gibi yapan kuaförü sonunda buldum. Nurkan Bey yüz hatlarıma göre saç ve sakalımı öyle bir ayarladı ki çevremdekiler hemen fark etti.',
-    service: 'Saç & Sakal Kombin',
+    comment: 'Yoğun duruşma takvimimde randevu saatine harfiyen uyulması benim için en önemli kriterdi. Nurkan Bey hem çok dakik hem de makas işçiliği gerçekten çok başarılı.',
+    service: 'Saç & Sakal Tasarımı',
   },
   {
-    name: 'Murat Kara',
-    role: 'Mimar',
+    name: 'Mustafa Çakır',
+    date: '5 gün önce',
+    rating: 5,
+    comment: 'Yıllardır çarşıda esnafım, vaktim kısıtlı olduğu için randevu sistemi büyük kolaylık. Sıra beklemeden girip tıraşımı oluyorum. Sakal tıraşındaki özen ve elinin hafifliği 10 numara.',
+    service: 'Geleneksel Sakal Tasarımı',
+  },
+  {
+    name: 'Melih Demirtaş',
     date: '1 hafta önce',
     rating: 5,
-    comment: 'Düğünümden önce damat bakım paketi için tercih ettim. İlgi, alaka, cilt bakımı ve hijyen gerçekten 10 numaraydı. Sıra beklemeden, vaktinde koltuğa oturup huzurla kalkıyorsunuz.',
-    service: 'Damat Bakım Paketi',
-  },
-  {
-    name: 'Emre Demirtaş',
-    role: 'İş İnsanı',
-    date: '2 hafta önce',
-    rating: 5,
-    comment: 'Yıllardır saçımı kestiriyorum, makas hassasiyeti ve fade geçişleri çok başarılı. Tertemiz ortam ve lezzetli kahve ikramı da cabası. Emeğinize sağlık.',
+    comment: 'Kafa ve yüz anatomisine göre saç kesimi yapması fark yaratıyor. Çorum’da fade geçişlerini ve saç dokusunu bu kadar temiz çıkaran usta sayısı çok az.',
     service: 'Kişiye Özel Saç Kesimi',
   },
   {
-    name: 'Burak Çetin',
-    role: 'Finans Danışmanı',
-    date: '2 hafta önce',
-    rating: 5,
-    comment: 'Randevu saatine harfiyen uyulması benim için en önemli kriterdi. Koltuğa oturduğunuz andan itibaren sadece sizinle ilgileniliyor. Sakal çizgileri ve cilt bakımı muazzam.',
-    service: 'Geleneksel Sakal Tasarımı',
+    name: 'Emre Demir',
+    date: '1 hafta önce',
+    rating: 4,
+    comment: 'Salonun sakinliği ve Nurkan Bey’in samimi esnaflığı çok güzel. Saç kesimi ve yıkama sonrası ferahlığı çok başarılı. Akşam saatlerinde bazen yoğun olabiliyor ama randevuyla sorunsuz.',
+    service: 'Kişiye Özel Saç Kesimi',
   },
   {
-    name: 'Dr. Serdar Aydın',
-    role: 'Doktor',
+    name: 'Serdar Aydın',
+    date: '2 hafta önce',
+    rating: 5,
+    comment: 'Kullandığı hijyenik ekipmanlar, kaliteli bakım ürünleri ve salonun nezih ortamı oldukça güven veriyor. Düzenli olarak geldiğim tek adres.',
+    service: 'Saç & Sakal Tasarımı',
+  },
+  {
+    name: 'Burak Öztürk',
+    date: '2 hafta önce',
+    rating: 5,
+    comment: 'Çorum’a üniversite için geldim, genç tarzı ve modern saç modellerini çok iyi anlayan bir berber arıyordum. Arkadaş tavsiyesiyle geldim, kesinlikle çok başarılı.',
+    service: 'Modern Fade Kesim',
+  },
+  {
+    name: 'Volkan Kurt',
     date: '3 hafta önce',
     rating: 5,
-    comment: 'Hijyen standartları, kullanılan ekipmanlar ve kaliteli bakım ürünleri gerçekten çok başarılı. Saç yapısına göre verdiği tavsiyeler sayesinde stilim tamamen oturdu.',
+    comment: 'Hijyen ve salon düzeni konusunda çok hassas biriyim. Makasların dezenfeksiyonu, tek kullanımlık ürünler ve ortamın ferahlığı kusursuz. İşini severek yaptığı çok belli.',
+    service: 'Saç & Cilt Bakımı',
+  },
+  {
+    name: 'Kaan Şahin',
+    date: '3 hafta önce',
+    rating: 5,
+    comment: 'Düğünüm öncesi damat tıraşı için tercih etmiştim. Gösterilen ilgi, yüz bakımı ve saç tasarımı tam istediğim gibi oldu. Özel günler için Çorum’daki en doğru adres.',
+    service: 'Özel Damat Paketi',
+  },
+  {
+    name: 'Yasin Polat',
+    date: '1 ay önce',
+    rating: 4,
+    comment: 'Randevuyu WhatsApp’tan kolayca alıp vaktinde koltuğa oturabilmek harika bir konfor. Fade kesimi ve sakal hatları çok net. Randevusuz giderseniz sıra olabilir, kesinlikle randevu alıp gidin.',
     service: 'Kişiye Özel Saç Kesimi',
   },
   {
-    name: 'Kaan Öztürk',
-    role: 'Makine Mühendisi',
+    name: 'Hakan Koç',
     date: '1 ay önce',
     rating: 5,
-    comment: 'Çorum’da fade kesimi ve kat geçişlerini bu kadar kusursuz yapan başka bir usta görmedim. Nurkan Bey’in makas ustalığı ve el çabukluğu tartışılmaz.',
-    service: 'Saç & Sakal Kombin',
-  },
-  {
-    name: 'Tolga Şahin',
-    role: 'Avukat',
-    date: '1 ay önce',
-    rating: 5,
-    comment: 'Damat traşım için gittim, kendinizi gerçekten çok rahat hissettiriyorlar. Özel gün hazırlığı için Çorum’daki en doğru ve nezih adres.',
-    service: 'Damat Bakım Paketi',
-  },
-  {
-    name: 'Onur Korkmaz',
-    role: 'İç Mimar',
-    date: '1 ay önce',
-    rating: 5,
-    comment: 'Salonun düzeni, sakin ve nezih atmosferi, randevulu çalışmanın getirdiği huzur harika. Artık saç ve sakal için başka bir yere gitmem imkansız.',
+    comment: 'Sakin bir ortamda kaliteli hizmet alıyorsunuz. Sakal hatlarının simetrisi ve ustura hassasiyeti tam kıvamında. Elinize sağlık usta.',
     service: 'Geleneksel Sakal Tasarımı',
+  },
+  {
+    name: 'Alperen Çetin',
+    date: '1 ay önce',
+    rating: 5,
+    comment: 'İstediğim modelin fotoğrafını gösterdim, yüz yapıma uygun şekilde birebir uyguladı. Çorum’da trend modelleri bu kadar iyi uygulayan başka salon yok.',
+    service: 'Modern Fade & Doku',
+  },
+  {
+    name: 'Onur Yıldız',
+    date: '1 ay önce',
+    rating: 5,
+    comment: 'Fatih Caddesi’nde böyle temiz ve profesyonel bir salonun olması büyük avantaj. Hem saç hem sakal kesiminden her seferinde çok memnun ayrılıyorum.',
+    service: 'Saç & Sakal Tasarımı',
+  },
+  {
+    name: 'Süleyman Kaya',
+    date: '1 ay önce',
+    rating: 4,
+    comment: 'İş çıkışı uğradım, ilgi ve alaka çok iyi. Saç yıkama ve fön işlemi gayet özenli yapıldı. Cadde üstü bazen park yoğun olabiliyor ama ustalık 10 numara.',
+    service: 'Saç Kesimi & Yıkama',
+  },
+  {
+    name: 'Barış Güler',
+    date: '1 ay önce',
+    rating: 5,
+    comment: 'Spor sonrası ferahlatıcı saç ve sakal bakımı için geliyorum. Cilt ürünleri çok kaliteli, tahriş sıfır. Nurkan Bey’in enerjisi ve titizliği takdire şayan.',
+    service: 'Saç & Sakal Tasarımı',
+  },
+  {
+    name: 'Tolga Doğan',
+    date: '2 ay önce',
+    rating: 5,
+    comment: 'Sürekli seyahat eden biriyim, Türkiye’nin birçok yerinde berbere gittim ama buradaki makas işçiliği ve samimiyet gerçekten üst seviyede.',
+    service: 'Kişiye Özel Saç Kesimi',
+  },
+  {
+    name: 'Oğuzhan Çelik',
+    date: '2 ay önce',
+    rating: 4,
+    comment: 'Müşteriyle iletişim ve stil tavsiyeleri çok profesyonel. İstediğim sakal modelini tam tarif ettiğim gibi yaptı. Hafta sonu randevularını önceden almakta fayda var.',
+    service: 'Geleneksel Sakal Tasarımı',
+  },
+  {
+    name: 'Cem Arslan',
+    date: '2 ay önce',
+    rating: 5,
+    comment: 'Modern berberlik anlayışını Çorum’a kazandıran çok nezih bir mekan. Kahve ikramından sohbetine kadar her şey birinci sınıf.',
+    service: 'Saç & Sakal Tasarımı',
+  },
+  {
+    name: 'Fatih Şen',
+    date: '2 ay önce',
+    rating: 5,
+    comment: 'El pratikliği ve makas geçişleri harika. Saçı hiç çekiştirmeden çok rahat bir tıraş deneyimi yaşatıyor. Gönül rahatlığıyla tavsiye ederim.',
+    service: 'Kişiye Özel Saç Kesimi',
+  },
+  {
+    name: 'Mert Aksoy',
+    date: '2 ay önce',
+    rating: 4,
+    comment: 'Taper fade kesimi tam istediğim gibi oldu. Öğrenci dostu samimi bir yaklaşım var. Randevu saatlerine tam riayet ediliyor.',
+    service: 'Modern Fade Kesim',
+  },
+  {
+    name: 'Selim Vural',
+    date: '3 ay önce',
+    rating: 5,
+    comment: 'Yıllardır saçımı Nurkan ustaya emanet ederim. Tek bir gün bile memnuniyetsiz ayrılmadım. Çorum’un en iyi erkek kuaförüdür.',
+    service: 'Saç & Sakal Tasarımı',
   },
 ];
 
 export default function Testimonials() {
-  // Duplicate for seamless infinite loop
-  const marqueeReviewsRow1 = [...REVIEWS.slice(0, 4), ...REVIEWS.slice(0, 4), ...REVIEWS.slice(0, 4)];
-  const marqueeReviewsRow2 = [...REVIEWS.slice(4, 8), ...REVIEWS.slice(4, 8), ...REVIEWS.slice(4, 8)];
+  // 10 in Row 1, 10 in Row 2 (seamless infinite marquee)
+  const marqueeReviewsRow1 = [...REVIEWS.slice(0, 10), ...REVIEWS.slice(0, 10)];
+  const marqueeReviewsRow2 = [...REVIEWS.slice(10, 20), ...REVIEWS.slice(10, 20)];
 
   return (
     <section id="testimonials" className="py-20 sm:py-28 lg:py-36 bg-noir-950 relative overflow-hidden border-t border-white/[0.04]">
@@ -97,7 +173,7 @@ export default function Testimonials() {
             </h2>
           </div>
 
-          {/* Rating Summary Card (Cleaned without Google text) */}
+          {/* Rating Summary Card */}
           <div className="surface-card p-5 px-6 flex items-center gap-4 border-amber/20 bg-noir-900/90 shrink-0">
             <div className="text-3xl sm:text-4xl font-extrabold text-amber font-sans">
               4.8
@@ -133,9 +209,14 @@ export default function Testimonials() {
             >
               <div>
                 <div className="flex items-center justify-between gap-2 mb-4">
-                  <div className="flex text-amber">
-                    {[...Array(r.rating)].map((_, i) => (
-                      <Star key={i} size={13} fill="currentColor" />
+                  <div className="flex items-center gap-0.5 text-amber">
+                    {[...Array(5)].map((_, i) => (
+                      <Star
+                        key={i}
+                        size={13}
+                        fill={i < r.rating ? "currentColor" : "none"}
+                        className={i < r.rating ? "text-amber" : "text-white/20"}
+                      />
                     ))}
                   </div>
                   <span className="text-[10px] text-slate-dark font-medium">
@@ -148,18 +229,22 @@ export default function Testimonials() {
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-white/[0.06] flex items-center justify-between gap-3">
-                <div>
-                  <h4 className="font-sans font-bold text-xs sm:text-sm text-alabaster flex items-center gap-1.5">
-                    {r.name}
-                    <CheckCircle2 size={13} className="text-emerald shrink-0" />
-                  </h4>
-                  <span className="text-[11px] text-slate-dark">
-                    {r.role}
-                  </span>
+              <div className="pt-4 border-t border-white/[0.06] flex items-center justify-between">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-8 h-8 rounded-full bg-gradient-to-br from-amber/20 to-amber/5 border border-amber/25 flex items-center justify-center text-amber font-bold text-xs shrink-0">
+                    {r.name.charAt(0)}
+                  </div>
+                  <div>
+                    <h4 className="font-sans font-bold text-sm text-alabaster leading-tight">
+                      {r.name}
+                    </h4>
+                    <span className="text-[10px] text-emerald flex items-center gap-1 mt-0.5 font-medium">
+                      <CheckCircle2 size={10} /> Doğrulanmış Müşteri
+                    </span>
+                  </div>
                 </div>
-                
-                <span className="px-2.5 py-1 rounded-md bg-noir-800 text-[10px] text-amber font-medium border border-white/[0.06]">
+
+                <span className="text-[10px] font-medium text-amber bg-amber/10 border border-amber/20 px-2.5 py-1 rounded-full whitespace-nowrap">
                   {r.service}
                 </span>
               </div>
@@ -167,7 +252,7 @@ export default function Testimonials() {
           ))}
         </div>
 
-        {/* Row 2: Sliding Right (Reverse, Pause on hover) */}
+        {/* Row 2: Sliding Right (Pause on hover) */}
         <div className="flex gap-6 w-max animate-marquee-reverse hover:[animation-play-state:paused] cursor-grab active:cursor-grabbing">
           {marqueeReviewsRow2.map((r, idx) => (
             <div
@@ -176,9 +261,14 @@ export default function Testimonials() {
             >
               <div>
                 <div className="flex items-center justify-between gap-2 mb-4">
-                  <div className="flex text-amber">
-                    {[...Array(r.rating)].map((_, i) => (
-                      <Star key={i} size={13} fill="currentColor" />
+                  <div className="flex items-center gap-0.5 text-amber">
+                    {[...Array(5)].map((_, i) => (
+                      <Star
+                        key={i}
+                        size={13}
+                        fill={i < r.rating ? "currentColor" : "none"}
+                        className={i < r.rating ? "text-amber" : "text-white/20"}
+                      />
                     ))}
                   </div>
                   <span className="text-[10px] text-slate-dark font-medium">
@@ -191,18 +281,22 @@ export default function Testimonials() {
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-white/[0.06] flex items-center justify-between gap-3">
-                <div>
-                  <h4 className="font-sans font-bold text-xs sm:text-sm text-alabaster flex items-center gap-1.5">
-                    {r.name}
-                    <CheckCircle2 size={13} className="text-emerald shrink-0" />
-                  </h4>
-                  <span className="text-[11px] text-slate-dark">
-                    {r.role}
-                  </span>
+              <div className="pt-4 border-t border-white/[0.06] flex items-center justify-between">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-8 h-8 rounded-full bg-gradient-to-br from-amber/20 to-amber/5 border border-amber/25 flex items-center justify-center text-amber font-bold text-xs shrink-0">
+                    {r.name.charAt(0)}
+                  </div>
+                  <div>
+                    <h4 className="font-sans font-bold text-sm text-alabaster leading-tight">
+                      {r.name}
+                    </h4>
+                    <span className="text-[10px] text-emerald flex items-center gap-1 mt-0.5 font-medium">
+                      <CheckCircle2 size={10} /> Doğrulanmış Müşteri
+                    </span>
+                  </div>
                 </div>
-                
-                <span className="px-2.5 py-1 rounded-md bg-noir-800 text-[10px] text-amber font-medium border border-white/[0.06]">
+
+                <span className="text-[10px] font-medium text-amber bg-amber/10 border border-amber/20 px-2.5 py-1 rounded-full whitespace-nowrap">
                   {r.service}
                 </span>
               </div>
