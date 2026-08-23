@@ -20,15 +20,17 @@ export default function WhatsAppButton() {
       setShowTooltip(false);
     }, 9000);
 
-    const handleMenu = (e) => {
+    const handleToggle = (e) => {
       setMenuOpen(Boolean(e.detail?.open));
     };
-    window.addEventListener('menu-toggle', handleMenu);
+    window.addEventListener('menu-toggle', handleToggle);
+    window.addEventListener('modal-toggle', handleToggle);
 
     return () => {
       clearTimeout(timer);
       clearTimeout(tooltipTimer);
-      window.removeEventListener('menu-toggle', handleMenu);
+      window.removeEventListener('menu-toggle', handleToggle);
+      window.removeEventListener('modal-toggle', handleToggle);
     };
   }, []);
 
