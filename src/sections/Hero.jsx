@@ -65,7 +65,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-slate text-sm sm:text-base lg:text-lg leading-relaxed max-w-xl mb-7 sm:mb-8"
             >
-              Yüz anatomisi, saç yapısı ve yaşam tarzınıza özel olarak tasarlanan modern kuaförlük deneyimi. Üçtutlar Mah. Fatih Caddesi No:24/A (Ulukavak Muhtarlığı Karşısı) adresinde, randevulu ve ayrıcalıklı hizmet.
+              Yüz anatomisi ve yaşam tarzınıza özel saç tasarımı, geleneksel sakal şekillendirme ve ferahlatıcı bakım. Çorum’da sıra beklemeden, randevulu ve ayrıcalıklı bir erkek kuaförlüğü deneyimi.
             </motion.p>
 
             {/* Action Buttons */}
