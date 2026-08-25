@@ -45,6 +45,41 @@ Bu proje, **Kuaför Nurkan Aydoğdu** salonunun hizmetlerini, çalışma saatler
 
 ---
 
+## 📂 Proje Klasör Yapısı
+
+```bash
+nurkanaydogdukuafor-web/
+├── public/
+│   ├── favicon.svg          # Altın makas vektör logosu
+│   ├── favicon-192x192.png  # PWA & Arama ikonu
+│   ├── nurkan.jpg           # Salon & kurucu görseli
+│   ├── robots.txt           # Arama motoru kuralları
+│   ├── sitemap.xml          # Site haritası
+│   └── site.webmanifest     # Web manifesti
+├── src/
+│   ├── components/
+│   │   ├── BrandIcon.jsx    # Logo bileşeni
+│   │   ├── Footer.jsx       # Alt bilgi & yasal linkler
+│   │   ├── LegalModal.jsx   # KVKK & Gizlilik modalı
+│   │   ├── Navbar.jsx       # Üst navigasyon menüsü
+│   │   └── WhatsAppButton.jsx # Kayan randevu butonu
+│   ├── sections/
+│   │   ├── About.jsx        # Hakkımızda & vizyon
+│   │   ├── FAQ.jsx          # Sıkça sorulan sorular
+│   │   ├── Gallery.jsx      # Salon ve stil galerisi
+│   │   ├── Hero.jsx         # Karşılama manşeti
+│   │   ├── Services.jsx     # Hizmetler & bakım menüsü
+│   │   └── Testimonials.jsx # Misafir değerlendirmeleri
+│   ├── App.jsx              # Ana uygulama düzeni
+│   └── index.css            # Stil ve tema tanımları
+├── index.html               # Temel HTML & SEO yapılandırması
+├── package.json             # Bağımlılıklar ve komutlar
+├── tailwind.config.js       # Tema & renk paleti ayarları
+└── vercel.json              # Güvenlik başlıkları yapılandırması
+```
+
+---
+
 ## 🚀 Kurulum & Çalıştırma
 
 ```bash
