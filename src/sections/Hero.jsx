@@ -38,7 +38,7 @@ export default function Hero() {
               className="pill-badge mb-6"
             >
               <span className="w-2 h-2 rounded-full bg-amber animate-pulse"></span>
-              <span className="text-alabaster font-medium">Modern Erkek Kuaförlüğü</span>
+              <span className="text-alabaster font-semibold">Kuaför Nurkan Aydoğdu</span>
               <span className="text-slate-dark">/</span>
               <span className="text-amber">Çorum</span>
             </motion.div>
@@ -50,6 +50,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="font-sans font-extrabold text-3xl sm:text-5xl lg:text-[64px] leading-[1.12] sm:leading-[1.08] text-alabaster tracking-[-0.03em] mb-5 sm:mb-6"
             >
+              <span className="sr-only">Kuaför Nurkan Aydoğdu - </span>
               Kusursuz Kesim & <br />
               <span className="font-serif italic font-normal text-gradient-amber pr-2">
                 Kişiye Özel
