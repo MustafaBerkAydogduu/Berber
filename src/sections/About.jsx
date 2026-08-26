@@ -126,7 +126,7 @@ export default function About() {
                   <div className="w-12 h-12 rounded-full overflow-hidden border border-amber/40">
                     <img
                       src="/nurkan.jpg"
-                      alt="Kuaför Nurkan Aydoğdu - Çorum Erkek Kuaförü Kurucusu"
+                      alt="Nurkan Aydoğdu - Kurucu ve Saç Tasarımcısı"
                       width="48"
                       height="48"
                       loading="lazy"

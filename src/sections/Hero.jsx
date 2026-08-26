@@ -50,7 +50,6 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="font-sans font-extrabold text-3xl sm:text-5xl lg:text-[64px] leading-[1.12] sm:leading-[1.08] text-alabaster tracking-[-0.03em] mb-5 sm:mb-6"
             >
-              <span className="sr-only">Kuaför Nurkan Aydoğdu - </span>
               Kusursuz Kesim & <br />
               <span className="font-serif italic font-normal text-gradient-amber pr-2">
                 Kişiye Özel
@@ -135,7 +134,7 @@ export default function Hero() {
               <div className="relative rounded-2xl overflow-hidden bg-noir-800 border border-white/15 shadow-luxury group">
                 <img
                   src="/nurkan.jpg"
-                  alt="Kuaför Nurkan Aydoğdu - Çorum Erkek Kuaförü ve Özel Saç Tasarımcısı"
+                  alt="Nurkan Aydoğdu - Erkek Kuaförü ve Saç Tasarımcısı"
                   width="440"
                   height="580"
                   fetchPriority="high"
