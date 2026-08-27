@@ -238,13 +238,13 @@ export default function Testimonials() {
               </div>
             </div>
 
-            {/* Yorum Bırak Button */}
+            {/* Yorum Yap Button */}
             <button
               onClick={() => setIsModalOpen(true)}
               className="btn-primary p-3 sm:p-4 sm:px-6 rounded-2xl text-xs sm:text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-luxury hover:shadow-amber/20 transition-all text-center"
             >
               <MessageSquarePlus size={16} className="shrink-0 text-noir-950" />
-              <span className="truncate">Yorum Bırak</span>
+              <span className="truncate">Yorum Yap</span>
             </button>
           </div>
         </div>
