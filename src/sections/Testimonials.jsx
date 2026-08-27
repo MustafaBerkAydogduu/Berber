@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Star, CheckCircle2, MessageSquare, Quote } from 'lucide-react';
+import { Star, CheckCircle2, MessageSquare, Quote, MessageSquarePlus } from 'lucide-react';
+import ReviewModal from '../components/ReviewModal';
+import { supabase } from '../lib/supabase';
 
 const REVIEWS = [
   {
@@ -146,9 +148,42 @@ const REVIEWS = [
 ];
 
 export default function Testimonials() {
-  // 10 in Row 1, 10 in Row 2 (seamless infinite marquee)
-  const marqueeReviewsRow1 = [...REVIEWS.slice(0, 10), ...REVIEWS.slice(0, 10)];
-  const marqueeReviewsRow2 = [...REVIEWS.slice(10, 20), ...REVIEWS.slice(10, 20)];
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [dynamicReviews, setDynamicReviews] = useState([]);
+
+  const fetchReviews = async () => {
+    try {
+      const { data, error } = await supabase
+        .from('reviews')
+        .select('*')
+        .eq('is_approved', true)
+        .order('created_at', { ascending: false });
+
+      if (!error && data && data.length > 0) {
+        setDynamicReviews(
+          data.map((item) => ({
+            name: item.name,
+            date: 'Yeni',
+            rating: item.rating,
+            comment: item.comment,
+            service: item.service,
+          }))
+        );
+      }
+    } catch (err) {
+      console.error('Yorum yükleme hatası:', err);
+    }
+  };
+
+  useEffect(() => {
+    fetchReviews();
+  }, []);
+
+  // Combine dynamic approved reviews with existing reviews
+  const allReviews = [...dynamicReviews, ...REVIEWS];
+  const half = Math.ceil(allReviews.length / 2);
+  const marqueeReviewsRow1 = [...allReviews.slice(0, half), ...allReviews.slice(0, half)];
+  const marqueeReviewsRow2 = [...allReviews.slice(half), ...allReviews.slice(half)];
 
   return (
     <section id="testimonials" className="py-20 sm:py-28 lg:py-36 bg-noir-950 relative overflow-hidden border-t border-white/[0.04]">
@@ -173,20 +208,31 @@ export default function Testimonials() {
             </h2>
           </div>
 
-          {/* Rating Summary Card */}
-          <div className="surface-card p-5 px-6 flex items-center gap-4 border-amber/20 bg-noir-900/90 shrink-0">
-            <div className="text-3xl sm:text-4xl font-extrabold text-amber font-sans">
-              4.8
-            </div>
-            <div>
-              <div className="flex text-amber mb-1">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={15} fill="currentColor" />
-                ))}
+          {/* Action Buttons & Rating Summary Card */}
+          <div className="flex flex-wrap items-center gap-3.5 sm:gap-4">
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="btn-primary py-3 px-5 text-xs font-semibold uppercase tracking-wider flex items-center gap-2 shadow-lg hover:shadow-amber/20"
+            >
+              <MessageSquarePlus size={16} />
+              <span>Yorum Bırak</span>
+            </button>
+
+            {/* Rating Summary Card */}
+            <div className="surface-card p-4 sm:p-5 px-5 sm:px-6 flex items-center gap-3.5 sm:gap-4 border-amber/20 bg-noir-900/90 shrink-0">
+              <div className="text-2xl sm:text-4xl font-extrabold text-amber font-sans">
+                4.8
               </div>
-              <span className="text-xs text-slate font-medium block">
-                Doğrulanmış Müşteri Değerlendirmesi
-              </span>
+              <div>
+                <div className="flex text-amber mb-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} size={14} fill="currentColor" />
+                  ))}
+                </div>
+                <span className="text-[11px] sm:text-xs text-slate font-medium block">
+                  Doğrulanmış Değerlendirme
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -305,6 +351,13 @@ export default function Testimonials() {
         </div>
 
       </div>
+
+      {/* Review Submission Modal */}
+      <ReviewModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        onReviewSubmitted={fetchReviews}
+      />
 
     </section>
   );
