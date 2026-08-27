@@ -6,7 +6,7 @@ const STATS = [
   { value: '7+', label: 'Yıllık Ustalık Deneyimi', desc: 'Zanaat ve modern trendlerin birleşimi' },
   { value: '1.000+', label: 'Memnun Müşteri', desc: 'Kişiye özel tasarım ve mutlu ayrılan misafirler' },
   { value: '%100', label: 'Kişiye Özel Tasarım', desc: 'Her kafa yapısına özel stil haritası' },
-  { value: '4.8 ★', label: 'Müşteri Memnuniyeti', desc: 'Yüksek memnuniyet ve tavsiye oranı' },
+  { value: '4.7 ★', label: 'Müşteri Memnuniyeti', desc: 'Yüksek memnuniyet ve tavsiye oranı' },
 ];
 
 const HIGHLIGHTS = [

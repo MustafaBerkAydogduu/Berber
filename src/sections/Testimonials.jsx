@@ -217,13 +217,20 @@ export default function Testimonials() {
             {/* Rating Summary Card */}
             <div className="surface-card p-3 sm:p-4 sm:px-6 flex items-center justify-center sm:justify-start gap-2.5 sm:gap-4 border-amber/20 bg-noir-900/90 rounded-2xl shrink-0">
               <div className="text-2xl sm:text-4xl font-extrabold text-amber font-sans">
-                4.8
+                4.7
               </div>
               <div className="flex flex-col">
-                <div className="flex text-amber mb-0.5">
-                  {[...Array(5)].map((_, i) => (
+                <div className="flex items-center text-amber mb-0.5">
+                  {[1, 2, 3, 4].map((i) => (
                     <Star key={i} size={12} className="sm:w-3.5 sm:h-3.5" fill="currentColor" />
                   ))}
+                  {/* 5th Star (70% fill for 4.7 rating) */}
+                  <div className="relative inline-flex items-center">
+                    <Star size={12} className="sm:w-3.5 sm:h-3.5 text-white/20" fill="currentColor" />
+                    <div className="absolute inset-0 overflow-hidden w-[70%] flex items-center">
+                      <Star size={12} className="sm:w-3.5 sm:h-3.5 text-amber shrink-0" fill="currentColor" />
+                    </div>
+                  </div>
                 </div>
                 <span className="text-[10px] sm:text-xs text-slate font-medium leading-tight">
                   Doğrulanmış Puan

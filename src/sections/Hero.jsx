@@ -100,12 +100,19 @@ export default function Hero() {
               className="pt-5 sm:pt-6 border-t border-white/[0.08] w-full flex flex-wrap items-center gap-4 sm:gap-8 text-xs text-slate"
             >
               <div className="flex items-center gap-2">
-                <div className="flex text-amber">
-                  {[...Array(5)].map((_, i) => (
+                <div className="flex items-center text-amber">
+                  {[1, 2, 3, 4].map((i) => (
                     <Star key={i} size={13} fill="currentColor" />
                   ))}
+                  {/* 5th Star (70% fill for 4.7 rating) */}
+                  <div className="relative inline-flex items-center">
+                    <Star size={13} className="text-white/20" fill="currentColor" />
+                    <div className="absolute inset-0 overflow-hidden w-[70%] flex items-center">
+                      <Star size={13} className="text-amber shrink-0" fill="currentColor" />
+                    </div>
+                  </div>
                 </div>
-                <span className="font-bold text-alabaster">4.8</span>
+                <span className="font-bold text-alabaster">4.7</span>
                 <span className="text-[11px] sm:text-xs text-slate-dark font-medium">(Müşteri Puanı)</span>
               </div>
 
