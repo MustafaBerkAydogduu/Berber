@@ -277,9 +277,6 @@ export default function Testimonials() {
                       />
                     ))}
                   </div>
-                  <span className="text-[10px] text-slate-dark font-medium">
-                    {r.date}
-                  </span>
                 </div>
 
                 <p className="text-alabaster text-xs sm:text-sm leading-relaxed mb-6 font-normal">
@@ -329,9 +326,6 @@ export default function Testimonials() {
                       />
                     ))}
                   </div>
-                  <span className="text-[10px] text-slate-dark font-medium">
-                    {r.date}
-                  </span>
                 </div>
 
                 <p className="text-alabaster text-xs sm:text-sm leading-relaxed mb-6 font-normal">
