@@ -137,7 +137,7 @@ export default function Hero() {
                   alt="Nurkan Aydoğdu - Erkek Kuaförü ve Saç Tasarımcısı"
                   width="440"
                   height="580"
-                  fetchPriority="high"
+                  fetchpriority="high"
                   className="w-full h-[450px] sm:h-[530px] lg:h-[580px] object-cover object-[center_42%] contrast-[1.08] brightness-[1.06] saturate-[1.08] transition-transform duration-700 ease-out group-hover:scale-105"
                 />
 
