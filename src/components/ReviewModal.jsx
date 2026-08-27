@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Star, Sparkles, CheckCircle2, MessageSquarePlus, Send, Loader2 } from 'lucide-react';
+import { X, Star, CheckCircle2, MessageSquarePlus, Send, Loader2 } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 
 const SERVICES = [
@@ -30,17 +30,17 @@ export default function ReviewModal({ isOpen, onClose, onReviewSubmitted }) {
   const [isSuccess, setIsSuccess] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
 
-  // Lock body scroll when modal is open
+  // Lock body scroll smoothly without layout shifts
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
       setIsSuccess(false);
       setErrorMsg('');
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = '';
     }
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = '';
     };
   }, [isOpen]);
 
@@ -66,7 +66,7 @@ export default function ReviewModal({ isOpen, onClose, onReviewSubmitted }) {
           rating,
           service,
           comment: comment.trim(),
-          is_approved: false, // Moderation gate
+          is_approved: false, // Admin approval gate
         },
       ]);
 
@@ -76,7 +76,7 @@ export default function ReviewModal({ isOpen, onClose, onReviewSubmitted }) {
       if (onReviewSubmitted) onReviewSubmitted();
     } catch (err) {
       console.error('Yorum gönderme hatası:', err);
-      setErrorMsg('Yorum gönderilirken bir hata oluştu. Lütfen tekrar deneyin.');
+      setErrorMsg('Yorum iletilirken bir hata oluştu. Lütfen tekrar deneyin.');
     } finally {
       setIsSubmitting(false);
     }
@@ -96,37 +96,35 @@ export default function ReviewModal({ isOpen, onClose, onReviewSubmitted }) {
     <AnimatePresence>
       {isOpen && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-3.5 sm:p-6 overflow-y-auto">
-          {/* Backdrop */}
+          {/* Lightweight Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            transition={{ duration: 0.15 }}
             onClick={resetForm}
-            className="fixed inset-0 bg-noir-950/85 backdrop-blur-md"
+            className="fixed inset-0 bg-noir-950/85 backdrop-blur-sm"
           />
 
-          {/* Modal Container */}
+          {/* Snappy Modal Dialog */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.94, y: 20 }}
+            initial={{ opacity: 0, scale: 0.96, y: 10 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.94, y: 20 }}
-            transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-            className="relative w-full max-w-lg bg-gradient-to-b from-noir-850 via-noir-900 to-noir-950 border border-amber/30 rounded-2xl sm:rounded-3xl shadow-luxury overflow-hidden z-10 p-6 sm:p-8"
+            exit={{ opacity: 0, scale: 0.96, y: 10 }}
+            transition={{ duration: 0.18, ease: [0.16, 1, 0.3, 1] }}
+            className="relative w-full max-w-lg bg-noir-900 border border-amber/30 rounded-2xl sm:rounded-3xl shadow-luxury overflow-hidden z-10 p-5 sm:p-8"
           >
-            {/* Ambient Corner Glow */}
-            <div className="absolute top-0 right-0 w-32 h-32 bg-amber/10 rounded-full blur-2xl pointer-events-none -z-10" />
-
             {/* Header */}
-            <div className="flex items-center justify-between pb-4 border-b border-white/[0.08] mb-5">
+            <div className="flex items-center justify-between pb-4 border-b border-white/[0.08] mb-4 sm:mb-5">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-amber/10 border border-amber/30 flex items-center justify-center text-amber shadow-sm">
-                  <MessageSquarePlus size={20} />
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-amber/10 border border-amber/30 flex items-center justify-center text-amber shrink-0 shadow-sm">
+                  <MessageSquarePlus size={18} />
                 </div>
                 <div>
-                  <h3 className="font-sans font-bold text-lg sm:text-xl text-alabaster leading-tight">
+                  <h3 className="font-sans font-bold text-base sm:text-xl text-alabaster leading-tight">
                     Deneyiminizi Paylaşın
                   </h3>
-                  <span className="text-xs text-slate mt-0.5 block">
+                  <span className="text-[11px] sm:text-xs text-slate mt-0.5 block">
                     Kuaför Nurkan Aydoğdu Değerlendirmesi
                   </span>
                 </div>
@@ -134,24 +132,20 @@ export default function ReviewModal({ isOpen, onClose, onReviewSubmitted }) {
 
               <button
                 onClick={resetForm}
-                className="p-2 rounded-full bg-noir-800/80 border border-white/10 text-slate hover:text-alabaster hover:border-amber/40 transition-colors"
+                className="p-2 rounded-full bg-noir-800 border border-white/10 text-slate hover:text-alabaster hover:border-amber/40 transition-colors"
                 aria-label="Kapat"
               >
-                <X size={18} />
+                <X size={16} />
               </button>
             </div>
 
             {/* Success State */}
             {isSuccess ? (
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="py-8 text-center flex flex-col items-center"
-              >
-                <div className="w-16 h-16 rounded-full bg-emerald/10 border border-emerald/30 flex items-center justify-center text-emerald mb-4 shadow-lg">
-                  <CheckCircle2 size={32} />
+              <div className="py-6 sm:py-8 text-center flex flex-col items-center">
+                <div className="w-14 h-14 rounded-full bg-emerald/10 border border-emerald/30 flex items-center justify-center text-emerald mb-3.5 shadow-lg">
+                  <CheckCircle2 size={28} />
                 </div>
-                <h4 className="font-sans font-bold text-xl text-alabaster mb-2">
+                <h4 className="font-sans font-bold text-lg sm:text-xl text-alabaster mb-2">
                   Değerli Yorumunuz İçin Teşekkür Ederiz!
                 </h4>
                 <p className="text-slate text-xs sm:text-sm leading-relaxed max-w-sm mb-6">
@@ -163,17 +157,17 @@ export default function ReviewModal({ isOpen, onClose, onReviewSubmitted }) {
                 >
                   Tamam
                 </button>
-              </motion.div>
+              </div>
             ) : (
               /* Form State */
-              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
+              <form onSubmit={handleSubmit} className="space-y-3.5 sm:space-y-4">
                 {/* Rating Selector */}
                 <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-slate mb-2">
+                  <label className="block text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-slate mb-1.5">
                     Puanınız
                   </label>
-                  <div className="flex items-center gap-2 p-3 rounded-xl bg-noir-800/60 border border-white/[0.08]">
-                    <div className="flex items-center gap-1.5">
+                  <div className="flex items-center justify-between p-2.5 sm:p-3 rounded-xl bg-noir-800/80 border border-white/[0.08]">
+                    <div className="flex items-center gap-1 sm:gap-1.5">
                       {[1, 2, 3, 4, 5].map((star) => {
                         const activeStar = hoverRating || rating;
                         const isFilled = star <= activeStar;
@@ -184,10 +178,10 @@ export default function ReviewModal({ isOpen, onClose, onReviewSubmitted }) {
                             onClick={() => setRating(star)}
                             onMouseEnter={() => setHoverRating(star)}
                             onMouseLeave={() => setHoverRating(0)}
-                            className="p-1 text-slate-dark hover:scale-110 transition-transform"
+                            className="p-1 touch-manipulation hover:scale-110 active:scale-95 transition-transform"
                           >
                             <Star
-                              size={24}
+                              size={22}
                               className={
                                 isFilled
                                   ? 'text-amber fill-amber drop-shadow-[0_0_8px_rgba(229,197,120,0.5)]'
@@ -198,7 +192,7 @@ export default function ReviewModal({ isOpen, onClose, onReviewSubmitted }) {
                         );
                       })}
                     </div>
-                    <span className="text-xs font-medium text-amber ml-auto">
+                    <span className="text-[11px] sm:text-xs font-semibold text-amber">
                       {RATING_LABELS[hoverRating || rating]}
                     </span>
                   </div>
@@ -206,7 +200,7 @@ export default function ReviewModal({ isOpen, onClose, onReviewSubmitted }) {
 
                 {/* Name */}
                 <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-slate mb-1.5">
+                  <label className="block text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-slate mb-1">
                     Adınız Soyadınız
                   </label>
                   <input
@@ -216,19 +210,19 @@ export default function ReviewModal({ isOpen, onClose, onReviewSubmitted }) {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="Örn: Ahmet Yılmaz"
-                    className="w-full px-4 py-3 rounded-xl bg-noir-800/80 border border-white/10 text-alabaster placeholder:text-slate-dark text-sm focus:outline-none focus:border-amber/60 focus:ring-1 focus:ring-amber/40 transition-all"
+                    className="w-full px-3.5 py-2.5 sm:py-3 rounded-xl bg-noir-800 border border-white/10 text-alabaster placeholder:text-slate-dark text-sm focus:outline-none focus:border-amber/60 transition-all"
                   />
                 </div>
 
                 {/* Service Selection */}
                 <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-slate mb-1.5">
+                  <label className="block text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-slate mb-1">
                     Aldığınız Hizmet
                   </label>
                   <select
                     value={service}
                     onChange={(e) => setService(e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl bg-noir-800/80 border border-white/10 text-alabaster text-sm focus:outline-none focus:border-amber/60 focus:ring-1 focus:ring-amber/40 transition-all cursor-pointer"
+                    className="w-full px-3.5 py-2.5 sm:py-3 rounded-xl bg-noir-800 border border-white/10 text-alabaster text-sm focus:outline-none focus:border-amber/60 transition-all cursor-pointer"
                   >
                     {SERVICES.map((s) => (
                       <option key={s} value={s} className="bg-noir-900 text-alabaster">
@@ -240,9 +234,9 @@ export default function ReviewModal({ isOpen, onClose, onReviewSubmitted }) {
 
                 {/* Comment */}
                 <div>
-                  <div className="flex justify-between items-center mb-1.5">
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-slate">
-                      Deneyiminiz & Yorumunuz
+                  <div className="flex justify-between items-center mb-1">
+                    <label className="block text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-slate">
+                      Yorumunuz
                     </label>
                     <span className="text-[10px] text-slate-dark">
                       {comment.length}/300
@@ -254,8 +248,8 @@ export default function ReviewModal({ isOpen, onClose, onReviewSubmitted }) {
                     maxLength={300}
                     value={comment}
                     onChange={(e) => setComment(e.target.value)}
-                    placeholder="Kuaför Nurkan Aydoğdu'daki tıraş ve bakım deneyiminizi kısaca anlatın..."
-                    className="w-full px-4 py-3 rounded-xl bg-noir-800/80 border border-white/10 text-alabaster placeholder:text-slate-dark text-sm focus:outline-none focus:border-amber/60 focus:ring-1 focus:ring-amber/40 transition-all resize-none"
+                    placeholder="Kuaför Nurkan Aydoğdu'daki deneyiminizi kısaca paylaşın..."
+                    className="w-full px-3.5 py-2.5 sm:py-3 rounded-xl bg-noir-800 border border-white/10 text-alabaster placeholder:text-slate-dark text-sm focus:outline-none focus:border-amber/60 transition-all resize-none"
                   />
                 </div>
 
@@ -270,7 +264,7 @@ export default function ReviewModal({ isOpen, onClose, onReviewSubmitted }) {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full btn-primary py-3.5 px-6 text-xs uppercase tracking-wider font-bold flex items-center justify-center gap-2 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full btn-primary py-3 sm:py-3.5 px-6 text-xs uppercase tracking-wider font-bold flex items-center justify-center gap-2 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? (
                     <>
@@ -279,7 +273,7 @@ export default function ReviewModal({ isOpen, onClose, onReviewSubmitted }) {
                     </>
                   ) : (
                     <>
-                      <Send size={16} />
+                      <Send size={15} />
                       <span>Yorumu Gönder</span>
                     </>
                   )}

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { Star, CheckCircle2, MessageSquare, Quote, MessageSquarePlus } from 'lucide-react';
 import ReviewModal from '../components/ReviewModal';
@@ -179,11 +179,15 @@ export default function Testimonials() {
     fetchReviews();
   }, []);
 
-  // Combine dynamic approved reviews with existing reviews
-  const allReviews = [...dynamicReviews, ...REVIEWS];
-  const half = Math.ceil(allReviews.length / 2);
-  const marqueeReviewsRow1 = [...allReviews.slice(0, half), ...allReviews.slice(0, half)];
-  const marqueeReviewsRow2 = [...allReviews.slice(half), ...allReviews.slice(half)];
+  // Combine dynamic approved reviews with existing reviews (memoized for instant modal performance)
+  const { marqueeReviewsRow1, marqueeReviewsRow2 } = useMemo(() => {
+    const allReviews = [...dynamicReviews, ...REVIEWS];
+    const half = Math.ceil(allReviews.length / 2);
+    return {
+      marqueeReviewsRow1: [...allReviews.slice(0, half), ...allReviews.slice(0, half)],
+      marqueeReviewsRow2: [...allReviews.slice(half), ...allReviews.slice(half)],
+    };
+  }, [dynamicReviews]);
 
   return (
     <section id="testimonials" className="py-20 sm:py-28 lg:py-36 bg-noir-950 relative overflow-hidden border-t border-white/[0.04]">
@@ -208,32 +212,33 @@ export default function Testimonials() {
             </h2>
           </div>
 
-          {/* Action Buttons & Rating Summary Card */}
-          <div className="flex flex-wrap items-center gap-3.5 sm:gap-4">
-            <button
-              onClick={() => setIsModalOpen(true)}
-              className="btn-primary py-3 px-5 text-xs font-semibold uppercase tracking-wider flex items-center gap-2 shadow-lg hover:shadow-amber/20"
-            >
-              <MessageSquarePlus size={16} />
-              <span>Yorum Bırak</span>
-            </button>
-
+          {/* Action Buttons & Rating Summary Card - Perfectly balanced 2-column on mobile */}
+          <div className="grid grid-cols-2 sm:flex sm:items-center gap-3 sm:gap-4 w-full lg:w-auto">
             {/* Rating Summary Card */}
-            <div className="surface-card p-4 sm:p-5 px-5 sm:px-6 flex items-center gap-3.5 sm:gap-4 border-amber/20 bg-noir-900/90 shrink-0">
+            <div className="surface-card p-3 sm:p-4 sm:px-6 flex items-center justify-center sm:justify-start gap-2.5 sm:gap-4 border-amber/20 bg-noir-900/90 rounded-2xl shrink-0">
               <div className="text-2xl sm:text-4xl font-extrabold text-amber font-sans">
                 4.8
               </div>
-              <div>
-                <div className="flex text-amber mb-1">
+              <div className="flex flex-col">
+                <div className="flex text-amber mb-0.5">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={14} fill="currentColor" />
+                    <Star key={i} size={12} className="sm:w-3.5 sm:h-3.5" fill="currentColor" />
                   ))}
                 </div>
-                <span className="text-[11px] sm:text-xs text-slate font-medium block">
-                  Doğrulanmış Değerlendirme
+                <span className="text-[10px] sm:text-xs text-slate font-medium leading-tight">
+                  Doğrulanmış Puan
                 </span>
               </div>
             </div>
+
+            {/* Yorum Bırak Button */}
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="btn-primary p-3 sm:p-4 sm:px-6 rounded-2xl text-xs sm:text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-luxury hover:shadow-amber/20 transition-all text-center"
+            >
+              <MessageSquarePlus size={16} className="shrink-0 text-noir-950" />
+              <span className="truncate">Yorum Bırak</span>
+            </button>
           </div>
         </div>
 
