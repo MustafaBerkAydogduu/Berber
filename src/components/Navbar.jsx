@@ -57,74 +57,74 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 w-full z-[60] bg-white transition-all duration-300 ${scrolled ? 'py-3.5 shadow-sm border-b border-gray-100' : 'py-5 border-b border-gray-100'
+        className={`fixed top-0 left-0 right-0 w-full z-[60] bg-white transition-all duration-300 ${scrolled ? 'py-3.5 shadow-sm border-b border-gray-100' : 'py-4.5 border-b border-gray-100'
           }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-6">
 
-          {/* 1. SOL BLOK: Logo (Mobilde sıkışmayı önleyen esnek yapı) */}
+          {/* 1. SOL BLOK: Logo */}
           <div className="flex items-center shrink-0">
-            <a href="#" className="inline-block group py-1">
-              <span className="font-signature text-2xl sm:text-3xl lg:text-4xl text-[#161719] group-hover:text-[#9E7A3B] transition-colors leading-none tracking-normal block whitespace-nowrap pt-1">
+            <a href="#" className="inline-flex items-center group py-0.5">
+              <span className="font-signature text-2xl sm:text-3xl lg:text-[34px] text-[#161719] group-hover:text-[#9E7A3B] transition-colors leading-normal tracking-normal whitespace-nowrap">
                 Nurkan Aydoğdu
               </span>
             </a>
           </div>
 
-          {/* 2. ORTA BLOK: Menü Linkleri (Masaüstünde tam merkezde) */}
-          <nav className="hidden lg:flex items-center justify-center gap-6 xl:gap-8 flex-1 mx-4">
+          {/* 2. ORTA BLOK: Menü Linkleri */}
+          <nav className="hidden lg:flex items-center justify-center gap-7 xl:gap-8 flex-1">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-[11px] xl:text-[12px] font-semibold tracking-[0.16em] text-[#161719]/85 hover:text-[#9E7A3B] transition-colors uppercase whitespace-nowrap"
+                className="text-[12px] font-semibold tracking-[0.12em] text-[#161719]/80 hover:text-[#9E7A3B] transition-colors uppercase whitespace-nowrap"
               >
                 {link.label}
               </a>
             ))}
           </nav>
 
-          {/* 3. SAĞ BLOK: Durum, Telefon & Randevu Butonu (Mobilde ve Masaüstünde tertemiz hizalı) */}
-          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+          {/* 3. SAĞ BLOK: Durum, Telefon & Randevu Butonu */}
+          <div className="flex items-center gap-3 shrink-0">
 
             {/* Canlı Durum Rozeti */}
             {salonStatus.isOpen ? (
-              <span className="hidden 2xl:inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-medium tracking-wide bg-emerald-50 text-emerald-700 border border-emerald-100 whitespace-nowrap">
+              <span className="hidden xl:inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-semibold tracking-wide bg-emerald-50 text-emerald-700 border border-emerald-200/80 whitespace-nowrap">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
                 Açık
               </span>
             ) : (
-              <span className="hidden 2xl:inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-medium tracking-wide bg-gray-50 text-gray-500 border border-gray-200 whitespace-nowrap">
-                <span className="w-1.5 h-1.5 rounded-full bg-gray-400"></span>
+              <span className="hidden xl:inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-medium tracking-wide bg-neutral-100 text-neutral-700 border border-neutral-200 whitespace-nowrap">
+                <span className="w-1.5 h-1.5 rounded-full bg-neutral-400"></span>
                 {salonStatus.isSunday ? 'Pazar Kapalı' : 'Kapalı'}
               </span>
             )}
 
-            {/* Telefon Butonu */}
+            {/* Telefon Butonu (Masaüstünde WhatsApp önde olduğu için sadece mobilde/tabletlerde pratik arama olarak tutulur) */}
             <a
               href="tel:+905522742383"
-              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-gray-200 bg-[#FAF9FB] hover:bg-gray-100 hover:border-[#9E7A3B] text-[#161719] flex items-center justify-center transition-all shadow-xs shrink-0"
+              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-gray-200 bg-[#FAF9FB] hover:bg-gray-100 hover:border-[#9E7A3B] text-[#161719] flex items-center justify-center transition-all shrink-0 lg:hidden"
               title="Telefonla Ara (0552 274 23 83)"
               aria-label="Telefonla Ara"
             >
               <Phone size={15} className="text-[#9E7A3B]" />
             </a>
 
-            {/* Randevu Al Butonu (Küçük ekranlarda gizlenir, logoyu asla ezmez) */}
+            {/* Randevu Al Butonu */}
             <a
               href={WA_URL}
               target="_blank"
               rel="noreferrer"
-              className="hidden sm:inline-flex btn-kadir-primary py-2 sm:py-2.5 px-4 sm:px-6 text-[11px] whitespace-nowrap shrink-0 shadow-xs"
+              className="hidden sm:inline-flex btn-kadir-primary py-2.5 px-5 text-[11px] font-bold tracking-wider uppercase whitespace-nowrap shrink-0 items-center justify-center gap-2 rounded-md"
             >
-              <WhatsAppIcon size={14} />
+              <WhatsAppIcon size={15} />
               <span>Randevu Al</span>
             </a>
 
             {/* Hamburger Menü */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="lg:hidden p-2 rounded-lg text-[#161719] hover:bg-gray-100 hover:text-[#9E7A3B] transition-colors ml-0.5"
+              className="lg:hidden p-2 rounded-lg text-[#161719] hover:bg-gray-100 hover:text-[#9E7A3B] transition-colors"
               aria-label={mobileOpen ? "Menüyü Kapat" : "Menüyü Aç"}
             >
               {mobileOpen ? <X size={24} /> : <Menu size={24} />}
