@@ -16,22 +16,15 @@ const NAV_LINKS = [
 ];
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [salonStatus, setSalonStatus] = useState(getSalonStatus());
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-
     const interval = setInterval(() => {
       setSalonStatus(getSalonStatus());
     }, 60000);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
       clearInterval(interval);
     };
   }, []);
@@ -56,10 +49,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header
-        className={`fixed top-0 left-0 right-0 w-full z-[60] bg-white transition-all duration-300 ${scrolled ? 'py-3.5 shadow-sm border-b border-gray-100' : 'py-4.5 border-b border-gray-100'
-          }`}
-      >
+      <header className="fixed top-0 left-0 right-0 w-full z-[60] bg-white border-b border-gray-100 py-4 sm:py-4.5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-6">
 
           {/* 1. SOL BLOK: Logo */}
