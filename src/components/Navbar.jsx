@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Phone, ArrowUpRight, Sparkles } from 'lucide-react';
+import { Menu, X, Phone, ArrowUpRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import WhatsAppIcon from './WhatsAppIcon';
-import BrandIcon from './BrandIcon';
 import { getSalonStatus } from '../utils/businessHours';
 
 const WA_URL = "https://wa.me/905522742383?text=Merhaba%20Nurkan%20Bey%2C%20randevu%20almak%20istiyorum.";
 
 const NAV_LINKS = [
-  { label: 'Hikaye', href: '#about' },
-  { label: 'Hizmetler', href: '#services' },
-  { label: 'Stil Portfolyosu', href: '#gallery' },
-  { label: 'Yorumlar', href: '#testimonials' },
+  { label: 'HAKKIMIZDA', href: '#about' },
+  { label: 'HİZMETLERİMİZ', href: '#services' },
+  { label: 'PORTFOLYO', href: '#gallery' },
+  { label: 'YORUMLAR', href: '#testimonials' },
   { label: 'SSS', href: '#faq' },
-  { label: 'İletişim', href: '#contact' },
+  { label: 'İLETİŞİM', href: '#contact' },
 ];
 
 export default function Navbar() {
@@ -37,8 +36,9 @@ export default function Navbar() {
     };
   }, []);
 
-  // Menü açıkken arka planın kaymasını engelle ve menü durumunu bildir
   useEffect(() => {
+    window.dispatchEvent(new CustomEvent('menu-toggle', { detail: { open: mobileOpen } }));
+
     if (mobileOpen) {
       document.body.style.overflow = 'hidden';
       document.body.classList.add('mobile-menu-open');
@@ -46,7 +46,6 @@ export default function Navbar() {
       document.body.style.overflow = '';
       document.body.classList.remove('mobile-menu-open');
     }
-    window.dispatchEvent(new CustomEvent('menu-toggle', { detail: { open: mobileOpen } }));
 
     return () => {
       document.body.style.overflow = '';
@@ -58,87 +57,80 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 inset-x-0 z-[60] transition-all duration-500 ${scrolled
-            ? 'bg-noir-950/85 backdrop-blur-xl border-b border-white/[0.08] py-3.5 shadow-luxury'
-            : 'bg-gradient-to-b from-noir-950/90 via-noir-950/40 to-transparent py-5'
+        className={`fixed top-0 left-0 right-0 w-full z-[60] bg-white transition-all duration-300 ${scrolled ? 'py-3.5 shadow-sm border-b border-gray-100' : 'py-5 border-b border-gray-100'
           }`}
       >
-        <div className="max-w-7xl mx-auto px-5 sm:px-8 flex items-center justify-between">
-          {/* Brand Identity */}
-          <a href="#" className="flex items-center gap-2.5 sm:gap-3 group text-left">
-            <BrandIcon size={36} />
-            <div className="flex flex-col">
-              <span className="font-sans font-extrabold text-sm sm:text-base tracking-[0.12em] text-alabaster group-hover:text-amber transition-colors duration-300 leading-tight">
-                NURKAN AYDOĞDU
-              </span>
-              <span className="font-sans text-[10px] tracking-[0.22em] uppercase text-amber font-semibold mt-0.5">
-                Erkek Kuaförü
-              </span>
-            </div>
-          </a>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8 bg-noir-850/60 border border-white/[0.06] px-6 py-2.5 rounded-full backdrop-blur-md shadow-card">
+          {/* 1. SOL BLOK: Logo (Mobilde sıkışmayı önleyen esnek yapı) */}
+          <div className="flex items-center shrink-0">
+            <a href="#" className="inline-block group py-1">
+              <span className="font-signature text-2xl sm:text-3xl lg:text-4xl text-[#161719] group-hover:text-[#9E7A3B] transition-colors leading-none tracking-normal block whitespace-nowrap pt-1">
+                Nurkan Aydoğdu
+              </span>
+            </a>
+          </div>
+
+          {/* 2. ORTA BLOK: Menü Linkleri (Masaüstünde tam merkezde) */}
+          <nav className="hidden lg:flex items-center justify-center gap-6 xl:gap-8 flex-1 mx-4">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-xs font-medium uppercase tracking-[0.12em] text-slate hover:text-alabaster transition-colors duration-200"
+                className="text-[11px] xl:text-[12px] font-semibold tracking-[0.16em] text-[#161719]/85 hover:text-[#9E7A3B] transition-colors uppercase whitespace-nowrap"
               >
                 {link.label}
               </a>
             ))}
           </nav>
 
-          {/* Right Actions */}
-          <div className="hidden sm:flex items-center gap-3">
-            {/* Live Open / Closed Pill */}
+          {/* 3. SAĞ BLOK: Durum, Telefon & Randevu Butonu (Mobilde ve Masaüstünde tertemiz hizalı) */}
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+
+            {/* Canlı Durum Rozeti */}
             {salonStatus.isOpen ? (
-              <div className="hidden xl:flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald/10 border border-emerald/20 text-emerald text-[11px] font-medium tracking-wide">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald"></span>
-                </span>
-                <span>Şu An Açık</span>
-              </div>
+              <span className="hidden 2xl:inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-medium tracking-wide bg-emerald-50 text-emerald-700 border border-emerald-100 whitespace-nowrap">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                Açık
+              </span>
             ) : (
-              <div className="hidden xl:flex items-center gap-2 px-3 py-1.5 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-400 text-[11px] font-medium tracking-wide">
-                <span className="relative flex h-2 w-2">
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-rose-400"></span>
-                </span>
-                <span>{salonStatus.isSunday ? 'Pazar Kapalı' : 'Şu An Kapalı'}</span>
-              </div>
+              <span className="hidden 2xl:inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-medium tracking-wide bg-gray-50 text-gray-500 border border-gray-200 whitespace-nowrap">
+                <span className="w-1.5 h-1.5 rounded-full bg-gray-400"></span>
+                {salonStatus.isSunday ? 'Pazar Kapalı' : 'Kapalı'}
+              </span>
             )}
 
-            {/* Quick Call */}
+            {/* Telefon Butonu */}
             <a
               href="tel:+905522742383"
-              className="p-2.5 rounded-full bg-noir-800 border border-white/10 text-slate hover:text-amber hover:border-amber/40 transition-all duration-300"
-              title="Doğrudan Ara"
+              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-gray-200 bg-[#FAF9FB] hover:bg-gray-100 hover:border-[#9E7A3B] text-[#161719] flex items-center justify-center transition-all shadow-xs shrink-0"
+              title="Telefonla Ara (0552 274 23 83)"
+              aria-label="Telefonla Ara"
             >
-              <Phone size={16} />
+              <Phone size={15} className="text-[#9E7A3B]" />
             </a>
 
-            {/* Main WhatsApp Booking Button */}
+            {/* Randevu Al Butonu (Küçük ekranlarda gizlenir, logoyu asla ezmez) */}
             <a
               href={WA_URL}
               target="_blank"
               rel="noreferrer"
-              className="btn-primary py-2.5 px-5 text-[11px]"
+              className="hidden sm:inline-flex btn-kadir-primary py-2 sm:py-2.5 px-4 sm:px-6 text-[11px] whitespace-nowrap shrink-0 shadow-xs"
             >
-              <WhatsAppIcon size={16} />
+              <WhatsAppIcon size={14} />
               <span>Randevu Al</span>
             </a>
+
+            {/* Hamburger Menü */}
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="lg:hidden p-2 rounded-lg text-[#161719] hover:bg-gray-100 hover:text-[#9E7A3B] transition-colors ml-0.5"
+              aria-label={mobileOpen ? "Menüyü Kapat" : "Menüyü Aç"}
+            >
+              {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
           </div>
 
-          {/* Mobile Hamburger Toggle */}
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden p-2.5 rounded-full bg-noir-850 border border-white/10 text-alabaster hover:text-amber transition-colors"
-            aria-label="Menüyü Aç"
-          >
-            {mobileOpen ? <X size={20} /> : <Menu size={20} />}
-          </button>
         </div>
       </header>
 
@@ -146,61 +138,58 @@ export default function Navbar() {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: -15 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.25, ease: 'easeOut' }}
-            className="fixed inset-0 z-50 bg-noir-950/98 backdrop-blur-2xl lg:hidden flex flex-col justify-between pt-24 pb-8 px-6 overflow-y-auto"
+            exit={{ opacity: 0, y: -15 }}
+            transition={{ duration: 0.22 }}
+            className="fixed inset-0 z-50 bg-white xl:hidden flex flex-col justify-between pt-24 pb-8 px-6 overflow-y-auto"
           >
-            <div className="flex flex-col gap-5 pt-4">
-              <span className="text-[11px] uppercase tracking-[0.25em] text-slate-dark font-semibold">
-                Menü Gezintisi
-              </span>
-              {NAV_LINKS.map((link, idx) => (
-                <motion.a
+            <div className="flex flex-col gap-2 pt-2">
+              {NAV_LINKS.map((link) => (
+                <a
                   key={link.href}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: idx * 0.05 }}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="font-sans font-bold text-2xl text-alabaster hover:text-amber flex items-center justify-between border-b border-white/[0.05] pb-3"
+                  className="font-sans font-bold text-lg tracking-[0.12em] text-[#161719] hover:text-[#9E7A3B] flex items-center justify-between py-3.5 border-b border-gray-100 text-left uppercase transition-colors group"
                 >
                   <span>{link.label}</span>
-                  <ArrowUpRight size={18} className="text-slate-dark" />
-                </motion.a>
+                  <ArrowUpRight size={18} className="text-gray-400 group-hover:text-[#9E7A3B] transition-colors" />
+                </a>
               ))}
             </div>
 
-            {/* Mobile Footer Info */}
-            <div className="flex flex-col gap-4 pt-8 border-t border-white/10">
-              {salonStatus.isOpen ? (
-                <div className="flex items-center gap-2 text-emerald text-xs font-medium">
-                  <span className="h-2 w-2 rounded-full bg-emerald animate-pulse"></span>
-                  <span>Şu An Açık · 09:00 – 20:00</span>
-                </div>
-              ) : (
-                <div className="flex items-center gap-2 text-rose-400 text-xs font-medium">
-                  <span className="h-2 w-2 rounded-full bg-rose-400"></span>
-                  <span>{salonStatus.isSunday ? 'Bugün Kapalı (Pazar)' : 'Şu An Kapalı · Açılış 09:00'}</span>
-                </div>
-              )}
-              <p className="text-slate text-xs leading-relaxed">
+            <div className="flex flex-col gap-4 pt-6 border-t border-gray-100 mt-4">
+              <div className="flex items-center gap-2 text-xs font-bold">
+                {salonStatus.isOpen ? (
+                  <span className="flex items-center gap-1.5 text-emerald-700">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    Şu An Açık (09:00 – 20:00)
+                  </span>
+                ) : (
+                  <span className="flex items-center gap-1.5 text-rose-600">
+                    <span className="w-2 h-2 rounded-full bg-rose-500"></span>
+                    {salonStatus.isSunday ? 'Bugün Kapalı (Pazar)' : 'Şu An Kapalı (Açılış: 09:00)'}
+                  </span>
+                )}
+              </div>
+
+              <p className="text-xs text-gray-500 font-medium leading-relaxed">
                 Üçtutlar Mah. Fatih Cad. No:24/A (Ulukavak Muhtarlığı Karşısı), Merkez / Çorum
               </p>
-              <div className="grid grid-cols-2 gap-3 pt-2">
+
+              <div className="grid grid-cols-2 gap-3 pt-1">
                 <a
                   href="tel:+905522742383"
-                  className="btn-secondary py-3 text-center text-[11px]"
+                  className="p-3.5 rounded-xl border border-gray-200 bg-[#FAF9FB] hover:bg-gray-100 text-[#161719] font-bold text-xs flex items-center justify-center gap-2 transition-all active:scale-[0.98]"
                 >
-                  <Phone size={14} />
+                  <Phone size={14} className="text-[#9E7A3B]" />
                   <span>Hemen Ara</span>
                 </a>
                 <a
                   href={WA_URL}
                   target="_blank"
                   rel="noreferrer"
-                  className="btn-primary py-3 text-center text-[11px]"
+                  className="p-3.5 rounded-xl bg-[#9E7A3B] hover:bg-[#7A5C28] text-white font-bold text-xs flex items-center justify-center gap-2 shadow-sm transition-all active:scale-[0.98]"
                 >
                   <WhatsAppIcon size={14} />
                   <span>WhatsApp</span>

@@ -1,29 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" width="192" height="192" fill="none">
-  <!-- Solid Luxury Dark Background Disc -->
-  <rect width="192" height="192" rx="48" fill="#0A0B0E"/>
-  <rect x="3" y="3" width="186" height="186" rx="45" stroke="#E5C578" stroke-width="6" stroke-opacity="0.85"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" width="192" height="192">
+  <!-- Pure White Circular Base with Subtle Contrast Ring -->
+  <circle cx="96" cy="96" r="94" fill="#FFFFFF"/>
+  <circle cx="96" cy="96" r="91" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="4"/>
   
-  <!-- Subtle Inner Gold Glow Ring -->
-  <circle cx="96" cy="96" r="76" stroke="#E5C578" stroke-width="1.5" stroke-opacity="0.25"/>
-
-  <!-- Star of Excellence at Top -->
-  <path d="M96 28 L100.5 40 L113 41.5 L103.5 50.5 L106.5 63 L96 56.5 L85.5 63 L88.5 50.5 L79 41.5 L91.5 40 Z" fill="#E5C578"/>
-
-  <!-- Master Stylist Crossed Scissors (Bold & Sharp) -->
-  <g stroke="#E5C578" stroke-linecap="round" stroke-linejoin="round">
-    <!-- Left Blade -->
-    <path d="M68 62 L124 126" stroke-width="9"/>
-    <!-- Right Blade -->
-    <path d="M124 62 L68 126" stroke-width="9"/>
-
-    <!-- Pivot Gold Ring -->
-    <circle cx="96" cy="94" r="8" fill="#0A0B0E" stroke-width="6"/>
-
-    <!-- Finger Loops -->
-    <circle cx="60" cy="138" r="17" stroke-width="7" fill="#0A0B0E"/>
-    <circle cx="132" cy="138" r="17" stroke-width="7" fill="#0A0B0E"/>
+  <!-- High-Contrast Luxury Monogram "N" with Signature Flow -->
+  <g fill="#161719">
+    <!-- Left Ascender / Entry Flourish -->
+    <path d="M50 120 C46 108 52 88 64 70 C74 54 86 44 94 44 C100 44 102 49 97 60 C90 77 75 116 68 136 C64 146 56 148 52 143 C48 138 48 128 50 120 Z"/>
+    
+    <!-- Main Center Stem & Connecting Diagonal -->
+    <path d="M92 46 C100 46 104 53 100 66 L74 136 C71 144 76 146 83 140 C95 130 122 86 140 58 C150 44 159 44 161 52 C163 60 159 72 150 92 L128 138 C123 148 129 152 137 146 C147 139 158 126 163 118 C165 115 168 116 167 121 C160 134 144 153 131 155 C119 157 113 147 118 134 L140 84 C143 76 140 71 133 77 C116 96 87 142 74 152 C63 160 52 154 57 138 L81 74 C84 66 81 61 74 64 C62 69 51 88 47 101 C45 105 42 103 43 98 C49 80 68 46 92 46 Z"/>
   </g>
 
-  <!-- Accent Center Dot -->
-  <circle cx="96" cy="94" r="3" fill="#E5C578"/>
+  <!-- Luxury Gold Stylist Accent Dot -->
+  <circle cx="152" cy="38" r="8" fill="#9E7A3B"/>
 </svg>

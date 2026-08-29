@@ -46,19 +46,19 @@ export default function WhatsAppButton() {
             initial={{ opacity: 0, x: 20, scale: 0.9 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
             exit={{ opacity: 0, x: 20, scale: 0.9 }}
-            className="hidden sm:flex items-center gap-3 py-2.5 px-4 bg-noir-850/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-luxury max-w-xs"
+            className="hidden sm:flex items-center gap-3 py-2.5 px-4 bg-white/95 backdrop-blur-xl border border-gray-200 rounded-xl shadow-xl max-w-xs"
           >
             <div className="text-left">
-              <span className="text-[11px] font-bold text-alabaster block leading-tight">
+              <span className="text-[11px] font-bold text-[#161719] block leading-tight">
                 Müsait saatleri öğrenin
               </span>
-              <span className="text-[10px] text-slate block leading-tight">
+              <span className="text-[10px] text-gray-500 block leading-tight">
                 Nurkan Aydoğdu ile direkt mesajlaşın
               </span>
             </div>
             <button
               onClick={() => setShowTooltip(false)}
-              className="text-slate-dark hover:text-alabaster transition-colors p-1"
+              className="text-gray-400 hover:text-[#161719] transition-colors p-1"
             >
               <X size={14} />
             </button>

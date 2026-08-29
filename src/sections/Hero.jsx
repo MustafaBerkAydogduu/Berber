@@ -1,199 +1,128 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Star, ShieldCheck, MapPin, Sparkles, ArrowDown, Scissors, Clock } from 'lucide-react';
+import { Star, ShieldCheck, ArrowRight, Scissors } from 'lucide-react';
 import WhatsAppIcon from '../components/WhatsAppIcon';
 
 const WA_URL = "https://wa.me/905522742383?text=Merhaba%20Nurkan%20Bey%2C%20randevu%20almak%20istiyorum.";
 
-const MARQUEE_ITEMS = [
-  'KİŞİYE ÖZEL SAÇ TASARIMI',
-  'ANATOMİK SAKAL ŞEKİLLENDİRME',
-  'FERAHLATICI SAÇ TONİĞİ',
-  'CİLT BAKIMI & ARINDIRICI MASKE',
-  'ÖZEL DAMAT TIRAŞI',
-  'YÜZ ANATOMİSİ ANALİZİ',
-  'PROFESYONEL ERKEK BAKIMI',
-  'ÇORUM MERKEZ',
-];
-
 export default function Hero() {
   return (
-    <section className="relative min-h-screen pt-28 sm:pt-36 pb-16 lg:pb-24 overflow-hidden bg-radial-glow flex flex-col justify-between">
+    <section className="relative pt-28 sm:pt-36 pb-16 lg:pb-24 bg-gradient-to-r from-[#E6E7EA] via-[#ECEEF0] to-[#F5F6F8] overflow-hidden">
       
-      {/* Background Decorative Ambience */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber/5 rounded-full blur-[140px] pointer-events-none -z-10" />
-      <div className="absolute bottom-10 right-0 w-[400px] h-[400px] bg-sand/5 rounded-full blur-[120px] pointer-events-none -z-10" />
+      <div className="max-w-7xl mx-auto px-5 sm:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
 
-      <div className="max-w-7xl mx-auto px-5 sm:px-8 w-full my-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
-
-          {/* Left Editorial Content (7 cols) */}
-          <div className="lg:col-span-7 flex flex-col items-start text-left">
+          {/* Left Content (7 cols) */}
+          <div className="lg:col-span-7 flex flex-col items-start text-left z-10">
             
-            {/* Studio Badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="pill-badge mb-6"
-            >
-              <span className="w-2 h-2 rounded-full bg-amber animate-pulse"></span>
-              <span className="text-alabaster font-semibold">Kuaför Nurkan Aydoğdu</span>
-              <span className="text-slate-dark">/</span>
-              <span className="text-amber">Çorum</span>
-            </motion.div>
+            {/* Top Gold Kicker Tag */}
+            <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-extrabold tracking-[0.25em] text-[#9E7A3B] uppercase mb-4">
+              <span>ÇORUM · MERKEZ</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-[#9E7A3B]"></span>
+              <span>ERKEK KUAFÖRÜ</span>
+            </div>
 
             {/* Headline */}
-            <motion.h1
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="font-sans font-extrabold text-3xl sm:text-5xl lg:text-[64px] leading-[1.12] sm:leading-[1.08] text-alabaster tracking-[-0.03em] mb-5 sm:mb-6"
-            >
-              Kusursuz Kesim & <br />
-              <span className="font-serif italic font-normal text-gradient-amber pr-2">
-                Kişiye Özel
-              </span>
-              Stil İmzası.
-            </motion.h1>
+            <h1 className="font-sans font-extrabold text-3xl sm:text-5xl lg:text-[56px] xl:text-[62px] leading-[1.1] sm:leading-[1.08] text-[#161719] tracking-tight mb-5">
+              KİŞİYE ÖZEL <br />
+              <span className="text-[#9E7A3B]">SAÇ & SAKAL</span> <br />
+              TASARIMI
+            </h1>
 
             {/* Subheading */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-slate text-sm sm:text-base lg:text-lg leading-relaxed max-w-xl mb-7 sm:mb-8"
-            >
-              Yüz anatomisi ve yaşam tarzınıza özel saç tasarımı, geleneksel sakal şekillendirme ve ferahlatıcı bakım. Çorum’da sıra beklemeden, randevulu ve ayrıcalıklı bir erkek kuaförlüğü deneyimi.
-            </motion.p>
+            <p className="text-gray-600 text-sm sm:text-base lg:text-lg leading-relaxed max-w-xl mb-8 font-medium">
+              Yüz anatomisine uygun modern saç kesim teknikleri, geleneksel ustura sakal şekillendirme ve ferahlatıcı saç-cilt bakımı. Sıra beklemeden, randevulu ve nezih salon deneyimi.
+            </p>
 
-            {/* Action Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4 w-full sm:w-auto mb-8 sm:mb-10"
-            >
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4 w-full sm:w-auto mb-10">
               <a
                 href={WA_URL}
                 target="_blank"
                 rel="noreferrer"
-                className="btn-primary"
+                className="btn-kadir-primary py-4 px-8 text-xs font-bold text-center"
               >
-                <WhatsAppIcon size={18} />
+                <WhatsAppIcon size={16} />
                 <span>WhatsApp'tan Randevu Al</span>
               </a>
 
               <a
                 href="#services"
-                className="btn-secondary"
+                className="btn-kadir-outline py-4 px-8 text-xs font-bold bg-white/60 text-center"
               >
-                <span>Hizmetleri Keşfet</span>
+                <span>Hizmetlerimizi İnceleyin</span>
               </a>
-            </motion.div>
+            </div>
 
-            {/* Proof Badges */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="pt-5 sm:pt-6 border-t border-white/[0.08] w-full flex flex-wrap items-center gap-4 sm:gap-8 text-xs text-slate"
-            >
+            {/* Verification Bar */}
+            <div className="pt-6 border-t border-gray-300/80 w-full flex flex-col sm:flex-row items-start sm:items-center justify-start gap-4 sm:gap-6 text-xs text-gray-600 font-semibold">
               <div className="flex items-center gap-2">
-                <div className="flex items-center text-amber">
+                <div className="flex items-center text-[#9E7A3B]">
                   {[1, 2, 3, 4].map((i) => (
-                    <Star key={i} size={13} fill="currentColor" />
+                    <Star key={i} size={14} fill="currentColor" />
                   ))}
-                  {/* 5th Star (70% fill for 4.7 rating) */}
                   <div className="relative inline-flex items-center">
-                    <Star size={13} className="text-white/20" fill="currentColor" />
+                    <Star size={14} className="text-gray-300" fill="currentColor" />
                     <div className="absolute inset-0 overflow-hidden w-[70%] flex items-center">
-                      <Star size={13} className="text-amber shrink-0" fill="currentColor" />
+                      <Star size={14} className="text-[#9E7A3B] shrink-0" fill="currentColor" />
                     </div>
                   </div>
                 </div>
-                <span className="font-bold text-alabaster">4.7</span>
-                <span className="text-[11px] sm:text-xs text-slate-dark font-medium">(Müşteri Puanı)</span>
+                <span className="font-extrabold text-[#161719] text-sm">4.7 / 5.0</span>
+                <span className="text-gray-500 font-normal">(Doğrulanmış Puan)</span>
               </div>
 
-              <div className="flex items-center gap-1.5 text-[11px] sm:text-xs">
-                <ShieldCheck size={15} className="text-emerald shrink-0" />
-                <span>%100 Hijyen & Memnuniyet</span>
+              <div className="flex items-center gap-1.5 text-emerald-800">
+                <ShieldCheck size={16} className="text-emerald-700 shrink-0" />
+                <span>%100 Hijyenik & Steril Ekipman</span>
               </div>
-            </motion.div>
+            </div>
 
           </div>
 
-          {/* Right Master Stylist Visual (5 cols) */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.96 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="lg:col-span-5 relative w-full"
-          >
-            {/* Outer Glow Frame */}
-            <div className="relative mx-auto max-w-[340px] sm:max-w-[420px] lg:max-w-none">
+          {/* Right Master Portrait Visual (5 cols) */}
+          <div className="lg:col-span-5 relative w-full flex justify-center mt-4 lg:mt-0">
+            <div className="relative w-full max-w-[340px] sm:max-w-[420px] lg:max-w-none">
               
-              {/* Decorative Luxury Back Frame */}
-              <div className="absolute -inset-2 sm:-inset-3 rounded-3xl border border-amber/20 bg-gradient-to-b from-amber/10 via-transparent to-transparent -z-10 blur-[1px]"></div>
-
-              {/* Main Image Container */}
-              <div className="relative rounded-2xl overflow-hidden bg-noir-800 border border-white/15 shadow-luxury group">
+              {/* Photo Card Frame with Kadir Alkan Gold Accent */}
+              <div className="relative rounded-xl overflow-hidden bg-white shadow-2xl border border-gray-200 group">
                 <img
                   src="/nurkan.jpg"
                   alt="Nurkan Aydoğdu - Erkek Kuaförü ve Saç Tasarımcısı"
                   width="440"
                   height="580"
                   fetchpriority="high"
-                  className="w-full h-[450px] sm:h-[530px] lg:h-[580px] object-cover object-[center_42%] contrast-[1.08] brightness-[1.06] saturate-[1.08] transition-transform duration-700 ease-out group-hover:scale-105"
+                  className="w-full h-[420px] sm:h-[500px] lg:h-[580px] object-cover object-[center_40%] contrast-[1.05] brightness-[1.02] transition-transform duration-700 ease-out group-hover:scale-105"
                 />
 
-                {/* Bottom Name Banner */}
-                <div className="absolute bottom-0 inset-x-0 pt-16 pb-4 sm:pb-5 px-4 sm:px-6 bg-gradient-to-t from-noir-950 via-noir-950/75 to-transparent">
-                  <span className="text-[10px] uppercase tracking-[0.22em] text-amber font-semibold block mb-1">
-                    Kurucu & Saç Tasarımcısı
-                  </span>
-                  <h3 className="font-sans font-bold text-lg sm:text-2xl text-alabaster tracking-tight">
+                {/* Bottom Signature Overlay */}
+                <div className="absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-[#161719] via-[#161719]/80 to-transparent text-white">
+                  <span className="font-signature text-2xl sm:text-3xl text-[#C5A059] block">
                     Nurkan Aydoğdu
-                  </h3>
+                  </span>
+                  <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-gray-300 mt-0.5 block">
+                    Kurucu & Saç Tasarımcısı · Çorum
+                  </span>
                 </div>
               </div>
 
-              {/* Floating Badge (Top Right): 10+ Years */}
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.5 }}
-                className="absolute -top-3 -right-2 sm:-top-5 sm:-right-5 bg-noir-850/95 border border-amber/30 rounded-2xl p-3 sm:p-4 shadow-luxury backdrop-blur-xl flex items-center gap-2.5 sm:gap-3 z-20"
-              >
-                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-amber/10 border border-amber/20 flex items-center justify-center text-amber shrink-0">
-                  <Scissors size={18} />
+              {/* Floating Badge (7+ Yıllık Deneyim) */}
+              <div className="absolute top-3 right-3 sm:-top-5 sm:-right-4 bg-[#161719] text-white border-2 border-[#9E7A3B] rounded-lg p-3 sm:p-3.5 shadow-2xl flex items-center gap-2.5 sm:gap-3 z-20">
+                <div className="w-8 h-8 sm:w-9 sm:h-9 rounded bg-[#9E7A3B] text-white flex items-center justify-center font-bold shrink-0">
+                  <Scissors size={17} />
                 </div>
                 <div>
-                  <span className="font-sans font-extrabold text-base sm:text-xl text-alabaster block leading-none">
-                    7+ Yıl
+                  <span className="font-extrabold text-sm sm:text-base text-white block leading-none">
+                    7+ YIL
                   </span>
-                  <span className="text-[9px] sm:text-[10px] text-slate uppercase tracking-wider mt-0.5 sm:mt-1 block">
-                    Zanaat Tecrübesi
+                  <span className="text-[9px] font-bold tracking-wider text-[#C5A059] uppercase block mt-0.5 whitespace-nowrap">
+                    Zanaat & Deneyim
                   </span>
                 </div>
-              </motion.div>
+              </div>
 
             </div>
-          </motion.div>
+          </div>
 
-        </div>
-      </div>
-
-      {/* Infinite Smooth Marquee Ticker */}
-      <div className="w-full mt-12 sm:mt-16 py-4 bg-noir-850/50 border-y border-white/[0.06] backdrop-blur-sm overflow-hidden flex items-center">
-        <div className="flex shrink-0 animate-marquee whitespace-nowrap gap-8 items-center">
-          {MARQUEE_ITEMS.concat(MARQUEE_ITEMS).map((item, idx) => (
-            <div key={idx} className="flex items-center gap-8 text-xs font-semibold tracking-[0.2em] text-slate-dark hover:text-amber transition-colors">
-              <span>{item}</span>
-              <span className="w-1.5 h-1.5 rounded-full bg-amber/50"></span>
-            </div>
-          ))}
         </div>
       </div>
 

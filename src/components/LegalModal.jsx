@@ -192,28 +192,28 @@ export default function LegalModal({ isOpen, onClose, initialTab = 'kvkk' }) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={onClose}
-          className="fixed inset-0 bg-noir-950/85 backdrop-blur-xl transition-all"
+          className="fixed inset-0 bg-black/70 backdrop-blur-sm transition-all"
         />
 
-        {/* Modal Window (Centering with balanced spacing) */}
+        {/* Modal Window */}
         <motion.div
           initial={{ opacity: 0, scale: 0.94, y: 15 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.94, y: 15 }}
           transition={{ duration: 0.22, ease: 'easeOut' }}
-          className="relative w-full max-w-2xl bg-gradient-to-b from-noir-900 via-noir-900 to-noir-950 border border-amber/30 rounded-2xl sm:rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.9)] overflow-hidden z-10 flex flex-col max-h-[82vh] my-auto"
+          className="relative w-full max-w-2xl bg-white border border-gray-200 rounded-2xl shadow-2xl overflow-hidden z-10 flex flex-col max-h-[82vh] my-auto text-[#161719]"
         >
           {/* Header Bar */}
-          <div className="px-5 py-4 sm:px-6 sm:py-5 border-b border-white/[0.08] bg-noir-950/70 backdrop-blur-md flex items-center justify-between gap-3 shrink-0">
+          <div className="px-5 py-4 sm:px-6 sm:py-5 border-b border-gray-100 bg-[#FAF9FB] flex items-center justify-between gap-3 shrink-0">
             <div className="flex items-center gap-3 min-w-0">
-              <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-amber/20 to-amber/5 border border-amber/30 flex items-center justify-center text-amber shrink-0 shadow-[0_0_15px_rgba(229,197,120,0.15)]">
+              <div className="w-10 h-10 rounded-xl bg-[#F9F5EC] border border-[#9E7A3B]/30 flex items-center justify-center text-[#9E7A3B] shrink-0">
                 <IconComponent size={20} />
               </div>
               <div className="min-w-0">
-                <span className="text-[10px] uppercase tracking-[0.2em] text-amber font-bold block">
+                <span className="text-[10px] uppercase tracking-[0.2em] text-[#9E7A3B] font-bold block">
                   {currentDoc.badge}
                 </span>
-                <h3 className="font-sans font-extrabold text-base sm:text-lg text-alabaster tracking-tight">
+                <h3 className="font-sans font-extrabold text-base sm:text-lg text-[#161719] tracking-tight">
                   {currentDoc.title}
                 </h3>
               </div>
@@ -223,15 +223,15 @@ export default function LegalModal({ isOpen, onClose, initialTab = 'kvkk' }) {
             <button
               onClick={onClose}
               aria-label="Kapat"
-              className="w-9 h-9 rounded-full bg-noir-800 hover:bg-amber hover:text-noir-950 active:scale-95 border border-white/10 text-slate hover:border-amber transition-all flex items-center justify-center shrink-0 shadow-md"
+              className="w-9 h-9 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-500 hover:text-[#161719] transition-all flex items-center justify-center shrink-0"
             >
               <X size={18} />
             </button>
           </div>
 
           {/* Segmented Tab Bar (4-Column Clean Grid) */}
-          <div className="p-2 sm:px-6 sm:py-2.5 bg-noir-950/90 border-b border-white/[0.06] shrink-0">
-            <div className="grid grid-cols-4 gap-1 sm:gap-1.5 p-1 rounded-xl bg-noir-850/80 border border-white/[0.04]">
+          <div className="p-2 sm:px-6 sm:py-2.5 bg-[#FAF9FB] border-b border-gray-100 shrink-0">
+            <div className="grid grid-cols-4 gap-1 sm:gap-1.5 p-1 rounded-lg bg-white border border-gray-200">
               {TABS.map((tab) => {
                 const TabIcon = tab.icon;
                 const isActive = activeTab === tab.id;
@@ -239,10 +239,10 @@ export default function LegalModal({ isOpen, onClose, initialTab = 'kvkk' }) {
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
-                    className={`flex items-center justify-center gap-1 sm:gap-1.5 py-2 px-1 rounded-lg text-[11px] sm:text-xs font-semibold transition-all duration-200 ${
+                    className={`flex items-center justify-center gap-1 sm:gap-1.5 py-2 px-1 rounded text-[11px] sm:text-xs font-bold transition-all duration-200 ${
                       isActive
-                        ? 'bg-gradient-to-r from-amber to-amber-dark text-noir-950 shadow-[0_2px_10px_rgba(229,197,120,0.35)] font-bold'
-                        : 'text-slate hover:text-alabaster hover:bg-white/[0.04]'
+                        ? 'bg-[#161719] text-white shadow-md'
+                        : 'text-gray-500 hover:text-[#161719] hover:bg-gray-50'
                     }`}
                   >
                     <TabIcon size={12} className="hidden sm:inline shrink-0" />
@@ -258,17 +258,17 @@ export default function LegalModal({ isOpen, onClose, initialTab = 'kvkk' }) {
             {currentDoc.sections.map((sec, idx) => (
               <div
                 key={idx}
-                className="p-4 rounded-2xl bg-noir-850/50 border border-white/[0.05] hover:border-amber/25 transition-colors space-y-2"
+                className="p-4 rounded-xl bg-[#FAF9FB] border border-gray-200 space-y-2"
               >
                 <div className="flex items-center gap-2.5">
-                  <span className="text-[10px] font-bold text-amber bg-amber/10 border border-amber/25 px-2 py-0.5 rounded-md">
+                  <span className="text-[10px] font-bold text-[#9E7A3B] bg-[#F9F5EC] border border-[#9E7A3B]/30 px-2 py-0.5 rounded">
                     {sec.num}
                   </span>
-                  <h4 className="font-sans font-bold text-xs sm:text-sm text-alabaster">
+                  <h4 className="font-sans font-bold text-xs sm:text-sm text-[#161719]">
                     {sec.title}
                   </h4>
                 </div>
-                <p className="text-slate text-xs sm:text-[13px] leading-relaxed pl-0.5">
+                <p className="text-gray-600 text-xs sm:text-[13px] leading-relaxed pl-0.5">
                   {sec.content}
                 </p>
                 {sec.list && (
@@ -276,9 +276,9 @@ export default function LegalModal({ isOpen, onClose, initialTab = 'kvkk' }) {
                     {sec.list.map((item, itemIdx) => (
                       <li
                         key={itemIdx}
-                        className="flex items-start gap-2 text-xs sm:text-[13px] text-slate"
+                        className="flex items-start gap-2 text-xs sm:text-[13px] text-gray-700"
                       >
-                        <CheckCircle2 size={13} className="text-amber shrink-0 mt-0.5" />
+                        <CheckCircle2 size={13} className="text-[#9E7A3B] shrink-0 mt-0.5" />
                         <span>{item}</span>
                       </li>
                     ))}
@@ -288,23 +288,23 @@ export default function LegalModal({ isOpen, onClose, initialTab = 'kvkk' }) {
             ))}
 
             {/* Trust Assurance Card */}
-            <div className="p-4 rounded-2xl bg-gradient-to-r from-amber/10 via-noir-850 to-noir-850 border border-amber/20 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left mt-3">
+            <div className="p-4 rounded-xl bg-[#F9F5EC] border border-[#9E7A3B]/30 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left mt-3">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-amber/15 text-amber flex items-center justify-center shrink-0">
+                <div className="w-8 h-8 rounded-full bg-[#9E7A3B] text-white flex items-center justify-center shrink-0 shadow-sm">
                   <Shield size={16} />
                 </div>
                 <div>
-                  <h5 className="font-sans font-bold text-xs text-alabaster">
+                  <h5 className="font-sans font-bold text-xs text-[#161719]">
                     Kuaför Nurkan Aydoğdu Güvencesi
                   </h5>
-                  <p className="text-[11px] text-slate">
+                  <p className="text-[11px] text-gray-500">
                     Kişisel verileriniz ve randevu gizliliğiniz yasal koruma altındadır.
                   </p>
                 </div>
               </div>
               <a
                 href="tel:+905522742383"
-                className="flex items-center gap-1.5 text-amber hover:text-amber-light font-bold text-xs whitespace-nowrap"
+                className="flex items-center gap-1.5 text-[#9E7A3B] hover:text-[#7A5C28] font-bold text-xs whitespace-nowrap"
               >
                 <Phone size={13} />
                 <span>0552 274 23 83</span>
@@ -313,13 +313,13 @@ export default function LegalModal({ isOpen, onClose, initialTab = 'kvkk' }) {
           </div>
 
           {/* Sticky Bottom Action Bar */}
-          <div className="p-3.5 sm:p-4 bg-noir-950/95 backdrop-blur-md border-t border-white/[0.08] flex items-center justify-between gap-3 shrink-0">
-            <span className="hidden sm:inline text-[11px] text-slate-dark">
+          <div className="p-3.5 sm:p-4 bg-[#FAF9FB] border-t border-gray-100 flex items-center justify-between gap-3 shrink-0">
+            <span className="hidden sm:inline text-[11px] text-gray-400">
               Resmi yürürlük tarihi: 2026
             </span>
             <button
               onClick={onClose}
-              className="w-full sm:w-auto btn-primary py-2.5 sm:py-2.5 px-8 text-xs sm:text-sm font-bold shadow-lg text-center"
+              className="w-full sm:w-auto btn-kadir-primary py-2.5 sm:py-2.5 px-8 text-xs sm:text-sm font-bold text-center"
             >
               Anladım ve Kapat
             </button>

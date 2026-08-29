@@ -7,70 +7,54 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Luxury Obsidian & Charcoal Foundation
-        noir: {
-          950: '#07080A',
-          900: '#0D0E11',
-          850: '#121317',
-          800: '#17181E',
-          700: '#20222A',
-          600: '#2A2C37',
+        // Kadir Alkan Signature Gold & Bronze Palette
+        gold: {
+          DEFAULT: '#9E7A3B',
+          light: '#C5A059',
+          dark: '#7A5C28',
+          bright: '#B8860B',
+          muted: '#8A6D3B',
+          tint: '#F9F5EC',
         },
-        // Warm Champagne, Amber & Sand Accents
+        // Kadir Alkan Dark Luxury Studio Sections
+        dark: {
+          DEFAULT: '#161719',
+          950: '#0F1012',
+          900: '#161719',
+          850: '#1A1B1E',
+          800: '#222428',
+          700: '#2C2E34',
+        },
+        // Studio Light Backgrounds
+        studio: {
+          DEFAULT: '#EBECEE',
+          50: '#FAFAFB',
+          100: '#F4F5F7',
+          200: '#EBECEE',
+          300: '#DCDDE1',
+        },
+        // Semantic Compatibility
         amber: {
-          DEFAULT: '#E5C578',
-          light: '#F3DB9E',
-          dark: '#C8A44D',
-          muted: '#A58639',
+          DEFAULT: '#9E7A3B',
+          light: '#C5A059',
+          dark: '#7A5C28',
         },
-        sand: {
-          DEFAULT: '#C8B195',
-          light: '#E2D3BF',
-          dark: '#9E8467',
-        },
-        // Editorial Typography Shades
-        alabaster: '#F6F5F2',
-        smoke: '#D4D5DC',
-        slate: {
-          DEFAULT: '#9698A0',
-          dark: '#62646D',
-        },
-        // Live Status Green
-        emerald: {
-          DEFAULT: '#10B981',
-          glow: 'rgba(16, 185, 129, 0.4)',
+        noir: {
+          950: '#161719',
+          900: '#1A1B1E',
+          850: '#222428',
         }
       },
       fontFamily: {
         sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
         serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
-        display: ['"Syne"', '"Plus Jakarta Sans"', 'sans-serif'],
-      },
-      animation: {
-        'marquee': 'marquee 35s linear infinite',
-        'marquee-reverse': 'marquee-reverse 35s linear infinite',
-        'pulse-glow': 'pulse-glow 3s ease-in-out infinite',
-      },
-      keyframes: {
-        marquee: {
-          '0%': { transform: 'translateX(0%)' },
-          '100%': { transform: 'translateX(-50%)' },
-        },
-        'marquee-reverse': {
-          '0%': { transform: 'translateX(-50%)' },
-          '100%': { transform: 'translateX(0%)' },
-        },
-        'pulse-glow': {
-          '0%, 100%': { opacity: '0.6', transform: 'scale(1)' },
-          '50%': { opacity: '1', transform: 'scale(1.05)' },
-        }
+        signature: ['"Playfair Display"', 'Georgia', 'serif'],
       },
       boxShadow: {
-        'luxury': '0 20px 50px -15px rgba(0, 0, 0, 0.7), 0 0 1px 1px rgba(255, 255, 255, 0.06)',
-        'card': '0 10px 30px -10px rgba(0, 0, 0, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.05)',
-        'amber-glow': '0 0 35px -5px rgba(229, 197, 120, 0.25)',
-      }
+        'kadir': '0 10px 30px -5px rgba(0, 0, 0, 0.1)',
+        'kadir-dark': '0 20px 50px -10px rgba(0, 0, 0, 0.5)',
+      },
     },
   },
   plugins: [],
-}
+};

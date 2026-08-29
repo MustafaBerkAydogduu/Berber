@@ -4,12 +4,10 @@ import { X, Star, CheckCircle2, MessageSquarePlus, Send, Loader2 } from 'lucide-
 import { supabase } from '../lib/supabase';
 
 const SERVICES = [
-  'Kişiye Özel Saç Tasarımı & Kesim',
+  'Kişiye Özel Saç Kesimi & Tasarımı',
   'Geleneksel Sakal Tasarımı',
-  'Kombin: Saç & Sakal Tasarımı',
+  'Kombin: Saç & Sakal Bakım Paketi',
   'Özel Damat Tıraşı & Komple Bakım',
-  'Modern Fade Kesim',
-  'Saç & Cilt Bakımı',
 ];
 
 const RATING_LABELS = {
@@ -33,7 +31,6 @@ export default function ReviewModal({ isOpen, onClose, onReviewSubmitted }) {
   // Lock scroll non-blockingly
   useEffect(() => {
     if (isOpen) {
-      const scrollY = window.scrollY;
       requestAnimationFrame(() => {
         document.body.style.overflow = 'hidden';
       });
@@ -99,29 +96,29 @@ export default function ReviewModal({ isOpen, onClose, onReviewSubmitted }) {
 
   const modalContent = (
     <div className="fixed inset-0 z-[999999] flex items-center justify-center p-3.5 sm:p-6 overflow-y-auto transform-gpu">
-      {/* Native GPU Accelerated Backdrop */}
+      {/* Backdrop */}
       <div
         onClick={resetForm}
-        className="fixed inset-0 bg-black/80 transition-opacity duration-150 ease-out"
+        className="fixed inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-150 ease-out"
         style={{ willChange: 'opacity' }}
       />
 
-      {/* Modal Dialog Card (Mounted instantly via Portal) */}
+      {/* Modal Dialog Card */}
       <div
-        className="relative w-full max-w-lg bg-noir-900 border border-amber/30 rounded-2xl sm:rounded-3xl shadow-luxury z-10 p-5 sm:p-8 transform-gpu transition-all duration-150 ease-out animate-fadeIn"
+        className="relative w-full max-w-lg bg-white border border-gray-200 rounded-2xl shadow-2xl z-10 p-6 sm:p-8 transform-gpu transition-all duration-150 ease-out animate-fadeIn text-[#161719]"
         style={{ willChange: 'transform, opacity' }}
       >
         {/* Header */}
-        <div className="flex items-center justify-between pb-4 border-b border-white/[0.08] mb-4 sm:mb-5">
+        <div className="flex items-center justify-between pb-4 border-b border-gray-100 mb-5">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-amber/10 border border-amber/30 flex items-center justify-center text-amber shrink-0 shadow-sm">
+            <div className="w-10 h-10 rounded-lg bg-[#F9F5EC] border border-[#9E7A3B]/30 flex items-center justify-center text-[#9E7A3B] shrink-0">
               <MessageSquarePlus size={18} />
             </div>
             <div>
-              <h3 className="font-sans font-bold text-base sm:text-xl text-alabaster leading-tight">
+              <h3 className="font-sans font-bold text-lg sm:text-xl text-[#161719] leading-tight">
                 Deneyiminizi Paylaşın
               </h3>
-              <span className="text-[11px] sm:text-xs text-slate mt-0.5 block">
+              <span className="text-xs text-gray-500 mt-0.5 block">
                 Kuaför Nurkan Aydoğdu Değerlendirmesi
               </span>
             </div>
@@ -130,43 +127,43 @@ export default function ReviewModal({ isOpen, onClose, onReviewSubmitted }) {
           <button
             type="button"
             onClick={resetForm}
-            className="p-2 rounded-full bg-noir-800 border border-white/10 text-slate hover:text-alabaster hover:border-amber/40 transition-colors"
+            className="p-2 rounded-full hover:bg-gray-100 text-gray-400 hover:text-[#161719] transition-colors"
             aria-label="Kapat"
           >
-            <X size={16} />
+            <X size={18} />
           </button>
         </div>
 
         {/* Success State */}
         {isSuccess ? (
           <div className="py-6 sm:py-8 text-center flex flex-col items-center">
-            <div className="w-14 h-14 rounded-full bg-emerald/10 border border-emerald/30 flex items-center justify-center text-emerald mb-3.5 shadow-lg">
+            <div className="w-14 h-14 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mb-3.5 shadow-sm">
               <CheckCircle2 size={28} />
             </div>
-            <h4 className="font-sans font-bold text-lg sm:text-xl text-alabaster mb-2">
+            <h4 className="font-sans font-bold text-lg text-[#161719] mb-2">
               Değerli Yorumunuz İçin Teşekkür Ederiz!
             </h4>
-            <p className="text-slate text-xs sm:text-sm leading-relaxed max-w-sm mb-6">
-              Yorumunuz başarıyla iletildi. İncelendikten kısa süre sonra sitemizdeki müşteri deneyimleri şeridine eklenecektir.
+            <p className="text-gray-600 text-xs sm:text-sm leading-relaxed max-w-sm mb-6">
+              Yorumunuz başarıyla iletildi. İncelendikten kısa süre sonra sitemizdeki değerlendirmelere eklenecektir.
             </p>
             <button
               type="button"
               onClick={resetForm}
-              className="btn-primary py-3 px-8 text-xs uppercase tracking-wider font-semibold"
+              className="btn-kadir-primary py-3 px-8 text-xs font-semibold"
             >
               Tamam
             </button>
           </div>
         ) : (
           /* Form State */
-          <form onSubmit={handleSubmit} className="space-y-3.5 sm:space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-4">
             {/* Rating Selector */}
             <div>
-              <label className="block text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-slate mb-1.5">
+              <label className="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1.5">
                 Puanınız
               </label>
-              <div className="flex items-center justify-between p-2.5 sm:p-3 rounded-xl bg-noir-800/80 border border-white/[0.08]">
-                <div className="flex items-center gap-1 sm:gap-1.5">
+              <div className="flex items-center justify-between p-3 rounded-lg bg-[#FAF9FB] border border-gray-200">
+                <div className="flex items-center gap-1.5">
                   {[1, 2, 3, 4, 5].map((star) => {
                     const activeStar = hoverRating || rating;
                     const isFilled = star <= activeStar;
@@ -183,15 +180,15 @@ export default function ReviewModal({ isOpen, onClose, onReviewSubmitted }) {
                           size={22}
                           className={
                             isFilled
-                              ? 'text-amber fill-amber drop-shadow-[0_0_8px_rgba(229,197,120,0.5)]'
-                              : 'text-slate-dark'
+                              ? 'text-[#9E7A3B] fill-[#9E7A3B]'
+                              : 'text-gray-300'
                           }
                         />
                       </button>
                     );
                   })}
                 </div>
-                <span className="text-[11px] sm:text-xs font-semibold text-amber">
+                <span className="text-xs font-bold text-[#161719]">
                   {RATING_LABELS[hoverRating || rating]}
                 </span>
               </div>
@@ -199,7 +196,7 @@ export default function ReviewModal({ isOpen, onClose, onReviewSubmitted }) {
 
             {/* Name */}
             <div>
-              <label className="block text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-slate mb-1">
+              <label className="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">
                 Adınız Soyadınız
               </label>
               <input
@@ -209,22 +206,22 @@ export default function ReviewModal({ isOpen, onClose, onReviewSubmitted }) {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Örn: Ahmet Yılmaz"
-                className="w-full px-3.5 py-2.5 sm:py-3 rounded-xl bg-noir-800 border border-white/10 text-alabaster placeholder:text-slate-dark text-sm focus:outline-none focus:border-amber/60 transition-all"
+                className="w-full px-3.5 py-2.5 rounded-lg bg-[#FAF9FB] border border-gray-200 text-[#161719] placeholder:text-gray-400 text-sm focus:outline-none focus:border-[#9E7A3B] focus:bg-white transition-all font-medium"
               />
             </div>
 
             {/* Service Selection */}
             <div>
-              <label className="block text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-slate mb-1">
+              <label className="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">
                 Aldığınız Hizmet
               </label>
               <select
                 value={service}
                 onChange={(e) => setService(e.target.value)}
-                className="w-full px-3.5 py-2.5 sm:py-3 rounded-xl bg-noir-800 border border-white/10 text-alabaster text-sm focus:outline-none focus:border-amber/60 transition-all cursor-pointer"
+                className="w-full px-3.5 py-2.5 rounded-lg bg-[#FAF9FB] border border-gray-200 text-[#161719] text-sm focus:outline-none focus:border-[#9E7A3B] focus:bg-white transition-all cursor-pointer font-medium"
               >
                 {SERVICES.map((s) => (
-                  <option key={s} value={s} className="bg-noir-900 text-alabaster">
+                  <option key={s} value={s}>
                     {s}
                   </option>
                 ))}
@@ -234,10 +231,10 @@ export default function ReviewModal({ isOpen, onClose, onReviewSubmitted }) {
             {/* Comment */}
             <div>
               <div className="flex justify-between items-center mb-1">
-                <label className="block text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-slate">
+                <label className="block text-xs font-bold uppercase tracking-wider text-gray-700">
                   Yorumunuz
                 </label>
-                <span className="text-[10px] text-slate-dark">
+                <span className="text-[10px] text-gray-400 font-medium">
                   {comment.length}/300
                 </span>
               </div>
@@ -248,13 +245,13 @@ export default function ReviewModal({ isOpen, onClose, onReviewSubmitted }) {
                 value={comment}
                 onChange={(e) => setComment(e.target.value)}
                 placeholder="Kuaför Nurkan Aydoğdu'daki deneyiminizi kısaca paylaşın..."
-                className="w-full px-3.5 py-2.5 sm:py-3 rounded-xl bg-noir-800 border border-white/10 text-alabaster placeholder:text-slate-dark text-sm focus:outline-none focus:border-amber/60 transition-all resize-none"
+                className="w-full px-3.5 py-2.5 rounded-lg bg-[#FAF9FB] border border-gray-200 text-[#161719] placeholder:text-gray-400 text-sm focus:outline-none focus:border-[#9E7A3B] focus:bg-white transition-all resize-none font-medium"
               />
             </div>
 
             {/* Error Message */}
             {errorMsg && (
-              <p className="text-xs text-rose-400 font-medium text-center">
+              <p className="text-xs text-rose-600 font-bold text-center">
                 {errorMsg}
               </p>
             )}
@@ -263,7 +260,7 @@ export default function ReviewModal({ isOpen, onClose, onReviewSubmitted }) {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full btn-primary py-3 sm:py-3.5 px-6 text-xs uppercase tracking-wider font-bold flex items-center justify-center gap-2 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full btn-kadir-primary py-3.5 text-xs uppercase tracking-wider font-extrabold flex items-center justify-center gap-2 shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isSubmitting ? (
                 <>

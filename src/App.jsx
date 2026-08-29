@@ -1,7 +1,5 @@
 import React from 'react';
 import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import WhatsAppButton from './components/WhatsAppButton';
 import Hero from './sections/Hero';
 import About from './sections/About';
 import Services from './sections/Services';
@@ -9,10 +7,12 @@ import Gallery from './sections/Gallery';
 import Testimonials from './sections/Testimonials';
 import FAQ from './sections/FAQ';
 import Contact from './sections/Contact';
+import Footer from './components/Footer';
+import WhatsAppButton from './components/WhatsAppButton';
 
 function App() {
   return (
-    <div className="bg-noir-900 min-h-screen text-alabaster overflow-x-hidden">
+    <div className="bg-white min-h-screen text-[#161719] overflow-x-hidden font-sans">
       <Navbar />
       <main>
         <Hero />
