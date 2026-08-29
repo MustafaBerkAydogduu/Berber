@@ -121,7 +121,7 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="flex items-center gap-4 text-[11px]">
+          <div className="flex flex-wrap items-center justify-center md:justify-end gap-3 sm:gap-4 text-[11px]">
             <button
               onClick={() => setLegalModal({ isOpen: true, tab: 'kvkk' })}
               className="hover:text-white transition-colors"
@@ -141,6 +141,13 @@ export default function Footer() {
               className="hover:text-white transition-colors"
             >
               Gizlilik Politikası
+            </button>
+            <span>·</span>
+            <button
+              onClick={() => setLegalModal({ isOpen: true, tab: 'cerez' })}
+              className="hover:text-white transition-colors"
+            >
+              Çerez Politikası
             </button>
           </div>
         </div>
