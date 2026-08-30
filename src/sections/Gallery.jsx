@@ -6,39 +6,39 @@ const CATEGORIES = ['TÜMÜ', 'SAÇ KESİMİ', 'SAKAL TASARIMI', 'SALON DETAYLAR
 
 const WORKS = [
   {
+    id: 1,
     src: '/nurkan.jpg',
     title: 'Nurkan Aydoğdu · Kişiye Özel Saç Tasarımı',
     category: 'SAÇ KESİMİ',
     tag: 'KURUCU & SAÇ TASARIMCISI',
-    span: 'sm:col-span-2 lg:col-span-2 sm:row-span-2 min-h-[320px]',
   },
   {
+    id: 2,
     src: 'https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=800&q=85',
     title: 'Modern Fade & Kişiye Özel Saç Şekillendirme',
     category: 'SAÇ KESİMİ',
     tag: 'FADE KESİM',
-    span: 'col-span-1 min-h-[240px]',
   },
   {
+    id: 3,
     src: 'https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=800&q=85',
     title: 'Geleneksel Ustura & Anatomik Sakal Tasarımı',
     category: 'SAKAL TASARIMI',
     tag: 'SAKAL TASARIMI',
-    span: 'col-span-1 min-h-[240px]',
   },
   {
+    id: 4,
     src: 'https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=800&q=85',
     title: 'Hassas Makas İşçiliği & Stil Geçişi',
     category: 'SAÇ KESİMİ',
     tag: 'MAKAS KESİMİ',
-    span: 'col-span-1 min-h-[240px]',
   },
   {
+    id: 5,
     src: 'https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=800&q=85',
     title: 'Nezih & Konforlu Salon Deneyimi',
     category: 'SALON DETAYLARI',
     tag: 'SALONUMUZ',
-    span: 'col-span-1 min-h-[240px]',
   },
 ];
 
@@ -82,19 +82,48 @@ export default function Gallery() {
           ))}
         </div>
 
-        {/* Gallery Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 auto-rows-[240px] sm:auto-rows-[270px] lg:auto-rows-[280px]">
-          <AnimatePresence mode="popLayout">
-            {filtered.map((item, idx) => (
-              <motion.div
-                key={item.src}
-                layout
-                initial={{ opacity: 0, scale: 0.96 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.96 }}
-                transition={{ duration: 0.3, delay: idx * 0.04 }}
+        {/* Gallery Bento Grid (Pixel-Perfect PC & Mobile Layout) */}
+        {activeCat === 'TÜMÜ' ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:h-[580px]">
+            {/* Featured Large Card (Left 2 cols on PC) */}
+            <div
+              onClick={() => setSelectedPhoto(WORKS[0])}
+              className="sm:col-span-2 lg:col-span-2 sm:row-span-2 h-[340px] sm:h-[420px] lg:h-full relative rounded-2xl overflow-hidden group cursor-pointer bg-white shadow-md border border-gray-200/90 transition-all duration-300 hover:shadow-xl"
+            >
+              <img
+                src={WORKS[0].src}
+                alt={WORKS[0].title}
+                loading="lazy"
+                decoding="async"
+                className="w-full h-full object-cover object-[center_20%] transition-transform duration-700 ease-out group-hover:scale-105"
+              />
+              {/* Dark Hover Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-5 sm:p-6 text-white">
+                <div className="flex justify-between items-center">
+                  <span className="px-2.5 py-1 rounded bg-[#9E7A3B] text-white text-[10px] font-bold uppercase tracking-wider shadow">
+                    {WORKS[0].tag}
+                  </span>
+                  <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white">
+                    <ZoomIn size={14} />
+                  </div>
+                </div>
+                <div>
+                  <span className="text-[10px] text-[#C5A059] uppercase tracking-wider block font-bold mb-0.5">
+                    {WORKS[0].category}
+                  </span>
+                  <h4 className="font-sans font-bold text-base sm:text-lg">
+                    {WORKS[0].title}
+                  </h4>
+                </div>
+              </div>
+            </div>
+
+            {/* 4 Smaller Cards (2x2 grid on right) */}
+            {WORKS.slice(1).map((item) => (
+              <div
+                key={item.id}
                 onClick={() => setSelectedPhoto(item)}
-                className={`relative rounded-xl overflow-hidden group cursor-pointer bg-white shadow-md border border-gray-200/90 ${item.span}`}
+                className="col-span-1 h-[260px] lg:h-full relative rounded-2xl overflow-hidden group cursor-pointer bg-white shadow-md border border-gray-200/90 transition-all duration-300 hover:shadow-xl"
               >
                 <img
                   src={item.src}
@@ -103,8 +132,7 @@ export default function Gallery() {
                   decoding="async"
                   className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
-
-                {/* Dark Hover Overlay with Gold Tag */}
+                {/* Dark Hover Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-5 sm:p-6 text-white">
                   <div className="flex justify-between items-center">
                     <span className="px-2.5 py-1 rounded bg-[#9E7A3B] text-white text-[10px] font-bold uppercase tracking-wider shadow">
@@ -123,10 +151,47 @@ export default function Gallery() {
                     </h4>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
-          </AnimatePresence>
-        </div>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+            {filtered.map((item) => (
+              <div
+                key={item.id}
+                onClick={() => setSelectedPhoto(item)}
+                className="col-span-1 h-[280px] sm:h-[320px] relative rounded-2xl overflow-hidden group cursor-pointer bg-white shadow-md border border-gray-200/90 transition-all duration-300 hover:shadow-xl"
+              >
+                <img
+                  src={item.src}
+                  alt={item.title}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                />
+                {/* Dark Hover Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-5 sm:p-6 text-white">
+                  <div className="flex justify-between items-center">
+                    <span className="px-2.5 py-1 rounded bg-[#9E7A3B] text-white text-[10px] font-bold uppercase tracking-wider shadow">
+                      {item.tag}
+                    </span>
+                    <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white">
+                      <ZoomIn size={14} />
+                    </div>
+                  </div>
+                  <div>
+                    <span className="text-[10px] text-[#C5A059] uppercase tracking-wider block font-bold mb-0.5">
+                      {item.category}
+                    </span>
+                    <h4 className="font-sans font-bold text-sm sm:text-base">
+                      {item.title}
+                    </h4>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
 
         {/* Bottom Instagram Showcase Banner */}
         <div className="mt-8 sm:mt-12 p-5 sm:p-8 rounded-2xl bg-white border border-gray-200 shadow-md flex flex-col sm:flex-row items-center justify-between gap-5 sm:gap-6">

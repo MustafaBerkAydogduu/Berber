@@ -108,19 +108,19 @@ export default function About() {
               </p>
             </div>
 
-            {/* 3 Core Pillars */}
-            <div className="grid grid-cols-3 gap-3 sm:gap-4 pt-6 mt-6 border-t border-white/10 w-full text-left">
-              <div className="flex flex-col">
-                <span className="font-extrabold text-base sm:text-xl text-white">7+ Yıl</span>
-                <span className="text-[10px] sm:text-xs text-[#C5A059] font-semibold">Ustalık Deneyimi</span>
+            {/* 3 Core Pillars (Symmetrically Centered & Balanced) */}
+            <div className="grid grid-cols-3 divide-x divide-white/10 pt-6 mt-6 border-t border-white/10 w-full text-center">
+              <div className="flex flex-col items-center px-1 sm:px-2">
+                <span className="font-extrabold text-lg sm:text-2xl text-white tracking-tight">7+ Yıl</span>
+                <span className="text-[10px] sm:text-xs text-[#C5A059] font-semibold mt-0.5">Ustalık Deneyimi</span>
               </div>
-              <div className="flex flex-col">
-                <span className="font-extrabold text-base sm:text-xl text-white">1.000+</span>
-                <span className="text-[10px] sm:text-xs text-[#C5A059] font-semibold">Mutlu Misafir</span>
+              <div className="flex flex-col items-center px-1 sm:px-2">
+                <span className="font-extrabold text-lg sm:text-2xl text-white tracking-tight">1.000+</span>
+                <span className="text-[10px] sm:text-xs text-[#C5A059] font-semibold mt-0.5">Mutlu Misafir</span>
               </div>
-              <div className="flex flex-col">
-                <span className="font-extrabold text-base sm:text-xl text-white">4.7 ★</span>
-                <span className="text-[10px] sm:text-xs text-[#C5A059] font-semibold">Müşteri Puanı</span>
+              <div className="flex flex-col items-center px-1 sm:px-2">
+                <span className="font-extrabold text-lg sm:text-2xl text-white tracking-tight">4.7 ★</span>
+                <span className="text-[10px] sm:text-xs text-[#C5A059] font-semibold mt-0.5">Müşteri Puanı</span>
               </div>
             </div>
 

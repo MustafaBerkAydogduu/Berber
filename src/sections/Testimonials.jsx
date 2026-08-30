@@ -193,42 +193,47 @@ export default function Testimonials() {
             </p>
           </div>
 
-          {/* Right Action: Scorecard & Button Vertically Centered */}
-          <div className="flex flex-wrap sm:flex-nowrap items-center gap-3.5 self-start lg:self-center shrink-0 w-full sm:w-auto">
-            
-            {/* Scorecard */}
-            <div className="p-3 sm:p-3.5 px-4 sm:px-5 rounded-xl bg-[#FAF9FB] border border-gray-200 shadow-sm flex items-center gap-3 flex-1 sm:flex-initial">
-              <span className="text-2xl sm:text-3xl font-extrabold text-[#161719] font-sans leading-none">
-                4.7
-              </span>
-              <div className="flex flex-col text-left">
-                <div className="flex items-center text-[#9E7A3B] mb-0.5">
-                  {[1, 2, 3, 4].map((i) => (
-                    <Star key={i} size={12} fill="currentColor" />
-                  ))}
-                  {/* 5th Star (70% fractional) */}
-                  <div className="relative inline-flex items-center">
-                    <Star size={12} className="text-gray-300" fill="currentColor" />
-                    <div className="absolute inset-0 overflow-hidden w-[70%] flex items-center">
-                      <Star size={12} className="text-[#9E7A3B] shrink-0" fill="currentColor" />
+          {/* Right Action: Unified Luxury Rating & Action Card */}
+          <div className="self-start lg:self-center shrink-0 w-full sm:w-auto">
+            <div className="inline-flex items-stretch rounded-2xl bg-white border border-gray-200/90 shadow-sm p-1.5 gap-2 hover:shadow-md transition-all duration-300 w-full sm:w-auto justify-between sm:justify-start">
+              
+              {/* Left: Score & Stars Block */}
+              <div className="flex items-center gap-3 px-3 sm:px-4 py-1.5">
+                <span className="text-2xl sm:text-3xl font-black text-[#161719] font-sans tracking-tight leading-none">
+                  4.7
+                </span>
+                <div className="flex flex-col text-left justify-center">
+                  <div className="flex items-center text-[#9E7A3B]">
+                    {[1, 2, 3, 4].map((i) => (
+                      <Star key={i} size={11} fill="currentColor" />
+                    ))}
+                    {/* 5th Star (70% fractional) */}
+                    <div className="relative inline-flex items-center">
+                      <Star size={11} className="text-gray-300" fill="currentColor" />
+                      <div className="absolute inset-0 overflow-hidden w-[70%] flex items-center">
+                        <Star size={11} className="text-[#9E7A3B] shrink-0" fill="currentColor" />
+                      </div>
                     </div>
                   </div>
+                  <span className="text-[10px] text-gray-500 font-semibold tracking-wide mt-0.5 whitespace-nowrap">
+                    Doğrulanmış Puan
+                  </span>
                 </div>
-                <span className="text-[10px] text-gray-500 font-bold uppercase tracking-wider leading-none">
-                  Doğrulanmış Puan
-                </span>
               </div>
+
+              {/* Elegant Vertical Divider */}
+              <div className="w-[1px] bg-gray-200 self-center h-8 hidden sm:block" />
+
+              {/* Right: Integrated Action CTA */}
+              <button
+                onClick={() => setIsModalOpen(true)}
+                className="px-4 sm:px-5 py-2.5 rounded-xl bg-[#161719] hover:bg-[#9E7A3B] text-white font-bold text-xs tracking-wider uppercase flex items-center justify-center gap-2 whitespace-nowrap transition-all duration-200 shadow-sm active:scale-95"
+              >
+                <MessageSquarePlus size={14} />
+                <span>Yorum Yap</span>
+              </button>
+
             </div>
-
-            {/* Yorum Yap Button */}
-            <button
-              onClick={() => setIsModalOpen(true)}
-              className="btn-kadir-primary py-3.5 px-6 text-xs flex items-center justify-center gap-2 whitespace-nowrap shadow-sm flex-1 sm:flex-initial"
-            >
-              <MessageSquarePlus size={15} />
-              <span>Yorum Yap</span>
-            </button>
-
           </div>
         </div>
 
@@ -246,7 +251,7 @@ export default function Testimonials() {
           {row1.map((r, idx) => (
             <div
               key={`row1-${idx}`}
-              className="w-[280px] sm:w-[360px] md:w-[380px] p-5 sm:p-7 rounded-2xl bg-[#FAF9FB] border border-gray-200 shadow-sm hover:shadow-xl hover:border-[#9E7A3B] transition-all duration-300 flex flex-col justify-between shrink-0"
+              className="w-[280px] sm:w-[350px] md:w-[380px] h-[210px] sm:h-[225px] md:h-[235px] p-5 sm:p-6 rounded-2xl bg-[#FAF9FB] border border-gray-200/90 shadow-sm hover:shadow-xl hover:border-[#9E7A3B] transition-all duration-300 flex flex-col justify-between shrink-0"
             >
               <div>
                 <div className="flex items-center justify-between gap-2 mb-3">
@@ -265,12 +270,12 @@ export default function Testimonials() {
                   </span>
                 </div>
 
-                <p className="text-gray-700 text-xs sm:text-[13px] leading-relaxed mb-5 sm:mb-6 font-normal">
+                <p className="text-gray-700 text-xs sm:text-[13px] leading-relaxed font-normal line-clamp-3 sm:line-clamp-4">
                   “{r.comment}”
                 </p>
               </div>
 
-              <div className="pt-3.5 sm:pt-4 border-t border-gray-200 flex items-center justify-between">
+              <div className="pt-3 border-t border-gray-200/80 flex items-center justify-between mt-auto">
                 <div className="flex items-center gap-2.5">
                   <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#161719] text-white flex items-center justify-center font-extrabold text-[11px] sm:text-xs shrink-0">
                     {r.name.charAt(0)}
@@ -294,7 +299,7 @@ export default function Testimonials() {
           {row2.map((r, idx) => (
             <div
               key={`row2-${idx}`}
-              className="w-[280px] sm:w-[360px] md:w-[380px] p-5 sm:p-7 rounded-2xl bg-[#FAF9FB] border border-gray-200 shadow-sm hover:shadow-xl hover:border-[#9E7A3B] transition-all duration-300 flex flex-col justify-between shrink-0"
+              className="w-[280px] sm:w-[350px] md:w-[380px] h-[210px] sm:h-[225px] md:h-[235px] p-5 sm:p-6 rounded-2xl bg-[#FAF9FB] border border-gray-200/90 shadow-sm hover:shadow-xl hover:border-[#9E7A3B] transition-all duration-300 flex flex-col justify-between shrink-0"
             >
               <div>
                 <div className="flex items-center justify-between gap-2 mb-3">
@@ -313,12 +318,12 @@ export default function Testimonials() {
                   </span>
                 </div>
 
-                <p className="text-gray-700 text-xs sm:text-[13px] leading-relaxed mb-5 sm:mb-6 font-normal">
+                <p className="text-gray-700 text-xs sm:text-[13px] leading-relaxed font-normal line-clamp-3 sm:line-clamp-4">
                   “{r.comment}”
                 </p>
               </div>
 
-              <div className="pt-3.5 sm:pt-4 border-t border-gray-200 flex items-center justify-between">
+              <div className="pt-3 border-t border-gray-200/80 flex items-center justify-between mt-auto">
                 <div className="flex items-center gap-2.5">
                   <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#161719] text-white flex items-center justify-center font-extrabold text-[11px] sm:text-xs shrink-0">
                     {r.name.charAt(0)}

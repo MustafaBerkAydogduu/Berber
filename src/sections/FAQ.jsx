@@ -23,7 +23,7 @@ const FAQS = [
 ];
 
 export default function FAQ() {
-  const [openIndex, setOpenIndex] = useState(0);
+  const [openIndex, setOpenIndex] = useState(null);
 
   return (
     <section id="faq" className="py-20 sm:py-28 lg:py-36 bg-[#F8F9FA] text-[#161719] relative border-t border-gray-100">
