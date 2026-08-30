@@ -19,65 +19,39 @@ export default function About() {
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           
-          {/* Left Column: Media Showcase Frame (Exact Kadir Alkan Video/Photo Box) */}
+          {/* Left Column: Portrait Showcase Frame (Clean & Pure Studio Portrait) */}
           <div className="lg:col-span-6">
             <div className="relative rounded-2xl overflow-hidden bg-[#222428] border border-white/10 shadow-2xl group">
               <img
-                src="/nurkan.jpg"
-                alt="Nurkan Aydoğdu Kimdir? Erkek Kuaförlüğü ve Saç Tasarımı"
+                src="/nurkan-portrait.jpg"
+                alt="Nurkan Aydoğdu - Kurucu & Erkek Kuaförü"
                 width="600"
-                height="450"
+                height="600"
                 loading="lazy"
                 decoding="async"
-                className="w-full h-[360px] sm:h-[460px] object-cover object-[center_35%] contrast-[1.08] transition-transform duration-700 group-hover:scale-105"
+                className="w-full h-[400px] sm:h-[480px] lg:h-[520px] object-cover object-[center_20%] transition-transform duration-700 group-hover:scale-103"
               />
 
-              {/* Dark Gradient Overlay & Video Title Banner */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex flex-col justify-between p-5 sm:p-8">
-                
-                {/* Top Channel Badge */}
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-[#9E7A3B] flex items-center justify-center text-white font-bold text-xs shadow-md">
-                    NA
-                  </div>
+              {/* Elegant Subtle Bottom Gradient & Minimal Name Tag */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent flex flex-col justify-end p-5 sm:p-7">
+                <div className="flex items-center justify-between">
                   <div>
-                    <span className="font-bold text-xs text-white block leading-tight">
-                      NURKAN AYDOĞDU
-                    </span>
-                    <span className="text-[10px] text-gray-400 block font-medium">
+                    <h3 className="font-sans font-extrabold text-lg sm:text-xl text-white tracking-wide uppercase leading-tight">
+                      Nurkan Aydoğdu
+                    </h3>
+                    <span className="text-xs text-[#C5A059] font-bold mt-0.5 block">
                       Kurucu & Saç Tasarımcısı
                     </span>
                   </div>
-                </div>
-
-                {/* Center / Play Visual Indicator */}
-                <div className="self-center my-auto">
-                  <a
-                    href="https://instagram.com/_nurkan_aydogdu_19"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#9E7A3B] hover:bg-[#B8860B] flex items-center justify-center text-white shadow-[0_0_30px_rgba(158,122,59,0.5)] transition-transform duration-300 hover:scale-110"
-                    title="İşlerimizi İzleyin"
-                  >
-                    <Play size={22} className="fill-white ml-1" />
-                  </a>
-                </div>
-
-                {/* Bottom Overlay Title (Kadir Alkan Style) */}
-                <div>
-                  <span className="font-extrabold text-base sm:text-2xl text-white tracking-wide block uppercase leading-tight">
-                    NURKAN AYDOĞDU ASLINDA KİMDİR? NELER YAPMIŞTIR?
-                  </span>
-                  <span className="text-xs text-[#C5A059] font-bold mt-1 block">
-                    Çorum Merkez Salonumuzda Birebir Hizmet
+                  <span className="px-3 py-1 rounded-full bg-white/10 border border-white/15 text-[11px] font-semibold text-gray-300 backdrop-blur-xs">
+                    Çorum Merkez
                   </span>
                 </div>
-
               </div>
             </div>
           </div>
 
-          {/* Right Column: Biography & Story (Exact Kadir Alkan Text Layout) */}
+          {/* Right Column: Biography & Story (Clean, Authentic & Grounded) */}
           <div className="lg:col-span-6 flex flex-col items-start text-left">
             
             {/* Top Subtitle */}
@@ -88,23 +62,23 @@ export default function About() {
             </div>
 
             {/* Giant Title */}
-            <h2 className="font-sans font-extrabold text-3xl sm:text-5xl lg:text-[52px] text-white tracking-tight leading-tight mb-5 sm:mb-6 uppercase">
+            <h2 className="font-sans font-extrabold text-3xl sm:text-5xl lg:text-[48px] text-white tracking-tight leading-tight mb-5 sm:mb-6 uppercase">
               NURKAN AYDOĞDU <br />
               <span className="text-[#C5A059]">KİMDİR?</span>
             </h2>
 
-            {/* Rich Biography Paragraphs */}
+            {/* Natural, Realistic & Authentic Biography */}
             <div className="space-y-3.5 sm:space-y-4 text-gray-300 text-sm sm:text-base leading-relaxed font-normal">
               <p>
-                Erkek kuaförlüğü mesleğine yıllar önce büyük bir tutku ve disiplinle adım atan <strong className="text-white">Nurkan Aydoğdu</strong>, geleneksel berber zanaatını modern dünya saç kesim trendleri ve yüz anatomisi analiziyle birleştirmiştir.
+                Erkek kuaförlüğü mesleğine yıllarını veren <strong className="text-white">Nurkan Aydoğdu</strong>, Çorum Merkez'deki salonunda her misafirinin yüz yapısına ve kişisel tarzına en uygun saç ve sakal kesimlerini titizlikle uygulamaktadır.
               </p>
               
               <p>
-                Her misafirin saç yapısı, kafa formu ve günlük yaşam tarzı birbirinden farklıdır. Bu vizyon doğrultusunda ezbere saç kesmek yerine; kişiye özel stil haritalandırması yaparak en doğal ve kolay şekil alan kesimleri ortaya çıkarmaktadır.
+                Tek tip ve ezbere kesimler yerine; misafirlerinin saç yapısını, kafa formunu ve günlük kullanım alışkanlıklarını göz önünde bulundurarak hem modern hem de evde kolayca şekil alabilen doğal modeller ortaya çıkarır.
               </p>
 
               <p>
-                Çorum Merkez'de, Üçtutlar Mahallesi Fatih Caddesi'nde yer alan nezih ve ferah salonunda; hijyenik sterilize ekipmanlar, uluslararası kalitede bakım ürünleri ve randevulu çalışma disiplini ile ayrıcalıklı bir kuaförlük deneyimi sunmaktadır.
+                Üçtutlar Mahallesi Fatih Caddesi'ndeki nezih salonunda; hijyen kurallarına uygun sterilize ekipmanlar, kaliteli bakım ürünleri ve randevulu çalışma düzeniyle samimi ve konforlu bir kuaförlük deneyimi sunmaktadır.
               </p>
             </div>
 
