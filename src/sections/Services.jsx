@@ -1,62 +1,67 @@
 import React from 'react';
-import { Scissors, Sparkles, Clock, Check } from 'lucide-react';
+import { Scissors, Sparkles, Clock, Check, Award, Crown, ArrowUpRight } from 'lucide-react';
 import WhatsAppIcon from '../components/WhatsAppIcon';
 
 const SERVICES = [
   {
     num: '01',
+    icon: Scissors,
     category: 'SAÇ TASARIMI',
-    title: 'Kişiye Özel Saç Kesimi & Tasarımı',
+    title: 'Kişiye Özel Saç Kesimi',
     duration: '45 Dk',
-    popular: true,
-    desc: 'Yüz ve kafa anatomisine uygun stil analizi, detaylı makas ve fade kesim teknikleri, saç yıkama, ferahlatıcı tonik ve fön şekillendirme.',
+    isPopular: false,
+    desc: 'Yüz ve kafa anatomisine uygun stil analizi, detaylı makas ve modern fade geçişleri, saç yıkama ve özel fön şekillendirme.',
     features: [
-      'Yüz anatomisine göre kesim',
-      'Detaylı makas ve fade tekniği',
-      'Ferahlatıcı saç toniği',
-      'Kişiye özel fön & şekillendirme',
+      'Kafa anatomisine göre stil analizi',
+      'Detaylı makas ve modern fade tekniği',
+      'Ferahlatıcı saç yıkama & tonik',
+      'Kişiye özel fön & kalıcı şekillendirme',
     ],
   },
   {
     num: '02',
+    icon: Sparkles,
     category: 'SAKAL BAKIMI',
-    title: 'Geleneksel Sakal Tasarımı & Ustura',
+    title: 'Geleneksel Sakal Tasarımı',
     duration: '30 Dk',
-    popular: false,
-    desc: 'Ustura ile hassas yanak ve boyun çizgileri netleştirme, sakal boyu kısaltma, sıcak havlu ve cilt yatıştırıcı losyon uygulaması.',
+    isPopular: false,
+    desc: 'Ustura ile jilet gibi net yanak ve boyun çizgileri, sakal boyu kısaltma, sıcak havlu terapisi ve cilt yatıştırıcı losyon bakımı.',
     features: [
-      'Ustura ile jilet gibi net hatlar',
-      'Yanak ve boyun temizliği',
-      'Sıcak havlu & yumuşatma',
+      'Ustura ile jilet gibi keskin hatlar',
+      'Yanak ve boyun detay temizliği',
+      'Geleneksel sıcak havlu terapisi',
       'Cilt yatıştırıcı ferahlatıcı losyon',
     ],
   },
   {
     num: '03',
-    category: 'FULL BAKIM',
-    title: 'Kombin: Saç & Sakal Tasarım Paketi',
+    icon: Award,
+    category: 'FULL BAKIM PAKETİ',
+    title: 'Saç & Sakal Kombin Paket',
     duration: '60 Dk',
-    popular: true,
-    desc: 'Salonumuzun en çok tercih edilen seansı. Kişiye özel saç kesimi, sakal tasarımı, saç yıkama, tonik ve profesyonel stilin eksiksiz paketi.',
+    isPopular: true,
+    badgeText: 'EN ÇOK TERCİH EDİLEN',
+    desc: 'Salonumuzun en popüler komple bakım seansı. Kişiye özel saç kesimi, ustura ile sakal tasarımı ve arındırıcı stil deneyimi.',
     features: [
-      'Eksiksiz saç kesimi & yıkama',
-      'Sakal şekillendirme & ustura',
+      'Eksiksiz saç kesimi & stil analizi',
+      'Ustura ile sakal tasarımı & hat netleştirme',
       'Saç toniği & bakım uygulaması',
-      'Gün boyu kalıcı şekillendirme',
+      'Gün boyu kalıcı profesyonel fön',
     ],
   },
   {
     num: '04',
-    category: 'VIP BAKIM',
-    title: 'Özel Damat Tıraşı & Komple Bakım',
+    icon: Crown,
+    category: 'VIP SEANS',
+    title: 'Özel Damat Tıraşı & Bakım',
     duration: '90 Dk',
-    popular: false,
-    desc: 'Düğün ve nişan günleriniz için VIP seans. Detaylı saç kesimi, sakal tasarımı, cilt bakımı, maske ve arındırıcı tonik bakımı.',
+    isPopular: false,
+    desc: 'Düğün ve nişan günleriniz için VIP özel hazırlık. Detaylı saç ve sakal tasarımı, yüz maskesi, cilt bakımı ve komple arındırma.',
     features: [
       'Özel damat saç & sakal tasarımı',
-      'Yüz maskesi & cilt bakımı',
-      'Kaş ve ense detay temizliği',
-      'Ferahlatıcı özel koku & tonik',
+      'Yüz maskesi & derinlemesine cilt bakımı',
+      'Kaş, kulak ve ense detay temizliği',
+      'Ferahlatıcı özel esans & tonik bakımı',
     ],
   },
 ];
@@ -67,7 +72,7 @@ export default function Services() {
   };
 
   return (
-    <section id="services" className="py-20 sm:py-28 lg:py-36 bg-white relative">
+    <section id="services" className="py-20 sm:py-28 lg:py-36 bg-[#FBFBFC] relative border-t border-gray-100">
       
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
         
@@ -84,80 +89,83 @@ export default function Services() {
           </p>
         </div>
 
-        {/* Modern Photo-Less Architectural Grid */}
+        {/* High-End Studio Service Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-7 items-stretch">
-          {SERVICES.map((s) => (
-            <div
-              key={s.num}
-              className={`relative rounded-2xl p-6 sm:p-7 lg:p-8 transition-all duration-300 flex flex-col justify-between group h-full ${
-                s.popular
-                  ? 'bg-[#FAF9FB] border-2 border-[#9E7A3B] shadow-xl hover:-translate-y-1.5'
-                  : 'bg-[#FAF9FB] border border-gray-200/90 shadow-sm hover:border-[#161719] hover:shadow-xl hover:-translate-y-1.5'
-              }`}
-            >
-              {/* Popular Badge */}
-              {s.popular && (
-                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3.5 py-1 bg-[#9E7A3B] text-white text-[9px] sm:text-[10px] font-extrabold uppercase tracking-widest rounded-full shadow-md flex items-center gap-1.5 whitespace-nowrap z-10">
-                  <Sparkles size={11} />
-                  <span>EN ÇOK TERCİH EDİLEN</span>
-                </div>
-              )}
-
-              {/* Card Content Top */}
-              <div className="flex-1 flex flex-col">
-                {/* Number & Duration */}
-                <div className="flex items-center justify-between pb-4 sm:pb-5 mb-4 sm:mb-5 border-b border-gray-200/80">
-                  <span className="font-sans font-extrabold text-2xl sm:text-3xl text-gray-300 group-hover:text-[#9E7A3B] transition-colors">
-                    {s.num}
-                  </span>
-                  <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-gray-200 text-xs font-bold text-gray-700 shadow-xs">
-                    <Clock size={13} className="text-[#9E7A3B]" />
-                    <span>{s.duration}</span>
-                  </div>
-                </div>
-
-                {/* Category & Title */}
-                <span className="text-[10px] font-extrabold tracking-[0.2em] text-[#9E7A3B] uppercase block mb-1.5">
-                  {s.category}
-                </span>
-                <h3 className="font-sans font-extrabold text-lg sm:text-xl text-[#161719] leading-snug mb-3">
-                  {s.title}
-                </h3>
-                
-                <p className="text-gray-600 text-xs sm:text-[13px] leading-relaxed mb-5 font-normal">
-                  {s.desc}
-                </p>
-
-                {/* Bullet Features */}
-                <ul className="space-y-2.5 pt-4 sm:pt-5 border-t border-gray-200/80 mb-6 sm:mb-8 mt-auto">
-                  {s.features.map((f, i) => (
-                    <li key={i} className="flex items-start gap-2.5 text-xs text-gray-700 font-medium">
-                      <div className="w-4 h-4 rounded-full bg-[#F9F5EC] text-[#9E7A3B] flex items-center justify-center shrink-0 mt-0.5">
-                        <Check size={11} strokeWidth={3} />
-                      </div>
-                      <span>{f}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Action Button Anchored to Bottom */}
-              <a
-                href={getWhatsAppLink(s.title)}
-                target="_blank"
-                rel="noreferrer"
-                className={`w-full py-3.5 px-4 text-xs font-bold uppercase tracking-wider rounded-sm flex items-center justify-center gap-2 transition-all duration-300 mt-auto ${
-                  s.popular
-                    ? 'bg-[#9E7A3B] text-white hover:bg-[#7A5C28] shadow-md'
-                    : 'bg-[#161719] text-white hover:bg-[#9E7A3B] shadow-sm'
+          {SERVICES.map((s) => {
+            const Icon = s.icon;
+            return (
+              <div
+                key={s.num}
+                className={`relative rounded-2xl p-6 sm:p-7 transition-all duration-300 flex flex-col justify-between group h-full bg-white ${
+                  s.isPopular
+                    ? 'border-2 border-[#9E7A3B] shadow-xl hover:-translate-y-2'
+                    : 'border border-gray-200/90 shadow-sm hover:border-[#9E7A3B]/60 hover:shadow-xl hover:-translate-y-2'
                 }`}
               >
-                <WhatsAppIcon size={15} />
-                <span>Randevu Al</span>
-              </a>
+                {/* Popular Integrated Badge */}
+                {s.isPopular && (
+                  <div className="mb-4 inline-flex items-center gap-1.5 px-3 py-1 bg-[#9E7A3B] text-white text-[10px] font-extrabold uppercase tracking-wider rounded-full shadow-xs self-start">
+                    <Sparkles size={11} />
+                    <span>{s.badgeText}</span>
+                  </div>
+                )}
 
-            </div>
-          ))}
+                {/* Card Content Top */}
+                <div className="flex-1 flex flex-col">
+                  {/* Icon & Duration Header */}
+                  <div className="flex items-center justify-between pb-4 mb-4 border-b border-gray-100">
+                    <div className="w-10 h-10 rounded-xl bg-[#FAF9FB] border border-gray-200/80 flex items-center justify-center text-[#161719] group-hover:bg-[#9E7A3B] group-hover:text-white group-hover:border-[#9E7A3B] transition-colors">
+                      <Icon size={18} />
+                    </div>
+                    <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#FAF9FB] border border-gray-200/80 text-[11px] font-bold text-gray-700">
+                      <Clock size={12} className="text-[#9E7A3B]" />
+                      <span>{s.duration}</span>
+                    </div>
+                  </div>
+
+                  {/* Category & Title */}
+                  <span className="text-[10px] font-extrabold tracking-[0.2em] text-[#9E7A3B] uppercase block mb-1">
+                    {s.category}
+                  </span>
+                  <h3 className="font-sans font-extrabold text-lg sm:text-xl text-[#161719] leading-snug mb-2.5">
+                    {s.title}
+                  </h3>
+                  
+                  <p className="text-gray-600 text-xs sm:text-[13px] leading-relaxed mb-5 font-normal">
+                    {s.desc}
+                  </p>
+
+                  {/* Feature Checklist */}
+                  <ul className="space-y-2.5 pt-4 border-t border-gray-100 mb-6 mt-auto">
+                    {s.features.map((f, i) => (
+                      <li key={i} className="flex items-start gap-2.5 text-xs text-gray-700 font-medium">
+                        <div className="w-4 h-4 rounded-full bg-[#9E7A3B]/10 text-[#9E7A3B] flex items-center justify-center shrink-0 mt-0.5">
+                          <Check size={11} strokeWidth={3} />
+                        </div>
+                        <span>{f}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Uniform High-End CTA Button */}
+                <a
+                  href={getWhatsAppLink(s.title)}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={`w-full py-3.5 px-4 text-xs font-bold uppercase tracking-wider rounded-xl flex items-center justify-center gap-2 transition-all duration-200 active:scale-98 mt-auto shadow-xs ${
+                    s.isPopular
+                      ? 'bg-[#9E7A3B] hover:bg-[#85632A] text-white shadow-md'
+                      : 'bg-[#161719] hover:bg-[#9E7A3B] text-white'
+                  }`}
+                >
+                  <WhatsAppIcon size={15} />
+                  <span>Randevu Al</span>
+                </a>
+
+              </div>
+            );
+          })}
         </div>
 
         {/* Bottom Transparent Pricing & Info Bar */}
