@@ -32,20 +32,15 @@ export default function About() {
                 className="w-full h-[400px] sm:h-[480px] lg:h-[520px] object-cover object-[center_20%] transition-transform duration-700 group-hover:scale-103"
               />
 
-              {/* Elegant Subtle Bottom Gradient & Minimal Name Tag */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent flex flex-col justify-end p-5 sm:p-7">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h3 className="font-sans font-extrabold text-lg sm:text-xl text-white tracking-wide uppercase leading-tight">
-                      Nurkan Aydoğdu
-                    </h3>
-                    <span className="text-xs text-[#C5A059] font-bold mt-0.5 block">
-                      Kurucu & Saç Tasarımcısı
-                    </span>
-                  </div>
-                  <span className="px-3 py-1 rounded-full bg-white/10 border border-white/15 text-[11px] font-semibold text-gray-300 backdrop-blur-xs">
-                    Çorum Merkez
+              {/* Elegant Bottom Master Quote Overlay (Classic Version) */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent flex flex-col justify-end p-5 sm:p-7">
+                <div className="border-l-2 border-[#C5A059] pl-3.5 sm:pl-4">
+                  <span className="text-[10px] uppercase tracking-[0.2em] text-[#C5A059] font-bold block mb-1">
+                    Kurucu & Usta Notu
                   </span>
+                  <blockquote className="font-serif italic text-xs sm:text-sm text-gray-200 leading-relaxed font-normal">
+                    “Erkek kuaförlüğü sadece saç kısaltmak değildir; insanın duruşunu, ifadesini ve özgüvenini tazeleyen bir sanattır.”
+                  </blockquote>
                 </div>
               </div>
             </div>
