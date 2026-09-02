@@ -26,7 +26,7 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
-    <section id="faq" className="py-20 sm:py-28 lg:py-36 bg-[#F8F9FA] text-[#161719] relative border-t border-gray-100">
+    <section id="faq" data-nosnippet className="py-20 sm:py-28 lg:py-36 bg-[#F8F9FA] text-[#161719] relative border-t border-gray-100">
 
       <div className="max-w-4xl mx-auto px-5 sm:px-8">
         
