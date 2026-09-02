@@ -28,8 +28,8 @@ export default function Hero() {
               TASARIMI
             </h1>
 
-            {/* Subheading */}
-            <p className="text-gray-600 text-sm sm:text-base lg:text-lg leading-relaxed max-w-xl mb-8 font-medium">
+            {/* Subheading (with data-nosnippet so Google strictly uses the official brand description) */}
+            <p data-nosnippet className="text-gray-600 text-sm sm:text-base lg:text-lg leading-relaxed max-w-xl mb-8 font-medium">
               Yüz anatomisine uygun modern saç kesim teknikleri, geleneksel ustura sakal şekillendirme ve ferahlatıcı saç-cilt bakımı. Sıra beklemeden, randevulu ve nezih salon deneyimi.
             </p>
 

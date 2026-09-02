@@ -62,8 +62,8 @@ export default function About() {
               <span className="text-[#C5A059]">KİMDİR?</span>
             </h2>
 
-            {/* Natural, Realistic & Authentic Biography */}
-            <div className="space-y-3.5 sm:space-y-4 text-gray-300 text-sm sm:text-base leading-relaxed font-normal">
+            {/* Natural, Realistic & Authentic Biography (with data-nosnippet to preserve authoritative Google Search snippet) */}
+            <div data-nosnippet className="space-y-3.5 sm:space-y-4 text-gray-300 text-sm sm:text-base leading-relaxed font-normal">
               <p>
                 Erkek kuaförlüğü mesleğine yıllarını veren <strong className="text-white">Nurkan Aydoğdu</strong>, Çorum Merkez'deki salonunda her misafirinin yüz yapısına ve kişisel tarzına en uygun saç ve sakal kesimlerini titizlikle uygulamaktadır.
               </p>
@@ -78,7 +78,7 @@ export default function About() {
             </div>
 
             {/* 3 Core Pillars (Symmetrically Centered & Balanced) */}
-            <div className="grid grid-cols-3 divide-x divide-white/10 pt-6 mt-6 border-t border-white/10 w-full text-center">
+            <div data-nosnippet className="grid grid-cols-3 divide-x divide-white/10 pt-6 mt-6 border-t border-white/10 w-full text-center">
               <div className="flex flex-col items-center px-1 sm:px-2">
                 <span className="font-extrabold text-lg sm:text-2xl text-white tracking-tight">7+ Yıl</span>
                 <span className="text-[10px] sm:text-xs text-[#C5A059] font-semibold mt-0.5">Ustalık Deneyimi</span>
