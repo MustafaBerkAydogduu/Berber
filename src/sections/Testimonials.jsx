@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { Star, CheckCircle2, MessageSquarePlus } from 'lucide-react';
+import { Star, CheckCircle2, MessageSquarePlus, Instagram, ArrowUpRight } from 'lucide-react';
 import ReviewModal from '../components/ReviewModal';
 import { supabase } from '../lib/supabase';
 
@@ -342,6 +342,36 @@ export default function Testimonials() {
           ))}
         </div>
 
+      </div>
+
+      {/* Bottom Instagram Portfolio Showcase Banner */}
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 mt-12 sm:mt-16 relative z-10">
+        <div className="p-6 sm:p-8 rounded-2xl bg-[#FAF9FB] border border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-5 sm:gap-6 text-center sm:text-left">
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] flex items-center justify-center text-white shrink-0 shadow-sm">
+              <Instagram size={24} className="sm:w-7 sm:h-7" />
+            </div>
+            <div>
+              <h4 className="font-sans font-extrabold text-base sm:text-lg text-[#161719]">
+                Yapılan İşleri & Güncel Modelleri İnceleyin
+              </h4>
+              <p className="text-gray-600 text-xs sm:text-sm mt-0.5 font-normal">
+                Salonumuzda uyguladığımız saç kesimlerini, sakal modellerini ve güncel video paylaşımlarımızı Instagram hesabımızdan görebilirsiniz.
+              </p>
+            </div>
+          </div>
+
+          <a
+            href="https://instagram.com/_nurkan_aydogdu_19"
+            target="_blank"
+            rel="noreferrer"
+            className="btn-kadir-primary whitespace-nowrap text-xs py-3.5 px-7 shrink-0 w-full sm:w-auto flex items-center justify-center gap-2"
+          >
+            <Instagram size={15} />
+            <span>Instagram'da İncele</span>
+            <ArrowUpRight size={14} />
+          </a>
+        </div>
       </div>
 
       {/* Review Submission Modal */}

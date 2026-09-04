@@ -1,5 +1,5 @@
 import React from 'react';
-import { Scissors, Sparkles, Clock, Check, Award, Crown, ArrowUpRight } from 'lucide-react';
+import { Scissors, Sparkles, Clock, Check, Award, Crown } from 'lucide-react';
 import WhatsAppIcon from '../components/WhatsAppIcon';
 
 const SERVICES = [

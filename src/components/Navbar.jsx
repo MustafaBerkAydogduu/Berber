@@ -9,7 +9,6 @@ const WA_URL = "https://wa.me/905522742383?text=Merhaba%20Nurkan%20Bey%2C%20rand
 const NAV_LINKS = [
   { label: 'HAKKIMIZDA', href: '#about' },
   { label: 'HİZMETLERİMİZ', href: '#services' },
-  { label: 'PORTFOLYO', href: '#gallery' },
   { label: 'YORUMLAR', href: '#testimonials' },
   { label: 'SSS', href: '#faq' },
   { label: 'İLETİŞİM', href: '#contact' },

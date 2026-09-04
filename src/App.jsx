@@ -3,7 +3,6 @@ import Navbar from './components/Navbar';
 import Hero from './sections/Hero';
 import About from './sections/About';
 import Services from './sections/Services';
-import Gallery from './sections/Gallery';
 import Testimonials from './sections/Testimonials';
 import FAQ from './sections/FAQ';
 import Contact from './sections/Contact';
@@ -18,7 +17,6 @@ function App() {
         <Hero />
         <About />
         <Services />
-        <Gallery />
         <Testimonials />
         <FAQ />
         <Contact />
