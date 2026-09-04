@@ -51,7 +51,7 @@ export default function Gallery() {
     : WORKS.filter(item => item.category === activeCat);
 
   return (
-    <section id="gallery" data-nosnippet className="py-20 sm:py-28 lg:py-36 bg-[#F8F9FA] text-[#161719] relative border-t border-gray-100">
+    <section id="gallery" className="py-20 sm:py-28 lg:py-36 bg-[#F8F9FA] text-[#161719] relative border-t border-gray-100">
 
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
         

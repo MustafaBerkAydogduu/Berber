@@ -31,10 +31,9 @@ export default function Footer() {
               Nurkan Aydoğdu
             </a>
             <p className="text-gray-400 text-xs sm:text-sm leading-relaxed max-w-sm mb-6">
-              Çorum’da erkek saç kesimi, saç tasarımı ve bakım hizmetleri. Tarzınıza uygun modern dokunuşlar için Nurkan Aydoğdu Erkek Kuaförü.
+              Çorum'da modern saç kesim teknikleri, anatomik sakal tasarımı ve ferahlatıcı cilt bakımı ile birinci sınıf erkek kuaförlüğü salonu.
             </p>
             <a
-              data-nosnippet
               href="https://instagram.com/_nurkan_aydogdu_19"
               target="_blank"
               rel="noreferrer"
@@ -46,7 +45,7 @@ export default function Footer() {
           </div>
 
           {/* Quick Nav (3 cols) */}
-          <div data-nosnippet className="lg:col-span-3">
+          <div className="lg:col-span-3">
             <h4 className="text-xs uppercase tracking-[0.2em] text-[#C5A059] font-extrabold mb-5">
               Hızlı Gezinti
             </h4>

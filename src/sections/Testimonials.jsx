@@ -175,7 +175,7 @@ export default function Testimonials() {
   }, [allReviews]);
 
   return (
-    <section id="testimonials" data-nosnippet className="py-20 sm:py-28 lg:py-36 bg-white relative border-t border-gray-100 overflow-hidden">
+    <section id="testimonials" className="py-20 sm:py-28 lg:py-36 bg-white relative border-t border-gray-100 overflow-hidden">
 
       <div className="max-w-7xl mx-auto px-5 sm:px-8 mb-12 sm:mb-16">
         

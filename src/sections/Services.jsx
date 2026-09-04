@@ -72,7 +72,7 @@ export default function Services() {
   };
 
   return (
-    <section id="services" data-nosnippet className="py-20 sm:py-28 lg:py-36 bg-[#FBFBFC] relative border-t border-gray-100">
+    <section id="services" className="py-20 sm:py-28 lg:py-36 bg-[#FBFBFC] relative border-t border-gray-100">
       
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
         
