@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { Star, CheckCircle2, MessageSquarePlus, Instagram, ArrowUpRight } from 'lucide-react';
+import { Star, MessageSquarePlus, Instagram, ArrowUpRight } from 'lucide-react';
 import ReviewModal from '../components/ReviewModal';
 import { supabase } from '../lib/supabase';
 
@@ -7,124 +7,113 @@ const INITIAL_REVIEWS = [
   {
     name: 'Ahmet Yılmaz',
     rating: 5,
-    comment: 'Yoğun duruşma takvimimde randevu saatine harfiyen uyulması benim için en önemli kriterdi. Nurkan Bey hem çok dakik hem de makas işçiliği gerçekten çok başarılı.',
-    service: 'Saç & Sakal Tasarımı',
+    service: 'Fade Kesim',
+    comment: 'Saçımı istediğim gibi yaptı, özellikle fade geçişleri çok temizdi. Tekrar giderim.',
   },
   {
     name: 'Mustafa Çakır',
     rating: 5,
-    comment: 'Yıllardır çarşıda esnafım, vaktim kısıtlı olduğu için randevu sistemi büyük kolaylık. Sıra beklemeden girip tıraşımı oluyorum. Sakal tıraşındaki özen ve elinin hafifliği 10 numara.',
-    service: 'Geleneksel Sakal Tasarımı',
-  },
-  {
-    name: 'Melih Demirtaş',
-    rating: 5,
-    comment: 'Kafa ve yüz anatomisine göre saç kesimi yapması fark yaratıyor. Çorum’da fade geçişlerini ve saç dokusunu bu kadar temiz çıkaran usta sayısı çok az.',
-    service: 'Kişiye Özel Saç Kesimi',
+    service: 'Sakal Tıraşı',
+    comment: 'Eli baya hafif sakalda hiç tahriş falan yapmadı. Dükkan da temiz esnaflığı da güzel.',
   },
   {
     name: 'Emre Demir',
+    rating: 5,
+    service: 'Saç & Sakal',
+    comment: 'Randevu saatinde direkt aldı beklemedim hiç. Kafamdaki modeli tam oturttu eline sağlık.',
+  },
+  {
+    name: 'Burak Öztürk',
     rating: 4,
-    comment: 'Salonun sakinliği ve Nurkan Bey’in samimi esnaflığı çok güzel. Saç kesimi ve yıkama sonrası ferahlığı çok başarılı. Akşam saatlerinde bazen yoğun olabiliyor ama randevuyla sorunsuz.',
-    service: 'Kişiye Özel Saç Kesimi',
+    service: 'Modern Fade',
+    comment: 'Fade kesimi gayet iyi ama akşamları biraz kalabalık oluyo randevusuz gitmeyin kesinlikle.',
   },
   {
     name: 'Serdar Aydın',
     rating: 5,
-    comment: 'Kullandığı hijyenik ekipmanlar, kaliteli bakım ürünleri ve salonun nezih ortamı oldukça güven veriyor. Düzenli olarak geldiğim tek adres.',
-    service: 'Saç & Sakal Tasarımı',
-  },
-  {
-    name: 'Burak Öztürk',
-    rating: 5,
-    comment: 'Çorum’a üniversite için geldim, genç tarzı ve modern saç modellerini çok iyi anlayan bir berber arıyordum. Arkadaş tavsiyesiyle geldim, kesinlikle çok başarılı.',
-    service: 'Modern Fade Kesim',
-  },
-  {
-    name: 'Volkan Kurt',
-    rating: 5,
-    comment: 'Hijyen ve salon düzeni konusunda çok hassas biriyim. Makasların dezenfeksiyonu, tek kullanımlık ürünler ve ortamın ferahlığı kusursuz. İşini severek yaptığı çok belli.',
-    service: 'Saç & Cilt Bakımı',
+    service: 'Saç Bakımı',
+    comment: 'Temiz ve nezih ortam. Makas işçiliği ve ilgisi 10 numara, çok memnun kaldım.',
   },
   {
     name: 'Kaan Şahin',
     rating: 5,
-    comment: 'Düğünüm öncesi damat tıraşı için tercih etmiştim. Gösterilen ilgi, yüz bakımı ve saç tasarımı tam istediğim gibi oldu. Özel günler için Çorum’daki en doğru adres.',
-    service: 'Özel Damat Paketi',
+    service: 'Damat Paketi',
+    comment: 'Düğün tıraşı için gitmiştim saç sakal tam istediğim gibi oldu fotoğraflarda da çok iyi durdu teşekkürler.',
   },
   {
     name: 'Yasin Polat',
-    rating: 4,
-    comment: 'Randevuyu WhatsApp’tan kolayca alıp vaktinde koltuğa oturabilmek harika bir konfor. Fade kesimi ve sakal hatları çok net. Randevusuz giderseniz sıra olabilir, kesinlikle randevu alıp gidin.',
-    service: 'Kişiye Özel Saç Kesimi',
+    rating: 5,
+    service: 'Saç Kesimi',
+    comment: 'Aceleye getirmeden özenerek kesiyor. Yıkama ve fön de başarılı tavsiye ederim.',
   },
   {
     name: 'Hakan Koç',
-    rating: 5,
-    comment: 'Sakin bir ortamda kaliteli hizmet alıyorsunuz. Sakal hatlarının simetrisi ve ustura hassasiyeti tam kıvamında. Elinize sağlık usta.',
-    service: 'Geleneksel Sakal Tasarımı',
-  },
-  {
-    name: 'Alperen Çetin',
-    rating: 5,
-    comment: 'İstediğim modelin fotoğrafını gösterdim, yüz yapıma uygun şekilde birebir uyguladı. Çorum’da trend modelleri bu kadar iyi uygulayan başka salon yok.',
-    service: 'Modern Fade & Doku',
-  },
-  {
-    name: 'Onur Yıldız',
-    rating: 5,
-    comment: 'Fatih Caddesi’nde böyle temiz ve profesyonel bir salonun olması büyük avantaj. Hem saç hem sakal kesiminden her seferinde çok memnun ayrılıyorum.',
-    service: 'Saç & Sakal Tasarımı',
-  },
-  {
-    name: 'Süleyman Kaya',
     rating: 4,
-    comment: 'İş çıkışı uğradım, ilgi ve alaka çok iyi. Saç yıkama ve fön işlemi gayet özenli yapıldı. Cadde üstü bazen park yoğun olabiliyor ama ustalık 10 numara.',
-    service: 'Saç Kesimi & Yıkama',
+    service: 'Sakal Düzeltme',
+    comment: 'Sakal düzeltme ve saç için gittim gayet güzel oldu. Cadde üstünde park yeri bazen sıkıntı ama tıraş başarılı.',
   },
   {
-    name: 'Barış Güler',
+    name: 'Mert Aksoy',
     rating: 5,
-    comment: 'Spor sonrası ferahlatıcı saç ve sakal bakımı için geliyorum. Cilt ürünleri çok kaliteli, tahriş sıfır. Nurkan Bey’in enerjisi ve titizliği takdire şayan.',
-    service: 'Saç & Sakal Tasarımı',
+    service: 'Taper Fade',
+    comment: 'Taper fade tam fotodaki gibi oldu genç tarzından anlayan usta bulmak zor eline sağlık Nurkan usta.',
   },
   {
     name: 'Tolga Doğan',
     rating: 5,
-    comment: 'Sürekli seyahat eden biriyim, Türkiye’nin birçok yerinde berbere gittim ama buradaki makas işçiliği ve samimiyet gerçekten üst seviyede.',
-    service: 'Kişiye Özel Saç Kesimi',
+    service: 'Saç & Sakal',
+    comment: 'İlk defa gittim çok memnun kaldım hem sohbeti hem işçiliği çok iyi artık buradayız.',
   },
   {
     name: 'Oğuzhan Çelik',
-    rating: 4,
-    comment: 'Müşteriyle iletişim ve stil tavsiyeleri çok profesyonel. İstediğim sakal modelini tam tarif ettiğim gibi yaptı. Hafta sonu randevularını önceden almakta fayda var.',
-    service: 'Geleneksel Sakal Tasarımı',
-  },
-  {
-    name: 'Cem Arslan',
     rating: 5,
-    comment: 'Modern berberlik anlayışını Çorum’a kazandıran çok nezih bir mekan. Kahve ikramından sohbetine kadar her şey birinci sınıf.',
-    service: 'Saç & Sakal Tasarımı',
+    service: 'Ustura & Sakal',
+    comment: 'Sakal çizgilerini çok nizami çekiyor makineyle değil usturayla özenerek yapıyor eyvallah usta.',
   },
   {
     name: 'Fatih Şen',
     rating: 5,
-    comment: 'El pratikliği ve makas geçişleri harika. Saçı hiç çekiştirmeden çok rahat bir tıraş deneyimi yaşatıyor. Gönül rahatlığıyla tavsiye ederim.',
-    service: 'Kişiye Özel Saç Kesimi',
-  },
-  {
-    name: 'Mert Aksoy',
-    rating: 4,
-    comment: 'Taper fade kesimi tam istediğim gibi oldu. Öğrenci dostu samimi bir yaklaşım var. Randevu saatlerine tam riayet ediliyor.',
-    service: 'Modern Fade Kesim',
-  },
-  {
-    name: 'Selim Vural',
-    rating: 5,
-    comment: 'Yıllardır saçımı Nurkan ustaya emanet ederim. Tek bir gün bile memnuniyetsiz ayrılmadım. Çorum’un en iyi erkek kuaförüdür.',
-    service: 'Saç & Sakal Tasarımı',
+    service: 'Saç Kesimi',
+    comment: 'Saçı hiç çekiştirmeden tertemiz kesti vaktinde de aldı. Eline koluna sağlık.',
   },
 ];
+
+function ReviewCard({ r }) {
+  return (
+    <div className="w-[280px] sm:w-[340px] md:w-[360px] h-[175px] sm:h-[185px] md:h-[190px] p-5 sm:p-6 rounded-2xl bg-[#FAF9FB] border border-gray-200/90 shadow-xs hover:shadow-md hover:border-[#9E7A3B] transition-all duration-300 flex flex-col justify-between shrink-0">
+      <div>
+        <div className="flex items-center justify-between gap-2 mb-2.5">
+          <div className="flex items-center gap-0.5 text-[#9E7A3B]">
+            {[...Array(5)].map((_, i) => (
+              <Star
+                key={i}
+                size={13}
+                fill={i < r.rating ? "currentColor" : "none"}
+                className={i < r.rating ? "text-[#9E7A3B]" : "text-gray-300"}
+              />
+            ))}
+          </div>
+          <span className="text-[10px] font-bold text-[#9E7A3B] bg-[#F9F5EC] border border-[#9E7A3B]/30 px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+            {r.service}
+          </span>
+        </div>
+
+        <p className="text-gray-700 text-xs sm:text-[13px] leading-relaxed font-normal line-clamp-3">
+          “{r.comment}”
+        </p>
+      </div>
+
+      <div className="pt-3 border-t border-gray-200/80 flex items-center gap-2.5 mt-auto">
+        <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#161719] text-white flex items-center justify-center font-bold text-[11px] sm:text-xs shrink-0">
+          {r.name.charAt(0)}
+        </div>
+        <h4 className="font-sans font-bold text-xs sm:text-sm text-[#161719] leading-tight truncate">
+          {r.name}
+        </h4>
+      </div>
+    </div>
+  );
+}
 
 export default function Testimonials() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -144,7 +133,8 @@ export default function Testimonials() {
             name: item.name,
             rating: item.rating,
             comment: item.comment,
-            service: item.service,
+            service: item.service || 'Saç Kesimi',
+            tag: 'Tavsiye Ediyor',
           }))
         );
       }
@@ -200,23 +190,16 @@ export default function Testimonials() {
               {/* Left: Score & Stars Block */}
               <div className="flex items-center gap-3 px-3 sm:px-4 py-1.5">
                 <span className="text-2xl sm:text-3xl font-black text-[#161719] font-sans tracking-tight leading-none">
-                  4.7
+                  4.8
                 </span>
                 <div className="flex flex-col text-left justify-center">
                   <div className="flex items-center text-[#9E7A3B]">
-                    {[1, 2, 3, 4].map((i) => (
+                    {[1, 2, 3, 4, 5].map((i) => (
                       <Star key={i} size={11} fill="currentColor" />
                     ))}
-                    {/* 5th Star (70% fractional) */}
-                    <div className="relative inline-flex items-center">
-                      <Star size={11} className="text-gray-300" fill="currentColor" />
-                      <div className="absolute inset-0 overflow-hidden w-[70%] flex items-center">
-                        <Star size={11} className="text-[#9E7A3B] shrink-0" fill="currentColor" />
-                      </div>
-                    </div>
                   </div>
                   <span className="text-[10px] text-gray-500 font-semibold tracking-wide mt-0.5 whitespace-nowrap">
-                    Doğrulanmış Puan
+                    Müşteri Memnuniyeti
                   </span>
                 </div>
               </div>
@@ -249,96 +232,14 @@ export default function Testimonials() {
         {/* Row 1: Sliding Left */}
         <div className="animate-marquee gap-4 sm:gap-6">
           {row1.map((r, idx) => (
-            <div
-              key={`row1-${idx}`}
-              className="w-[280px] sm:w-[350px] md:w-[380px] h-[210px] sm:h-[225px] md:h-[235px] p-5 sm:p-6 rounded-2xl bg-[#FAF9FB] border border-gray-200/90 shadow-sm hover:shadow-xl hover:border-[#9E7A3B] transition-all duration-300 flex flex-col justify-between shrink-0"
-            >
-              <div>
-                <div className="flex items-center justify-between gap-2 mb-3">
-                  <div className="flex items-center gap-0.5 text-[#9E7A3B]">
-                    {[...Array(5)].map((_, i) => (
-                      <Star
-                        key={i}
-                        size={13}
-                        fill={i < r.rating ? "currentColor" : "none"}
-                        className={i < r.rating ? "text-[#9E7A3B]" : "text-gray-300"}
-                      />
-                    ))}
-                  </div>
-                  <span className="text-[9px] sm:text-[10px] font-bold text-[#9E7A3B] bg-[#F9F5EC] border border-[#9E7A3B]/30 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full whitespace-nowrap uppercase tracking-wider">
-                    {r.service}
-                  </span>
-                </div>
-
-                <p className="text-gray-700 text-xs sm:text-[13px] leading-relaxed font-normal line-clamp-3 sm:line-clamp-4">
-                  “{r.comment}”
-                </p>
-              </div>
-
-              <div className="pt-3 border-t border-gray-200/80 flex items-center justify-between mt-auto">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#161719] text-white flex items-center justify-center font-extrabold text-[11px] sm:text-xs shrink-0">
-                    {r.name.charAt(0)}
-                  </div>
-                  <div>
-                    <h4 className="font-sans font-extrabold text-xs sm:text-sm text-[#161719] leading-tight">
-                      {r.name}
-                    </h4>
-                    <span className="text-[9px] sm:text-[10px] text-emerald-700 flex items-center gap-1 mt-0.5 font-semibold">
-                      <CheckCircle2 size={10} /> Doğrulanmış Misafir
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <ReviewCard key={`row1-${idx}`} r={r} />
           ))}
         </div>
 
         {/* Row 2: Sliding Right */}
         <div className="animate-marquee-reverse gap-4 sm:gap-6">
           {row2.map((r, idx) => (
-            <div
-              key={`row2-${idx}`}
-              className="w-[280px] sm:w-[350px] md:w-[380px] h-[210px] sm:h-[225px] md:h-[235px] p-5 sm:p-6 rounded-2xl bg-[#FAF9FB] border border-gray-200/90 shadow-sm hover:shadow-xl hover:border-[#9E7A3B] transition-all duration-300 flex flex-col justify-between shrink-0"
-            >
-              <div>
-                <div className="flex items-center justify-between gap-2 mb-3">
-                  <div className="flex items-center gap-0.5 text-[#9E7A3B]">
-                    {[...Array(5)].map((_, i) => (
-                      <Star
-                        key={i}
-                        size={13}
-                        fill={i < r.rating ? "currentColor" : "none"}
-                        className={i < r.rating ? "text-[#9E7A3B]" : "text-gray-300"}
-                      />
-                    ))}
-                  </div>
-                  <span className="text-[9px] sm:text-[10px] font-bold text-[#9E7A3B] bg-[#F9F5EC] border border-[#9E7A3B]/30 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full whitespace-nowrap uppercase tracking-wider">
-                    {r.service}
-                  </span>
-                </div>
-
-                <p className="text-gray-700 text-xs sm:text-[13px] leading-relaxed font-normal line-clamp-3 sm:line-clamp-4">
-                  “{r.comment}”
-                </p>
-              </div>
-
-              <div className="pt-3 border-t border-gray-200/80 flex items-center justify-between mt-auto">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#161719] text-white flex items-center justify-center font-extrabold text-[11px] sm:text-xs shrink-0">
-                    {r.name.charAt(0)}
-                  </div>
-                  <div>
-                    <h4 className="font-sans font-extrabold text-xs sm:text-sm text-[#161719] leading-tight">
-                      {r.name}
-                    </h4>
-                    <span className="text-[9px] sm:text-[10px] text-emerald-700 flex items-center gap-1 mt-0.5 font-semibold">
-                      <CheckCircle2 size={10} /> Doğrulanmış Misafir
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <ReviewCard key={`row2-${idx}`} r={r} />
           ))}
         </div>
 
