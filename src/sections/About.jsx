@@ -65,15 +65,15 @@ export default function About() {
             {/* Natural, Realistic & Authentic Biography */}
             <div className="space-y-3.5 sm:space-y-4 text-gray-300 text-sm sm:text-base leading-relaxed font-normal">
               <p>
-                Erkek kuaförlüğü mesleğine yıllarını veren <strong className="text-white">Nurkan Aydoğdu</strong>, Çorum Merkez'deki salonunda her misafirinin yüz yapısına ve kişisel tarzına en uygun saç ve sakal kesimlerini titizlikle uygulamaktadır.
+                <strong className="text-white">Nurkan Aydoğdu</strong>, 2019'dan bu yana Çorum'da erkek kuaförü olarak hizmet vermektedir.
               </p>
               
               <p>
-                Tek tip ve ezbere kesimler yerine; misafirlerinin saç yapısını, kafa formunu ve günlük kullanım alışkanlıklarını göz önünde bulundurarak hem modern hem de evde kolayca şekil alabilen doğal modeller ortaya çıkarır.
+                Saç ve sakal kesimlerinde kişinin yüz yapısına, saç tipine ve tarzına uygun modeller tercih etmeye önem verir. Amacı, günlük hayatta da rahat kullanılabilecek ve kolay şekil alabilecek saç modelleri sunmaktır.
               </p>
 
               <p>
-                Üçtutlar Mahallesi Fatih Caddesi'ndeki nezih salonunda; hijyen kurallarına uygun sterilize ekipmanlar, kaliteli bakım ürünleri ve randevulu çalışma düzeniyle samimi ve konforlu bir kuaförlük deneyimi sunmaktadır.
+                Saç ve sakal kesiminin yanı sıra temel bakım hizmetleri de sunan Nurkan Aydoğdu, randevulu çalışma sistemiyle hizmet vermektedir.
               </p>
             </div>
 
