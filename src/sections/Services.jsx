@@ -12,10 +12,9 @@ const SERVICES = [
     isPopular: false,
     desc: 'Yüz ve kafa anatomisine uygun stil analizi, detaylı makas ve modern fade geçişleri, saç yıkama ve özel fön şekillendirme.',
     features: [
-      'Kafa anatomisine göre stil analizi',
-      'Detaylı makas ve modern fade tekniği',
-      'Ferahlatıcı saç yıkama & tonik',
-      'Kişiye özel fön & kalıcı şekillendirme',
+      'Yüz ve kafa yapısına uygun kesim analizi',
+      'Detaylı makas ve fade geçişleri',
+      'Saç yıkama, tonik ve fön şekillendirme',
     ],
   },
   {
@@ -27,10 +26,9 @@ const SERVICES = [
     isPopular: false,
     desc: 'Ustura ile jilet gibi net yanak ve boyun çizgileri, sakal boyu kısaltma, sıcak havlu terapisi ve cilt yatıştırıcı losyon bakımı.',
     features: [
-      'Ustura ile jilet gibi keskin hatlar',
-      'Yanak ve boyun detay temizliği',
-      'Geleneksel sıcak havlu terapisi',
-      'Cilt yatıştırıcı ferahlatıcı losyon',
+      'Ustura ile keskin yanak ve boyun hatları',
+      'Geleneksel sıcak havlu uygulaması',
+      'Cilt yatıştırıcı losyon & sakal bakımı',
     ],
   },
   {
@@ -43,10 +41,9 @@ const SERVICES = [
     badgeText: 'EN ÇOK TERCİH EDİLEN',
     desc: 'Salonumuzun en popüler komple bakım seansı. Kişiye özel saç kesimi, ustura ile sakal tasarımı ve arındırıcı stil deneyimi.',
     features: [
-      'Eksiksiz saç kesimi & stil analizi',
-      'Ustura ile sakal tasarımı & hat netleştirme',
-      'Saç toniği & bakım uygulaması',
-      'Gün boyu kalıcı profesyonel fön',
+      'Kişiye özel saç ve sakal tasarımı',
+      'Sıcak havlu, saç yıkama ve tonik bakımı',
+      'Kalıcı profesyonel fön şekillendirme',
     ],
   },
   {
@@ -58,10 +55,9 @@ const SERVICES = [
     isPopular: false,
     desc: 'Düğün ve nişan günleriniz için VIP özel hazırlık. Detaylı saç ve sakal tasarımı, yüz maskesi, cilt bakımı ve komple arındırma.',
     features: [
-      'Özel damat saç & sakal tasarımı',
-      'Yüz maskesi & derinlemesine cilt bakımı',
-      'Kaş, kulak ve ense detay temizliği',
-      'Ferahlatıcı özel esans & tonik bakımı',
+      'Özel gün için detaylı saç & sakal tasarımı',
+      'Yüz maskesi ve canlandırıcı cilt bakımı',
+      'Kulak, burun ve ense detay temizliği',
     ],
   },
 ];
